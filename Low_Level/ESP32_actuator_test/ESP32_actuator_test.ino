@@ -1,4 +1,4 @@
-// Define the pins connected to the stepper driver
+ // Define the pins connected to the stepper driver
 int driverPULL = 27; // PULL- pin
 int driverDIR = 26;  // DIR- pin
 int encoderPinA = 33; // Encoder pin A
@@ -14,13 +14,12 @@ long currentSteps = 0; // Variable to keep track of the current steps
 volatile long encoderCount = 0; // Variable to store encoder position
 volatile int lastEncoded = 0;
 
-bool isMoving = false; // Variable to indicate if the motor is currently moving
-float targetAngle = 0; // Variable to store the target angle
-int motorSpeed = 0; // Variable to store the motor speed
-
 // Timer to periodically print encoder values
 unsigned long lastPrintTime = 0;
 unsigned long printInterval = 500; // Print every 500ms
+
+volatile bool stopMotor = false; // Variable to signal stopping the motor
+volatile bool newCommandReceived = false; // Variable to signal new command
 
 void setup() {
   // Set the pin modes
@@ -44,22 +43,26 @@ void loop() {
   if (Serial.available() > 0) {
     // If there's serial data available
     String input = Serial.readStringUntil('\n');
-    if (input.startsWith("SPEED")) {
-      // Parse the speed command
-      int newSpeed = input.substring(6).toInt();
-      setMotorSpeed(newSpeed);
-    } else if (input == "RESET") {
-      resetAngle();
-    } else {
-      // Parse the new angle command
-      float newTargetAngle = input.toFloat();
-      setTargetAngle(newTargetAngle);
-    }
-  }
+    input.trim(); // Remove any extra whitespace
 
-  // Move to the target angle if set and motor is not currently moving
-  if (!isMoving && targetAngle != 0) {
-    moveToAngle(targetAngle);
+    switch (input.charAt(0)) {
+      case 'R': // Handle RESET command
+        if (input == "RESET") {
+          resetAngle();
+        }
+        break;
+      case 'S': // Handle STOP command
+        if (input == "STOP") {
+          stopMotor = true; // Set the flag to stop the motor
+        }
+        break;
+      default: // Handle target angle input
+        float targetAngle = input.toFloat();
+        stopMotor = false; // Clear the stop flag before starting a new move
+        newCommandReceived = true;
+        moveToAngle(targetAngle); // Move to the specified angle
+        break;
+    }
   }
 
   // Print the encoder value to the serial monitor if it has changed
@@ -72,17 +75,20 @@ void loop() {
   }
 }
 
+
 ///////////////////////////////////////////////////////////
 void moveToAngle(float targetAngle) {
   // Convert the target angle to steps
   long targetSteps = (targetAngle / 360.0) * STEPS_PER_REV;
-  long stepsToMove = targetSteps - currentSteps;
+  // Update the current steps
 
+  currentSteps = (encoderToAngle(encoderCount) / 360.0) * STEPS_PER_REV;
+
+   long stepsToMove = targetSteps - currentSteps;
   // Move the stepper motor to the target position
   moveStepper(stepsToMove);
 
-  // Update the current steps
-  currentSteps = targetSteps;
+
 }
 
 void moveStepper(long steps) {
@@ -97,6 +103,18 @@ void moveStepper(long steps) {
 
   // Generate the step pulses
   for (long i = 0; i < steps; i++) {
+    if (stopMotor) {
+      Serial.println("Motor stopped.");
+      return; // Exit the loop if stop command is received
+    }
+
+    if (Serial.available() > 0) {
+      // If a new command is received
+      newCommandReceived = true;
+      Serial.println("New command received.");
+      return; // Exit the loop to handle the new command
+    }
+
     digitalWrite(driverPULL, HIGH);
     delayMicroseconds(STEP_DELAY); // Wait for a short period
     digitalWrite(driverPULL, LOW);
@@ -131,14 +149,4 @@ void updateEncoder() {
 // Function to convert encoder count to angle
 float encoderToAngle(long count) {
   return (float)count * 0.09;
-}
-
-// Function to set the motor speed
-void setMotorSpeed(int speed) {
-  motorSpeed = speed;
-}
-
-// Function to set the target angle
-void setTargetAngle(float angle) {
-  targetAngle = angle;
 }
