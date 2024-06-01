@@ -1,0 +1,10 @@
+%implements s25_b0_aap3n_0_ModuleConstants "C"
+
+%function ModuleConstants(block) Output
+
+
+/* Named constants for Chart: '<S27>/Clutch' */
+#define bu4b1ichw4 ((uint8_T)0U)
+#define daa2nsd5zx ((uint8_T)2U)
+#define llehlpimse ((uint8_T)1U)
+%endfunction

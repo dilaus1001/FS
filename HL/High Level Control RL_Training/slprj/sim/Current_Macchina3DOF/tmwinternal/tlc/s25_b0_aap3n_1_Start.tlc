@@ -1,0 +1,93 @@
+%implements s25_b0_aap3n_1_Start "C"
+
+%function Start(block, system) Output
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%<SLibCGIRAccessLocalDWork(206, 0)> %% fu3cohzr0a
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T i;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%assign tlcStartFcnOfS13B1 = OpaqueTLCBlockFcn("Start", 13, 1, 1, 24, 0)
+%assign tlcStartFcnOfS24B9 = OpaqueTLCBlockFcn("Start", 24, 9, 1, 24, 1)
+%assign tlcStartFcnOfS24B10 = OpaqueTLCBlockFcn("Start", 24, 10, 1, 24, 2)
+%assign tlcStartFcnOfS24B11 = OpaqueTLCBlockFcn("Start", 24, 11, 1, 24, 3)
+%assign tlcStartFcnOfS24B14 = OpaqueTLCBlockFcn("Start", 24, 14, 1, 24, 4)
+%assign tlcStartFcnOfS24B15 = OpaqueTLCBlockFcn("Start", 24, 15, 1, 24, 5)
+%assign tlcStartFcnOfS24B16 = OpaqueTLCBlockFcn("Start", 24, 16, 1, 24, 6)
+%<SFLibRegSignalLogging(0, 1)>\
+%openfile locBufForEachIteration_24_0
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[6], "Start",0)
+%if SLibCG_SystemFcnArgAccessed("cm3i2fcsct",6,0)
+%<SLibCG_AccessArg(1 ,24, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("cm3i2fcsct",6,1)
+%<SLibCG_AccessArg(1 ,24, 1)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+
+%<SLibCGIRGenReusableSysCall("cm3i2fcsct", ["%<::tSimStruct>", "&localB->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t"], 6, 0, 0, 0, 0, 24)>\
+%assign ss = ::CompiledModel.System[6]
+%if !LibSystemIsInlined(ss)
+;
+%else
+\
+%endif
+%endif
+%closefile locBufForEachIteration_24_0
+%if !ISEMPTY(locBufForEachIteration_24_0) && !WHITE_SPACE(locBufForEachIteration_24_0)
+for (kvsf2axtt4 = 0; kvsf2axtt4 < 4; kvsf2axtt4++) {
+%<locBufForEachIteration_24_0>
+}
+%endif
+%<tlcStartFcnOfS13B1>\
+for (fu3cohzr0a = 0; fu3cohzr0a < 4; fu3cohzr0a++) {
+    for (i = 0; i < 9; i++) {
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[i] = 0.0;
+    }
+}
+%<SFLibRegSignalLogging(0, 23)>\
+%<SFLibRegSignalLogging(0, 22)>\
+localDW->kishugiqhj = 0;
+%<tlcStartFcnOfS24B9>\
+%<tlcStartFcnOfS24B10>\
+%<tlcStartFcnOfS24B11>\
+%<tlcStartFcnOfS24B14>\
+%<tlcStartFcnOfS24B15>\
+%<tlcStartFcnOfS24B16>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Start", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))
+%<SLibCG_AccessArg(1, 24, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 24, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Start", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Start"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 24, 0)>
+%endif
+%<LibSetSystemField(system, "CachedStartLocalVars", localVarDecl)>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void fq1oqby45q(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 24, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("fq1oqby45q", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 24, fcnProtoType)>
+%endfunction

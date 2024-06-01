@@ -1,0 +1,3069 @@
+%implements s25_b0_aap3n_1_Outputs "C"
+
+%function OutputsForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%<SLibCGIRAccessLocalDWork(205, 0)> %% e4yeotdv24
+%<SLibCGIRAccessLocalDWork(206, 0)> %% fu3cohzr0a
+%<SLibCGIRAccessLocalVar(206, 0, "")> %% febx31gzuq
+%<SLibCGIRAccessLocalVar(207, 0, "")> %% bd4mvhqsri
+%<SLibCGIRAccessLocalVar(208, 0, "")> %% mtl3yd055m
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T zeta[36];
+real_T gtnu3btlhv[12];
+real_T mmyrcwyceu[12];
+real_T gvoqg0xovk_p[9];
+real_T mosy5wbylc_p[9];
+real_T ohbm0cmx1i[9];
+real_T pb03mnnx5d_p[9];
+real_T gf3ppugwlf_p[6];
+real_T ktda3n3ifj_p[6];
+real_T prc2prvbk2_p[6];
+real_T Bykappa[4];
+real_T Eykappa[4];
+real_T FzUnSat[4];
+real_T Fzo_prime[4];
+real_T Mzphiinf[4];
+real_T R_omega[4];
+real_T R_omega_p[4];
+real_T SHy[4];
+real_T a212wubcu4[4];
+real_T ai3ndf3ja2[4];
+real_T bv5e24gcbb_p[4];
+real_T c4pihn5jgj[4];
+real_T cwefdql3v4_p[4];
+real_T dc_data[4];
+real_T dosyb5bkip[4];
+real_T eemzcdzxid_data[4];
+real_T eemzcdzxid_p[4];
+real_T eiihbvg0nv[4];
+real_T epsilon_gamma[4];
+real_T fzbcvayacp[4];
+real_T gamma_star[4];
+real_T hdhhddtroz[4];
+real_T imtn23idgd[4];
+real_T kappa_x[4];
+real_T kx4jhai2wh[4];
+real_T lam_Cz[4];
+real_T lam_Kygamma[4];
+real_T lam_mux[4];
+real_T lam_muy[4];
+real_T lam_muy_prime[4];
+real_T n4qzq0wcyz[4];
+real_T nkuraloqpr[4];
+real_T phi_t[4];
+real_T tmpDrphiVar_data[4];
+real_T tmp_data_e[4];
+real_T ake4vbzosr_p[3];
+real_T dbni30djfc_p[3];
+real_T ftsmejlxj5_p[3];
+real_T fu35uxztk4_p[3];
+real_T iwk1ba05r0[3];
+real_T j4duleeubb_p[3];
+real_T m5ddekvp3i_p[3];
+real_T mra411h1rq_p[3];
+real_T B1;
+real_T B2;
+real_T B3;
+real_T Dx_tmp;
+real_T Dx_tmp_p;
+real_T Vsy_tmp;
+real_T Vsy_tmp_e;
+real_T Vsy_tmp_i;
+real_T Vsy_tmp_p;
+real_T ab_idx_0;
+real_T chhinxp222_idx_0;
+real_T chhinxp222_idx_1;
+real_T chhinxp222_idx_2;
+real_T chhinxp222_idx_3;
+real_T co5cofqc3o;
+real_T dd20ekst0q;
+real_T e_y;
+real_T eemzcdzxid_e;
+real_T fh4bzzfcm4_idx_0;
+real_T fohy1okpri;
+real_T gamma_star_tmp;
+real_T hbcim53f5k_p;
+real_T hek1ox05rk_idx_0;
+real_T hek1ox05rk_idx_1;
+real_T hek1ox05rk_idx_2;
+real_T iehexxz52y_idx_2;
+real_T koutmp4ixp;
+real_T lam_Cz_tmp;
+real_T lam_Cz_tmp_p;
+real_T lkgzij3obv_p;
+real_T m3ezqvwkit_idx_0;
+real_T m3ezqvwkit_idx_1;
+real_T m3ezqvwkit_idx_2;
+real_T m4uvcqvy2c_idx_0;
+real_T m4uvcqvy2c_idx_1;
+real_T m4uvcqvy2c_idx_2;
+real_T m4uvcqvy2c_idx_3;
+real_T mtyhn2pzkf;
+real_T mu_y_idx_0;
+real_T mu_y_idx_1;
+real_T mu_y_idx_2;
+real_T njhq4xcks4;
+real_T or1pah3dt3;
+real_T owmlrlnhp3_idx_2;
+real_T p3hmlvzciy;
+real_T pb03mnnx5d_tmp;
+real_T pb03mnnx5d_tmp_e;
+real_T pb03mnnx5d_tmp_i;
+real_T pb03mnnx5d_tmp_p;
+real_T rdot;
+real_T x_idx_0;
+real_T xddot;
+real_T yddot;
+real_T *lastY;
+int32_T bc_tmp_data[4];
+int32_T sb_tmp_data[4];
+int32_T tmp_data[4];
+int32_T tmp_data_p[4];
+int32_T ec_size[2];
+int32_T bc_tmp_size;
+int32_T i;
+int32_T tmp_size;
+int32_T tmp_size_p;
+int32_T trueCount;
+int8_T bc_data[4];
+boolean_T nomslipinds[4];
+boolean_T tempInds[4];
+boolean_T tmp;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(1,28,49,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,48,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,47,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,46,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,45,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,44,1)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,43,1)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,42,0)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,42,1)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,42,2)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,42,6)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,42,182)
+%<SLibCG_AccessArg(1 ,28, 162)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,42,197)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,41,1)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,41,19)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,40,6)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,39,6)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,39,13)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,38,1)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,37,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,36,6)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,35,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,34,5)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,33,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,32,6)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,32,11)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,31,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,30,9)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,29,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,28,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,27,6)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,26,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,25,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,24,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,23,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,22,5)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,21,5)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,20,6)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,19,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,18,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,17,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,16,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,15,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,14,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,13,13)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,12,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,11,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,10,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,9,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,8,1)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,7,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,6,3)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,6,5)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,5,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,4,0)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,4,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,3,6)
+%<SLibCG_AccessArg(1 ,28, 162)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,3,8)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,3,9)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,2,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,1,2)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,28,0,0)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,28,0,4)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+
+%assign tlcOutputsFcnOfS24B1 = OpaqueTLCBlockFcn("Outputs", 24, 1, 1, 28, 0)
+%assign tlcOutputsFcnOfS13B1 = OpaqueTLCBlockFcn("Outputs", 13, 1, 1, 28, 1)
+%assign tlcOutputsFcnOfS13B5 = OpaqueTLCBlockFcn("Outputs", 13, 5, 1, 28, 2)
+%assign tlcOutputsFcnOfS13B6 = OpaqueTLCBlockFcn("Outputs", 13, 6, 1, 28, 3)
+%assign tlcOutputsFcnOfS24B9 = OpaqueTLCBlockFcn("Outputs", 24, 9, 1, 28, 4)
+%assign tlcOutputsFcnOfS24B10 = OpaqueTLCBlockFcn("Outputs", 24, 10, 1, 28, 5)
+%assign tlcOutputsFcnOfS24B11 = OpaqueTLCBlockFcn("Outputs", 24, 11, 1, 28, 6)
+%assign tlcOutputsFcnOfS24B13 = OpaqueTLCBlockFcn("Outputs", 24, 13, 1, 28, 7)
+%assign tlcOutputsFcnOfS24B14 = OpaqueTLCBlockFcn("Outputs", 24, 14, 1, 28, 8)
+%assign tlcOutputsFcnOfS24B15 = OpaqueTLCBlockFcn("Outputs", 24, 15, 1, 28, 9)
+%assign tlcOutputsFcnOfS24B16 = OpaqueTLCBlockFcn("Outputs", 24, 16, 1, 28, 10)
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    localDW->az2mao2gtz = (*hygc5rvpil > izarshtadf.P_267);
+}
+if (localDW->az2mao2gtz) {
+    localB->pbvljfha1b = *hygc5rvpil;
+} else {
+    localB->pbvljfha1b = izarshtadf.P_467;
+}
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    localDW->eanjugtka2 = (*hygc5rvpil > izarshtadf.P_268);
+}
+if (localDW->eanjugtka2) {
+    localB->i3zah01fdw = izarshtadf.P_466;
+} else {
+    localB->i3zah01fdw = -*hygc5rvpil;
+}
+%<tlcOutputsFcnOfS24B1>\
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    if (localDW->nyu1c2jebf != 0) {
+        localX->nxwpeow2gx[0] = localB->i2qdeyak4i[0];
+        localX->nxwpeow2gx[1] = localB->i2qdeyak4i[1];
+        localX->nxwpeow2gx[2] = localB->i2qdeyak4i[2];
+        localX->nxwpeow2gx[3] = localB->i2qdeyak4i[3];
+    }
+    localB->odufjmwvlq[0] = localX->nxwpeow2gx[0];
+    localB->odufjmwvlq[1] = localX->nxwpeow2gx[1];
+    localB->odufjmwvlq[2] = localX->nxwpeow2gx[2];
+    localB->odufjmwvlq[3] = localX->nxwpeow2gx[3];
+} else {
+    localB->odufjmwvlq[0] = localX->nxwpeow2gx[0];
+    localB->odufjmwvlq[1] = localX->nxwpeow2gx[1];
+    localB->odufjmwvlq[2] = localX->nxwpeow2gx[2];
+    localB->odufjmwvlq[3] = localX->nxwpeow2gx[3];
+}
+hbcim53f5k_p = muDoubleScalarSin(localB->odufjmwvlq[2]);
+lkgzij3obv_p = muDoubleScalarCos(localB->odufjmwvlq[2]);
+localB->kdjo14dy4y[0] = localB->odufjmwvlq[0] * lkgzij3obv_p - localB->odufjmwvlq[1] * hbcim53f5k_p;
+localB->kdjo14dy4y[1] = localB->odufjmwvlq[0] * hbcim53f5k_p + localB->odufjmwvlq[1] * lkgzij3obv_p;
+fh4bzzfcm4_idx_0 = localB->odufjmwvlq[2];
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &hbcim53f5k_p, &iwk1ba05r0[0]);
+muDoubleScalarSinCos(*dpfnomih21, &lkgzij3obv_p, &iwk1ba05r0[1]);
+muDoubleScalarSinCos(*kh4bdqeora, &owmlrlnhp3_idx_2, &iwk1ba05r0[2]);
+pb03mnnx5d_p[0] = iwk1ba05r0[0] * iwk1ba05r0[1];
+hek1ox05rk_idx_2 = lkgzij3obv_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[1] = hek1ox05rk_idx_2 * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_tmp = lkgzij3obv_p * iwk1ba05r0[2];
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[3] = hbcim53f5k_p * iwk1ba05r0[1];
+pb03mnnx5d_p[4] = hek1ox05rk_idx_2 * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[6] = -lkgzij3obv_p;
+pb03mnnx5d_p[7] = iwk1ba05r0[1] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[8] = iwk1ba05r0[1] * iwk1ba05r0[2];
+for (i = 0; i < 3; i++) {
+    mosy5wbylc_p[3 * i] = pb03mnnx5d_p[i];
+    mosy5wbylc_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    mosy5wbylc_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->niuqftwyy3[0] = izarshtadf.P_190;
+    localB->niuqftwyy3[1] = localB->klrnznry03 - izarshtadf.P_197;
+    localB->niuqftwyy3[2] = izarshtadf.P_199;
+    localB->lkft4c3ltd = *ohfutn4w42 * localB->niuqftwyy3[2];
+    localB->je2b1oxnsp = *mgxwk4kyvq * localB->niuqftwyy3[1];
+    localB->icmtjtl3in = *mgxwk4kyvq * localB->niuqftwyy3[2];
+    localB->lsz3qfuvy0 = *ohfutn4w42 * localB->niuqftwyy3[0];
+}
+hek1ox05rk_idx_0 = localB->lkft4c3ltd - localB->niuqftwyy3[1] * localB->odufjmwvlq[3];
+hek1ox05rk_idx_1 = localB->niuqftwyy3[0] * localB->odufjmwvlq[3] - localB->icmtjtl3in;
+hek1ox05rk_idx_2 = localB->je2b1oxnsp - localB->lsz3qfuvy0;
+for (i = 0; i < 3; i++) {
+    j4duleeubb_p[i] = (mosy5wbylc_p[i + 3] * hek1ox05rk_idx_1 + mosy5wbylc_p[i] * hek1ox05rk_idx_0) + mosy5wbylc_p[i + 6] * hek1ox05rk_idx_2;
+}
+localB->crrjqjlmgk[0] = localB->kdjo14dy4y[0] + j4duleeubb_p[0];
+localB->crrjqjlmgk[1] = localB->kdjo14dy4y[1] + j4duleeubb_p[1];
+localB->crrjqjlmgk[2] = *oxj304jy1x + j4duleeubb_p[2];
+*lxrp005lhu = localB->crrjqjlmgk[0];
+*n04boasq2h = localB->crrjqjlmgk[1];
+*pvihppahlz = localB->crrjqjlmgk[2];
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    if (localDW->oms0n1jkm5 != 0) {
+        localX->fitr5s5e5d[0] = localB->fwlllyfpq1[0];
+        localX->fitr5s5e5d[1] = localB->fwlllyfpq1[1];
+    }
+    localB->d1ovqkqe05[0] = localX->fitr5s5e5d[0];
+    localB->d1ovqkqe05[1] = localX->fitr5s5e5d[1];
+} else {
+    localB->d1ovqkqe05[0] = localX->fitr5s5e5d[0];
+    localB->d1ovqkqe05[1] = localX->fitr5s5e5d[1];
+}
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+pb03mnnx5d_p[0] = hbcim53f5k_p * lkgzij3obv_p;
+pb03mnnx5d_tmp = iwk1ba05r0[1] * iwk1ba05r0[2];
+pb03mnnx5d_p[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_tmp_p = iwk1ba05r0[1] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+pb03mnnx5d_p[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_p[6] = -iwk1ba05r0[1];
+pb03mnnx5d_tmp_e = lkgzij3obv_p * iwk1ba05r0[2];
+pb03mnnx5d_p[7] = pb03mnnx5d_tmp_e;
+pb03mnnx5d_tmp_i = lkgzij3obv_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[8] = pb03mnnx5d_tmp_i;
+for (i = 0; i < 3; i++) {
+    gvoqg0xovk_p[3 * i] = pb03mnnx5d_p[i];
+    gvoqg0xovk_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    gvoqg0xovk_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->hzo2z3os5h[0] = izarshtadf.P_190;
+    localB->hzo2z3os5h[1] = localB->bgkpptdarc - izarshtadf.P_197;
+    localB->hzo2z3os5h[2] = izarshtadf.P_199;
+}
+hbcim53f5k_p = localB->hzo2z3os5h[1];
+lkgzij3obv_p = localB->hzo2z3os5h[0];
+owmlrlnhp3_idx_2 = localB->hzo2z3os5h[2];
+for (i = 0; i < 3; i++) {
+    j4duleeubb_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->k3r0bkjk2k[0] = localB->d1ovqkqe05[0] + j4duleeubb_p[0];
+localB->k3r0bkjk2k[1] = localB->d1ovqkqe05[1] + j4duleeubb_p[1];
+localB->k3r0bkjk2k[2] = *ahhpsc2vv2 + j4duleeubb_p[2];
+*dgy45demut = localB->k3r0bkjk2k[0];
+*frk3iuylmx = localB->k3r0bkjk2k[1];
+*jtqqdcpckv = localB->k3r0bkjk2k[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->bxzqeyv0df = *ohfutn4w42 * localB->hzo2z3os5h[2];
+    localB->m0v5srqhnx = *mgxwk4kyvq * localB->hzo2z3os5h[1];
+    localB->mswyh3hbsa = *mgxwk4kyvq * localB->hzo2z3os5h[2];
+    localB->d4r3mns5nx = *ohfutn4w42 * localB->hzo2z3os5h[0];
+}
+j4duleeubb_p[0] = localB->bxzqeyv0df - localB->hzo2z3os5h[1] * localB->odufjmwvlq[3];
+j4duleeubb_p[1] = localB->hzo2z3os5h[0] * localB->odufjmwvlq[3] - localB->mswyh3hbsa;
+j4duleeubb_p[2] = localB->m0v5srqhnx - localB->d4r3mns5nx;
+hbcim53f5k_p = j4duleeubb_p[1];
+lkgzij3obv_p = j4duleeubb_p[0];
+owmlrlnhp3_idx_2 = j4duleeubb_p[2];
+for (i = 0; i < 3; i++) {
+    m5ddekvp3i_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->dcdbrtuwxg[0] = localB->kdjo14dy4y[0] + m5ddekvp3i_p[0];
+localB->dcdbrtuwxg[1] = localB->kdjo14dy4y[1] + m5ddekvp3i_p[1];
+localB->dcdbrtuwxg[2] = *oxj304jy1x + m5ddekvp3i_p[2];
+*n2i3wczmzf = localB->dcdbrtuwxg[0];
+*nepc2nvveo = localB->dcdbrtuwxg[1];
+*mf3bogwtld = localB->dcdbrtuwxg[2];
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+pb03mnnx5d_p[0] = hbcim53f5k_p * lkgzij3obv_p;
+pb03mnnx5d_p[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+pb03mnnx5d_p[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_p[6] = -iwk1ba05r0[1];
+pb03mnnx5d_p[7] = pb03mnnx5d_tmp_e;
+pb03mnnx5d_p[8] = pb03mnnx5d_tmp_i;
+for (i = 0; i < 3; i++) {
+    gvoqg0xovk_p[3 * i] = pb03mnnx5d_p[i];
+    gvoqg0xovk_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    gvoqg0xovk_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->ifgmiol1io[0] = -izarshtadf.P_191;
+    localB->ifgmiol1io[1] = localB->hzo2z3os5h_mbvzarwird - izarshtadf.P_197;
+    localB->ifgmiol1io[2] = izarshtadf.P_199;
+}
+hbcim53f5k_p = localB->ifgmiol1io[1];
+lkgzij3obv_p = localB->ifgmiol1io[0];
+owmlrlnhp3_idx_2 = localB->ifgmiol1io[2];
+for (i = 0; i < 3; i++) {
+    m5ddekvp3i_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->cumbhazpfc[0] = localB->d1ovqkqe05[0] + m5ddekvp3i_p[0];
+localB->cumbhazpfc[1] = localB->d1ovqkqe05[1] + m5ddekvp3i_p[1];
+localB->cumbhazpfc[2] = *ahhpsc2vv2 + m5ddekvp3i_p[2];
+*grh5hjeybz = localB->cumbhazpfc[0];
+*mg50quuw05 = localB->cumbhazpfc[1];
+*jjdupr2jb1 = localB->cumbhazpfc[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->oqumpqs1x4 = *ohfutn4w42 * localB->ifgmiol1io[2];
+    localB->mcizw1eob0 = *mgxwk4kyvq * localB->ifgmiol1io[1];
+    localB->kb1jgygqsf = *mgxwk4kyvq * localB->ifgmiol1io[2];
+    localB->edwtewohug = *ohfutn4w42 * localB->ifgmiol1io[0];
+}
+m5ddekvp3i_p[0] = localB->oqumpqs1x4 - localB->ifgmiol1io[1] * localB->odufjmwvlq[3];
+m5ddekvp3i_p[1] = localB->ifgmiol1io[0] * localB->odufjmwvlq[3] - localB->kb1jgygqsf;
+m5ddekvp3i_p[2] = localB->mcizw1eob0 - localB->edwtewohug;
+hbcim53f5k_p = m5ddekvp3i_p[1];
+lkgzij3obv_p = m5ddekvp3i_p[0];
+owmlrlnhp3_idx_2 = m5ddekvp3i_p[2];
+for (i = 0; i < 3; i++) {
+    fu35uxztk4_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->cdxxrvrfnl[0] = localB->kdjo14dy4y[0] + fu35uxztk4_p[0];
+localB->cdxxrvrfnl[1] = localB->kdjo14dy4y[1] + fu35uxztk4_p[1];
+localB->cdxxrvrfnl[2] = *oxj304jy1x + fu35uxztk4_p[2];
+*irxpz2hnvb = localB->cdxxrvrfnl[0];
+*itqh0ujd0w = localB->cdxxrvrfnl[1];
+*p1crcxvp1f = localB->cdxxrvrfnl[2];
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+pb03mnnx5d_p[0] = hbcim53f5k_p * lkgzij3obv_p;
+pb03mnnx5d_p[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+pb03mnnx5d_p[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_p[6] = -iwk1ba05r0[1];
+pb03mnnx5d_p[7] = pb03mnnx5d_tmp_e;
+pb03mnnx5d_p[8] = pb03mnnx5d_tmp_i;
+for (i = 0; i < 3; i++) {
+    gvoqg0xovk_p[3 * i] = pb03mnnx5d_p[i];
+    gvoqg0xovk_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    gvoqg0xovk_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->k2csnfwxuu[0] = -izarshtadf.P_191;
+    localB->k2csnfwxuu[1] = localB->dpqsdxcv0m - izarshtadf.P_197;
+    localB->k2csnfwxuu[2] = izarshtadf.P_199;
+}
+hbcim53f5k_p = localB->k2csnfwxuu[1];
+lkgzij3obv_p = localB->k2csnfwxuu[0];
+owmlrlnhp3_idx_2 = localB->k2csnfwxuu[2];
+for (i = 0; i < 3; i++) {
+    fu35uxztk4_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->niurx0viog[0] = localB->d1ovqkqe05[0] + fu35uxztk4_p[0];
+localB->niurx0viog[1] = localB->d1ovqkqe05[1] + fu35uxztk4_p[1];
+localB->niurx0viog[2] = *ahhpsc2vv2 + fu35uxztk4_p[2];
+*nhe3ndg5yk = localB->niurx0viog[0];
+*dxdkcx54wc = localB->niurx0viog[1];
+*euweb3ebxq = localB->niurx0viog[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->hh5l3jneix = *ohfutn4w42 * localB->k2csnfwxuu[2];
+    localB->cvachrulfq = *mgxwk4kyvq * localB->k2csnfwxuu[1];
+    localB->gotccrg2aw = *mgxwk4kyvq * localB->k2csnfwxuu[2];
+    localB->arppb2d33f = *ohfutn4w42 * localB->k2csnfwxuu[0];
+}
+fu35uxztk4_p[0] = localB->hh5l3jneix - localB->k2csnfwxuu[1] * localB->odufjmwvlq[3];
+fu35uxztk4_p[1] = localB->k2csnfwxuu[0] * localB->odufjmwvlq[3] - localB->gotccrg2aw;
+fu35uxztk4_p[2] = localB->cvachrulfq - localB->arppb2d33f;
+hbcim53f5k_p = fu35uxztk4_p[1];
+lkgzij3obv_p = fu35uxztk4_p[0];
+owmlrlnhp3_idx_2 = fu35uxztk4_p[2];
+for (i = 0; i < 3; i++) {
+    mra411h1rq_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->navhpsbfft[0] = localB->kdjo14dy4y[0] + mra411h1rq_p[0];
+localB->navhpsbfft[1] = localB->kdjo14dy4y[1] + mra411h1rq_p[1];
+localB->navhpsbfft[2] = *oxj304jy1x + mra411h1rq_p[2];
+*m5lzgipsce = localB->navhpsbfft[0];
+*cgc4vug52r = localB->navhpsbfft[1];
+*jrfqeop4xn = localB->navhpsbfft[2];
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+pb03mnnx5d_p[0] = hbcim53f5k_p * lkgzij3obv_p;
+pb03mnnx5d_p[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+pb03mnnx5d_p[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_p[6] = -iwk1ba05r0[1];
+pb03mnnx5d_p[7] = pb03mnnx5d_tmp_e;
+pb03mnnx5d_p[8] = pb03mnnx5d_tmp_i;
+for (i = 0; i < 3; i++) {
+    gvoqg0xovk_p[3 * i] = pb03mnnx5d_p[i];
+    gvoqg0xovk_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    gvoqg0xovk_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->c1qw0ocafm[0] = -izarshtadf.P_486;
+    localB->c1qw0ocafm[1] = izarshtadf.P_488 - izarshtadf.P_197;
+    localB->c1qw0ocafm[2] = izarshtadf.P_199 - izarshtadf.P_487;
+}
+hbcim53f5k_p = localB->c1qw0ocafm[1];
+lkgzij3obv_p = localB->c1qw0ocafm[0];
+owmlrlnhp3_idx_2 = localB->c1qw0ocafm[2];
+for (i = 0; i < 3; i++) {
+    mra411h1rq_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->lao3tfxpxi[0] = localB->d1ovqkqe05[0] + mra411h1rq_p[0];
+localB->lao3tfxpxi[1] = localB->d1ovqkqe05[1] + mra411h1rq_p[1];
+localB->lao3tfxpxi[2] = *ahhpsc2vv2 + mra411h1rq_p[2];
+*b1vc4qwi1o = localB->lao3tfxpxi[0];
+*pbr2hhohbt = localB->lao3tfxpxi[1];
+*g4tai322x0 = localB->lao3tfxpxi[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->jsvtof53vx = *ohfutn4w42 * localB->c1qw0ocafm[2];
+    localB->fw33ckrmw0 = *mgxwk4kyvq * localB->c1qw0ocafm[1];
+    localB->f0v5jk1ala = *mgxwk4kyvq * localB->c1qw0ocafm[2];
+    localB->egld4bmrqw = *ohfutn4w42 * localB->c1qw0ocafm[0];
+}
+mra411h1rq_p[0] = localB->jsvtof53vx - localB->c1qw0ocafm[1] * localB->odufjmwvlq[3];
+mra411h1rq_p[1] = localB->c1qw0ocafm[0] * localB->odufjmwvlq[3] - localB->f0v5jk1ala;
+mra411h1rq_p[2] = localB->fw33ckrmw0 - localB->egld4bmrqw;
+hbcim53f5k_p = mra411h1rq_p[1];
+lkgzij3obv_p = mra411h1rq_p[0];
+owmlrlnhp3_idx_2 = mra411h1rq_p[2];
+for (i = 0; i < 3; i++) {
+    ake4vbzosr_p[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->lamw3ih12z[0] = localB->kdjo14dy4y[0] + ake4vbzosr_p[0];
+localB->lamw3ih12z[1] = localB->kdjo14dy4y[1] + ake4vbzosr_p[1];
+localB->lamw3ih12z[2] = *oxj304jy1x + ake4vbzosr_p[2];
+*jppcfon0ef = localB->lamw3ih12z[0];
+*nqgwt5tip2 = localB->lamw3ih12z[1];
+*i3dlzpox5n = localB->lamw3ih12z[2];
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+pb03mnnx5d_p[0] = hbcim53f5k_p * lkgzij3obv_p;
+pb03mnnx5d_p[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+pb03mnnx5d_p[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+pb03mnnx5d_p[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+pb03mnnx5d_p[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+pb03mnnx5d_p[6] = -iwk1ba05r0[1];
+pb03mnnx5d_p[7] = pb03mnnx5d_tmp_e;
+pb03mnnx5d_p[8] = pb03mnnx5d_tmp_i;
+for (i = 0; i < 3; i++) {
+    gvoqg0xovk_p[3 * i] = pb03mnnx5d_p[i];
+    gvoqg0xovk_p[3 * i + 1] = pb03mnnx5d_p[i + 3];
+    gvoqg0xovk_p[3 * i + 2] = pb03mnnx5d_p[i + 6];
+}
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->jwpcqxehbp[0] = izarshtadf.P_201;
+    localB->jwpcqxehbp[1] = izarshtadf.P_200;
+    localB->jwpcqxehbp[2] = izarshtadf.P_207;
+}
+hbcim53f5k_p = localB->jwpcqxehbp[1];
+lkgzij3obv_p = localB->jwpcqxehbp[0];
+owmlrlnhp3_idx_2 = localB->jwpcqxehbp[2];
+for (i = 0; i < 3; i++) {
+    iwk1ba05r0[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->mkji1cr0np[0] = localB->d1ovqkqe05[0] + iwk1ba05r0[0];
+localB->mkji1cr0np[1] = localB->d1ovqkqe05[1] + iwk1ba05r0[1];
+localB->mkji1cr0np[2] = *ahhpsc2vv2 + iwk1ba05r0[2];
+*od5it0x2uv = localB->mkji1cr0np[0];
+*pwiri50szq = localB->mkji1cr0np[1];
+*czd0y5v4id = localB->mkji1cr0np[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->keuskm3uxw = *ohfutn4w42 * localB->jwpcqxehbp[2];
+    localB->nz4mvow14i = *mgxwk4kyvq * localB->jwpcqxehbp[1];
+    localB->pmo1ulvspr = *mgxwk4kyvq * localB->jwpcqxehbp[2];
+    localB->dgzfasxpqf = *ohfutn4w42 * localB->jwpcqxehbp[0];
+}
+ake4vbzosr_p[0] = localB->keuskm3uxw - localB->jwpcqxehbp[1] * localB->odufjmwvlq[3];
+ake4vbzosr_p[1] = localB->jwpcqxehbp[0] * localB->odufjmwvlq[3] - localB->pmo1ulvspr;
+ake4vbzosr_p[2] = localB->nz4mvow14i - localB->dgzfasxpqf;
+hbcim53f5k_p = ake4vbzosr_p[1];
+lkgzij3obv_p = ake4vbzosr_p[0];
+owmlrlnhp3_idx_2 = ake4vbzosr_p[2];
+for (i = 0; i < 3; i++) {
+    iwk1ba05r0[i] = (gvoqg0xovk_p[i + 3] * hbcim53f5k_p + gvoqg0xovk_p[i] * lkgzij3obv_p) + gvoqg0xovk_p[i + 6] * owmlrlnhp3_idx_2;
+}
+localB->hps2wlccrl[0] = localB->kdjo14dy4y[0] + iwk1ba05r0[0];
+localB->hps2wlccrl[1] = localB->kdjo14dy4y[1] + iwk1ba05r0[1];
+localB->hps2wlccrl[2] = *oxj304jy1x + iwk1ba05r0[2];
+*nhbvkzsajt = localB->hps2wlccrl[0];
+*ngviqeevse = localB->hps2wlccrl[1];
+*hj3whlktf4 = localB->hps2wlccrl[2];
+*jaeezo5lzo = localB->odufjmwvlq[0];
+*j11t3nzw5v = localB->odufjmwvlq[1];
+*fngqiqdiuh = localB->odufjmwvlq[3];
+/* Unit Conversion - from: deg to: rad
+ Expression: output = (0.0174533*input) + (0) */
+hbcim53f5k_p = izarshtadf.P_270 * localX->owmqssc4wh * 0.017453292519943295;
+lkgzij3obv_p = izarshtadf.P_10 / 2.0;
+if (localDW->dbs3eljnjr < localDW->in32qq1lum) {
+    if (localDW->in32qq1lum < %<(SLibCG_SE(LibGetT()))>) {
+        lastY = &localDW->kgz2p4ovl2;
+    } else {
+        lastY = &localDW->luiomh3fbt;
+    }
+} else if (localDW->dbs3eljnjr < %<(SLibCG_SE(LibGetT()))>) {
+    lastY = &localDW->luiomh3fbt;
+} else {
+    lastY = &localDW->kgz2p4ovl2;
+}
+if (hbcim53f5k_p < *lastY - lkgzij3obv_p) {
+    localB->jiozdxoznf = hbcim53f5k_p + lkgzij3obv_p;
+} else if (hbcim53f5k_p <= *lastY + lkgzij3obv_p) {
+    localB->jiozdxoznf = *lastY;
+} else {
+    localB->jiozdxoznf = hbcim53f5k_p - lkgzij3obv_p;
+}
+if (localB->jiozdxoznf > izarshtadf.P_185) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_185;
+} else if (localB->jiozdxoznf < -izarshtadf.P_185) {
+    m3ezqvwkit_idx_0 = -izarshtadf.P_185;
+} else {
+    m3ezqvwkit_idx_0 = localB->jiozdxoznf;
+}
+hbcim53f5k_p = 1.0 / izarshtadf.P_184 * m3ezqvwkit_idx_0;
+if (izarshtadf.P_477 > izarshtadf.P_272) {
+    localB->kv4t523btn[0] = hbcim53f5k_p;
+} else {
+    localB->kv4t523btn[0] = -hbcim53f5k_p;
+}
+if (!(izarshtadf.P_477 > izarshtadf.P_273)) {
+    hbcim53f5k_p = -hbcim53f5k_p;
+}
+localB->kv4t523btn[1] = hbcim53f5k_p;
+/* Unit Conversion - from: rad to: rad
+ Expression: output = (1*input) + (0) */
+localB->avnmeyvwxh[0] = localB->kv4t523btn[0];
+localB->avnmeyvwxh[1] = localB->kv4t523btn[1];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    localB->bwxr5kx0lh[0] = izarshtadf.P_274;
+    localB->bwxr5kx0lh[1] = izarshtadf.P_274;
+}
+if (%<(SLibCGIRIsSampleHit(2, 24))>) {
+    if (localDW->hy2consnqn > izarshtadf.P_277) {
+        localB->c01nnxdpya = localDW->hy2consnqn - izarshtadf.P_277;
+    } else if (localDW->hy2consnqn >= izarshtadf.P_276) {
+        localB->c01nnxdpya = 0.0;
+    } else {
+        localB->c01nnxdpya = localDW->hy2consnqn - izarshtadf.P_276;
+    }
+    localB->bbkhipzqlk = !(localB->c01nnxdpya != 0.0);
+}
+hbcim53f5k_p = localX->pyo5ewy0pk;
+if (localB->bbkhipzqlk && (localB->i3zah01fdw != 0.0)) {
+    localB->oxpmcsfslj = izarshtadf.P_474;
+} else {
+    localB->oxpmcsfslj = localX->pyo5ewy0pk;
+}
+switch ((int32_T)localB->pzgjr5jomr) {
+  case 0:
+    nkuraloqpr[0] = -(izarshtadf.P_279[0] * localB->oxpmcsfslj);
+    nkuraloqpr[1] = -(izarshtadf.P_279[1] * localB->oxpmcsfslj);
+    nkuraloqpr[2] = -(izarshtadf.P_279[2] * localB->oxpmcsfslj);
+    nkuraloqpr[3] = -(izarshtadf.P_279[3] * localB->oxpmcsfslj);
+    break;
+  case 1:
+    nkuraloqpr[0] = izarshtadf.P_472[0];
+    nkuraloqpr[1] = izarshtadf.P_472[1];
+    nkuraloqpr[2] = izarshtadf.P_472[2];
+    nkuraloqpr[3] = izarshtadf.P_472[3];
+    break;
+  default:
+    nkuraloqpr[0] = izarshtadf.P_279[0] * localB->oxpmcsfslj;
+    nkuraloqpr[1] = izarshtadf.P_279[1] * localB->oxpmcsfslj;
+    nkuraloqpr[2] = izarshtadf.P_279[2] * localB->oxpmcsfslj;
+    nkuraloqpr[3] = izarshtadf.P_279[3] * localB->oxpmcsfslj;
+    break;
+}
+if (%<(SLibCGIRIsSampleHit(2, 24))>) {
+    mmyrcwyceu[0] = localDW->ljmwhirruz;
+    mmyrcwyceu[1] = localDW->gc31phbpyu;
+    mmyrcwyceu[2] = localDW->mzwpkkfpe4;
+    mmyrcwyceu[3] = localDW->pthq3l1h0h;
+    mmyrcwyceu[4] = localDW->purbac2xn0;
+    mmyrcwyceu[5] = localDW->higvqfkulr;
+    mmyrcwyceu[6] = localDW->diuf53dw5e;
+    mmyrcwyceu[7] = localDW->obbb0borhj;
+    mmyrcwyceu[8] = localDW->exzs0iny25;
+    mmyrcwyceu[9] = localDW->cxszqxcfpr;
+    mmyrcwyceu[10] = localDW->oljco1dzmy;
+    mmyrcwyceu[11] = localDW->ghxh3j34r0;
+    p3hmlvzciy = localDW->okrb2fj2ln;
+    koutmp4ixp = localDW->eplluvgf3n;
+    njhq4xcks4 = localDW->iik4tjpyrt;
+    co5cofqc3o = localDW->oo0ecakpkc;
+    or1pah3dt3 = localDW->ae3ejcikld;
+}
+lkgzij3obv_p = localX->mtyhn2pzkf[0];
+m4uvcqvy2c_idx_0 = localX->mtyhn2pzkf[0] + izarshtadf.P_473[0];
+owmlrlnhp3_idx_2 = localX->mtyhn2pzkf[1];
+m4uvcqvy2c_idx_1 = localX->mtyhn2pzkf[1] + izarshtadf.P_473[1];
+iehexxz52y_idx_2 = localX->mtyhn2pzkf[2];
+m4uvcqvy2c_idx_2 = localX->mtyhn2pzkf[2] + izarshtadf.P_473[2];
+mtyhn2pzkf = localX->mtyhn2pzkf[3];
+m4uvcqvy2c_idx_3 = localX->mtyhn2pzkf[3] + izarshtadf.P_473[3];
+chhinxp222_idx_0 = localX->bu2ly5qc2o[0];
+bv5e24gcbb_p[0] = localX->dgg1sdb2a2[0];
+eemzcdzxid_e = izarshtadf.P_235 * m4uvcqvy2c_idx_0;
+eemzcdzxid_p[0] = eemzcdzxid_e;
+m3ezqvwkit_idx_0 = izarshtadf.P_187 - eemzcdzxid_e;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_236) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_236;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_237) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_237;
+}
+localB->c2qfpdtasy[0] = (localX->dgg1sdb2a2[0] * m3ezqvwkit_idx_0 - nkuraloqpr[0]) - localX->bu2ly5qc2o[0];
+chhinxp222_idx_1 = localX->bu2ly5qc2o[1];
+bv5e24gcbb_p[1] = localX->dgg1sdb2a2[1];
+eemzcdzxid_e = izarshtadf.P_235 * m4uvcqvy2c_idx_1;
+eemzcdzxid_p[1] = eemzcdzxid_e;
+m3ezqvwkit_idx_0 = izarshtadf.P_187 - eemzcdzxid_e;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_236) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_236;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_237) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_237;
+}
+localB->c2qfpdtasy[1] = (localX->dgg1sdb2a2[1] * m3ezqvwkit_idx_0 - nkuraloqpr[1]) - localX->bu2ly5qc2o[1];
+chhinxp222_idx_2 = localX->bu2ly5qc2o[2];
+bv5e24gcbb_p[2] = localX->dgg1sdb2a2[2];
+eemzcdzxid_e = izarshtadf.P_235 * m4uvcqvy2c_idx_2;
+eemzcdzxid_p[2] = eemzcdzxid_e;
+m3ezqvwkit_idx_0 = izarshtadf.P_187 - eemzcdzxid_e;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_236) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_236;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_237) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_237;
+}
+localB->c2qfpdtasy[2] = (localX->dgg1sdb2a2[2] * m3ezqvwkit_idx_0 - nkuraloqpr[2]) - localX->bu2ly5qc2o[2];
+chhinxp222_idx_3 = localX->bu2ly5qc2o[3];
+bv5e24gcbb_p[3] = localX->dgg1sdb2a2[3];
+eemzcdzxid_e = izarshtadf.P_235 * m4uvcqvy2c_idx_3;
+eemzcdzxid_p[3] = eemzcdzxid_e;
+m3ezqvwkit_idx_0 = izarshtadf.P_187 - eemzcdzxid_e;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_236) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_236;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_237) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_237;
+}
+localB->c2qfpdtasy[3] = (localX->dgg1sdb2a2[3] * m3ezqvwkit_idx_0 - nkuraloqpr[3]) - localX->bu2ly5qc2o[3];
+kvsf2axtt4 = 0;
+while (kvsf2axtt4 < 4) {
+%<SLibCGIRIteratorContainer(8, "&kvsf2axtt4")>\
+    febx31gzuq = localB->c2qfpdtasy[kvsf2axtt4];
+    bd4mvhqsri = localB->emjgnepdic[kvsf2axtt4];
+    mtl3yd055m = localB->kzgyhdf5ic_cl54gopm0x[kvsf2axtt4];
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[6], "Output",0)
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,0)
+%<SLibCG_AccessArg(1 ,28, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,1)
+%<SLibCGIRAccessLocalVar(206, 0, "")> %% febx31gzuq
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,2)
+%<SLibCGIRAccessLocalVar(207, 0, "")> %% bd4mvhqsri
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,3)
+%<SLibCGIRAccessLocalVar(208, 0, "")> %% mtl3yd055m
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,8)
+%<SLibCG_AccessArg(1 ,28, 160)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,9)
+%<SLibCG_AccessArg(1 ,28, 161)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3r",6,11)
+%<SLibCG_AccessArg(1 ,28, 162)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+
+%<SLibCGIRGenReusableSysCall("baf0a14e3r", ["%<::tSimStruct>", "febx31gzuq", "bd4mvhqsri", "mtl3yd055m", "izarshtadf.P_203", "izarshtadf.P_193", "izarshtadf.P_14", "izarshtadf.aeaqmjbn3j.P_0", "&localB->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t", "&localDW->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t", "&izarshtadf.aeaqmjbn3j.pn4gg5ls0t", "&localX->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t"], 6, 0, 6, 0, 6, 24)>\
+%assign ss = ::CompiledModel.System[6]
+%if !LibSystemIsInlined(ss)
+;
+%else
+\
+%endif
+%endif
+    localB->cxmr05b0u1[kvsf2axtt4] = localB->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t.ba5pmoem1g;
+    kvsf2axtt4++;
+}
+%<tlcOutputsFcnOfS13B1>\
+localB->kzgyhdf5ic[0] = nkuraloqpr[0] * localB->cxmr05b0u1[0];
+localB->kzgyhdf5ic[1] = nkuraloqpr[1] * localB->cxmr05b0u1[1];
+localB->kzgyhdf5ic[2] = nkuraloqpr[2] * localB->cxmr05b0u1[2];
+localB->kzgyhdf5ic[3] = nkuraloqpr[3] * localB->cxmr05b0u1[3];
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    localDW->mxkllx3z4j[0] = (localB->kzgyhdf5ic[0] >= 0.0);
+    localDW->mxkllx3z4j[1] = (localB->kzgyhdf5ic[1] >= 0.0);
+    localDW->mxkllx3z4j[2] = (localB->kzgyhdf5ic[2] >= 0.0);
+    localDW->mxkllx3z4j[3] = (localB->kzgyhdf5ic[3] >= 0.0);
+}
+if (%<(SLibCGIRIsSampleHit(2, 13))>) {
+    gtnu3btlhv[0] = localB->ed5otmes3i[0];
+    gtnu3btlhv[1] = izarshtadf.P_263[0];
+    gtnu3btlhv[3] = localB->ed5otmes3i[1];
+    gtnu3btlhv[4] = izarshtadf.P_263[1];
+    gtnu3btlhv[6] = localB->ed5otmes3i[2];
+    gtnu3btlhv[7] = izarshtadf.P_263[2];
+    gtnu3btlhv[9] = localB->ed5otmes3i[3];
+    gtnu3btlhv[10] = izarshtadf.P_263[3];
+    gtnu3btlhv[2] = p3hmlvzciy + izarshtadf.P_262[0];
+    gtnu3btlhv[5] = koutmp4ixp + izarshtadf.P_262[1];
+    gtnu3btlhv[8] = njhq4xcks4 + izarshtadf.P_262[2];
+    gtnu3btlhv[11] = co5cofqc3o + izarshtadf.P_262[3];
+    e4yeotdv24 = 0;
+    while (e4yeotdv24 < 4) {
+%<SLibCGIRIteratorContainer(12, "&e4yeotdv24")>\
+        dbni30djfc_p[0] = gtnu3btlhv[3 * e4yeotdv24];
+        dbni30djfc_p[1] = gtnu3btlhv[3 * e4yeotdv24 + 1];
+        dbni30djfc_p[2] = gtnu3btlhv[3 * e4yeotdv24 + 2];
+        iwk1ba05r0[0] = mmyrcwyceu[3 * e4yeotdv24];
+        iwk1ba05r0[1] = mmyrcwyceu[3 * e4yeotdv24 + 1];
+        iwk1ba05r0[2] = mmyrcwyceu[3 * e4yeotdv24 + 2];
+        muDoubleScalarSinCos(dbni30djfc_p[2], &m3ezqvwkit_idx_0, &ftsmejlxj5_p[0]);
+        muDoubleScalarSinCos(dbni30djfc_p[1], &m3ezqvwkit_idx_1, &ftsmejlxj5_p[1]);
+        muDoubleScalarSinCos(dbni30djfc_p[0], &m3ezqvwkit_idx_2, &ftsmejlxj5_p[2]);
+        ohbm0cmx1i[0] = ftsmejlxj5_p[0] * ftsmejlxj5_p[1];
+        rdot = m3ezqvwkit_idx_1 * m3ezqvwkit_idx_2;
+        ohbm0cmx1i[1] = rdot * ftsmejlxj5_p[0] - m3ezqvwkit_idx_0 * ftsmejlxj5_p[2];
+        xddot = m3ezqvwkit_idx_1 * ftsmejlxj5_p[2];
+        ohbm0cmx1i[2] = xddot * ftsmejlxj5_p[0] + m3ezqvwkit_idx_0 * m3ezqvwkit_idx_2;
+        ohbm0cmx1i[3] = m3ezqvwkit_idx_0 * ftsmejlxj5_p[1];
+        ohbm0cmx1i[4] = rdot * m3ezqvwkit_idx_0 + ftsmejlxj5_p[0] * ftsmejlxj5_p[2];
+        ohbm0cmx1i[5] = xddot * m3ezqvwkit_idx_0 - ftsmejlxj5_p[0] * m3ezqvwkit_idx_2;
+        ohbm0cmx1i[6] = -m3ezqvwkit_idx_1;
+        ohbm0cmx1i[7] = ftsmejlxj5_p[1] * m3ezqvwkit_idx_2;
+        ohbm0cmx1i[8] = ftsmejlxj5_p[1] * ftsmejlxj5_p[2];
+        m3ezqvwkit_idx_0 = iwk1ba05r0[1];
+        m3ezqvwkit_idx_1 = iwk1ba05r0[0];
+        m3ezqvwkit_idx_2 = iwk1ba05r0[2];
+        for (i = 0; i < 3; i++) {
+            dbni30djfc_p[i] = (ohbm0cmx1i[i + 3] * m3ezqvwkit_idx_0 + ohbm0cmx1i[i] * m3ezqvwkit_idx_1) + ohbm0cmx1i[i + 6] * m3ezqvwkit_idx_2;
+        }
+        localB->bwzc3y3ooz[e4yeotdv24] = dbni30djfc_p[1];
+        localB->l5f5e51b2t[e4yeotdv24] = dbni30djfc_p[0];
+        e4yeotdv24++;
+    }
+    localB->k4zuackhsl = -or1pah3dt3;
+}
+cwefdql3v4_p[0] = localB->k4zuackhsl;
+cwefdql3v4_p[1] = localB->k4zuackhsl;
+cwefdql3v4_p[2] = localB->k4zuackhsl;
+cwefdql3v4_p[3] = localB->k4zuackhsl;
+ai3ndf3ja2[0] = izarshtadf.P_194;
+a212wubcu4[0] = izarshtadf.P_195;
+ai3ndf3ja2[1] = izarshtadf.P_194;
+a212wubcu4[1] = izarshtadf.P_195;
+ai3ndf3ja2[2] = izarshtadf.P_194;
+a212wubcu4[2] = izarshtadf.P_195;
+ai3ndf3ja2[3] = izarshtadf.P_194;
+a212wubcu4[3] = izarshtadf.P_195;
+or1pah3dt3 = izarshtadf.P_223;
+if (izarshtadf.P_230[3] == 1.0) {
+    lam_mux[0] = localB->h2feaakbey[1];
+    lam_muy[0] = localB->h2feaakbey[2];
+    lam_mux[1] = localB->h2feaakbey[28];
+    lam_muy[1] = localB->h2feaakbey[29];
+    lam_mux[2] = localB->h2feaakbey[55];
+    lam_muy[2] = localB->h2feaakbey[56];
+    lam_mux[3] = localB->h2feaakbey[82];
+    lam_muy[3] = localB->h2feaakbey[83];
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["localB->l5f5e51b2t", "izarshtadf.P_188", "R_omega", "n4qzq0wcyz", "%<::tSimStruct>"], 1, 28, 0))>;
+    for (i = 0; i < 4; i++) {
+        dd20ekst0q = ai3ndf3ja2[i];
+        if (dd20ekst0q < izarshtadf.P_4) {
+            dd20ekst0q = izarshtadf.P_4;
+            ai3ndf3ja2[i] = izarshtadf.P_4;
+        }
+        if (dd20ekst0q > izarshtadf.P_3) {
+            ai3ndf3ja2[i] = izarshtadf.P_3;
+        }
+        dd20ekst0q = a212wubcu4[i];
+        if (dd20ekst0q < izarshtadf.P_88) {
+            dd20ekst0q = izarshtadf.P_88;
+            a212wubcu4[i] = izarshtadf.P_88;
+        }
+        if (dd20ekst0q > izarshtadf.P_87) {
+            a212wubcu4[i] = izarshtadf.P_87;
+        }
+        if (lam_mux[i] <= 0.0) {
+            lam_mux[i] = 2.2204460492503131E-16;
+        }
+        if (lam_muy[i] <= 0.0) {
+            lam_muy[i] = 2.2204460492503131E-16;
+        }
+    }
+    hdhhddtroz[0] = (a212wubcu4[0] - izarshtadf.P_22) / izarshtadf.P_22;
+    hdhhddtroz[1] = (a212wubcu4[1] - izarshtadf.P_22) / izarshtadf.P_22;
+    hdhhddtroz[2] = (a212wubcu4[2] - izarshtadf.P_22) / izarshtadf.P_22;
+    hdhhddtroz[3] = (a212wubcu4[3] - izarshtadf.P_22) / izarshtadf.P_22;
+    Fzo_prime[0] = localB->h2feaakbey[0] * izarshtadf.P_11;
+    Fzo_prime[1] = localB->h2feaakbey[27] * izarshtadf.P_11;
+    Fzo_prime[2] = localB->h2feaakbey[54] * izarshtadf.P_11;
+    Fzo_prime[3] = localB->h2feaakbey[81] * izarshtadf.P_11;
+    if (izarshtadf.P_255 == 2.0) {
+        if (izarshtadf.P_223 == 0.0) {
+            dd20ekst0q = izarshtadf.P_229 * izarshtadf.P_187 / izarshtadf.P_11;
+            or1pah3dt3 = izarshtadf.P_223;
+            m3ezqvwkit_idx_0 = dd20ekst0q * dd20ekst0q - 4.0 * izarshtadf.P_224;
+            if (m3ezqvwkit_idx_0 < 0.0) {
+                or1pah3dt3 = izarshtadf.P_224 * 0.0;
+            }
+            trueCount = 0;
+            if (!(m3ezqvwkit_idx_0 < 0.0)) {
+                for (i = 0; i < 1; i++) {
+                    trueCount++;
+                }
+            }
+            ec_size[0] = 1;
+            ec_size[1] = trueCount;
+            if (trueCount - 1 >= 0) {
+                mu_y_idx_0 = dd20ekst0q * dd20ekst0q - 4.0 * izarshtadf.P_224;
+            }
+            %<(SLibCGCallSubFcn("ovabakf0qv", ["&mu_y_idx_0", "ec_size", "%<::tSimStruct>"], 1, 28, 1))>;
+            if (!(m3ezqvwkit_idx_0 < 0.0)) {
+                for (i = 0; i < 1; i++) {
+                    or1pah3dt3 = mu_y_idx_0;
+                }
+            }
+        }
+        m3ezqvwkit_idx_0 = izarshtadf.P_173 + izarshtadf.P_214;
+        mu_y_idx_0 = izarshtadf.P_220 * bv5e24gcbb_p[0] / izarshtadf.P_11;
+        dd20ekst0q = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = izarshtadf.P_221 * localX->ol0aq4t2pf[0] / izarshtadf.P_11;
+        e_y = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = eemzcdzxid_p[0] / izarshtadf.P_187;
+        imtn23idgd[0] = muDoubleScalarMax((((izarshtadf.P_228 * muDoubleScalarAbs(localB->cxmr05b0u1[0]) * izarshtadf.P_187 / izarshtadf.P_20 + 1.0) - dd20ekst0q) - e_y) * ((izarshtadf.P_225 * ai3ndf3ja2[0] * ai3ndf3ja2[0] + or1pah3dt3) * eemzcdzxid_p[0] / izarshtadf.P_187 + mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_224) * (izarshtadf.P_219 * hdhhddtroz[0] + 1.0) * Fzo_prime[0], (m3ezqvwkit_idx_0 - (izarshtadf.P_187 + eemzcdzxid_p[0]) / muDoubleScalarCos(ai3ndf3ja2[0])) * izarshtadf.P_215);
+        mu_y_idx_0 = izarshtadf.P_220 * bv5e24gcbb_p[1] / izarshtadf.P_11;
+        dd20ekst0q = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = izarshtadf.P_221 * localX->ol0aq4t2pf[1] / izarshtadf.P_11;
+        e_y = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = eemzcdzxid_p[1] / izarshtadf.P_187;
+        imtn23idgd[1] = muDoubleScalarMax((((izarshtadf.P_228 * muDoubleScalarAbs(localB->cxmr05b0u1[1]) * izarshtadf.P_187 / izarshtadf.P_20 + 1.0) - dd20ekst0q) - e_y) * ((izarshtadf.P_225 * ai3ndf3ja2[1] * ai3ndf3ja2[1] + or1pah3dt3) * eemzcdzxid_p[1] / izarshtadf.P_187 + mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_224) * (izarshtadf.P_219 * hdhhddtroz[1] + 1.0) * Fzo_prime[1], (m3ezqvwkit_idx_0 - (izarshtadf.P_187 + eemzcdzxid_p[1]) / muDoubleScalarCos(ai3ndf3ja2[1])) * izarshtadf.P_215);
+        mu_y_idx_0 = izarshtadf.P_220 * bv5e24gcbb_p[2] / izarshtadf.P_11;
+        dd20ekst0q = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = izarshtadf.P_221 * localX->ol0aq4t2pf[2] / izarshtadf.P_11;
+        e_y = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = eemzcdzxid_p[2] / izarshtadf.P_187;
+        imtn23idgd[2] = muDoubleScalarMax((((izarshtadf.P_228 * muDoubleScalarAbs(localB->cxmr05b0u1[2]) * izarshtadf.P_187 / izarshtadf.P_20 + 1.0) - dd20ekst0q) - e_y) * ((izarshtadf.P_225 * ai3ndf3ja2[2] * ai3ndf3ja2[2] + or1pah3dt3) * eemzcdzxid_p[2] / izarshtadf.P_187 + mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_224) * (izarshtadf.P_219 * hdhhddtroz[2] + 1.0) * Fzo_prime[2], (m3ezqvwkit_idx_0 - (izarshtadf.P_187 + eemzcdzxid_p[2]) / muDoubleScalarCos(ai3ndf3ja2[2])) * izarshtadf.P_215);
+        mu_y_idx_0 = izarshtadf.P_220 * bv5e24gcbb_p[3] / izarshtadf.P_11;
+        dd20ekst0q = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = izarshtadf.P_221 * localX->ol0aq4t2pf[3] / izarshtadf.P_11;
+        e_y = mu_y_idx_0 * mu_y_idx_0;
+        mu_y_idx_0 = eemzcdzxid_e / izarshtadf.P_187;
+        imtn23idgd[3] = muDoubleScalarMax((((izarshtadf.P_228 * muDoubleScalarAbs(localB->cxmr05b0u1[3]) * izarshtadf.P_187 / izarshtadf.P_20 + 1.0) - dd20ekst0q) - e_y) * ((izarshtadf.P_225 * ai3ndf3ja2[3] * ai3ndf3ja2[3] + or1pah3dt3) * eemzcdzxid_e / izarshtadf.P_187 + mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_224) * (izarshtadf.P_219 * hdhhddtroz[3] + 1.0) * Fzo_prime[3], (m3ezqvwkit_idx_0 - (izarshtadf.P_187 + eemzcdzxid_e) / muDoubleScalarCos(ai3ndf3ja2[3])) * izarshtadf.P_215);
+    } else {
+        imtn23idgd[0] = m4uvcqvy2c_idx_0;
+        imtn23idgd[1] = m4uvcqvy2c_idx_1;
+        imtn23idgd[2] = m4uvcqvy2c_idx_2;
+        imtn23idgd[3] = m4uvcqvy2c_idx_3;
+    }
+    nkuraloqpr[0] = izarshtadf.P_229 * localB->h2feaakbey[22];
+    nkuraloqpr[1] = izarshtadf.P_229 * localB->h2feaakbey[49];
+    nkuraloqpr[2] = izarshtadf.P_229 * localB->h2feaakbey[76];
+    nkuraloqpr[3] = izarshtadf.P_229 * localB->h2feaakbey[103];
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (eemzcdzxid_p[i] > 0.0) {
+            trueCount++;
+        }
+    }
+    tmp_size = trueCount;
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (eemzcdzxid_p[i] > 0.0) {
+            tmp_data[trueCount] = i;
+            trueCount++;
+        }
+    }
+    tmp_size_p = tmp_size;
+    trueCount = tmp_size;
+    for (i = 0; i < tmp_size; i++) {
+        trueCount = tmp_data[i];
+        R_omega_p[i] = eemzcdzxid_p[trueCount];
+        eemzcdzxid_data[i] = eemzcdzxid_p[trueCount];
+        fzbcvayacp[i] = eemzcdzxid_p[trueCount];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["fzbcvayacp", "&tmp_size", "tmp_data_e", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 49))>;
+    i = tmp_size == 1 ? tmp_size_p : tmp_size;
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["R_omega_p", "&tmp_size", "tmp_data_e", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 47))>;
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["eemzcdzxid_data", "&tmp_size", "tmp_data_e", "&trueCount", "%<::tSimStruct>"], 1, 28, 48))>;
+    if ((tmp_size == tmp_size_p) && ((tmp_size == 1 ? trueCount : tmp_size) == tmp_size) && ((i == 1 ? tmp_size : i) == tmp_size)) {
+        for (i = 0; i < tmp_size; i++) {
+            R_omega_p[i] = eemzcdzxid_p[tmp_data[i]];
+        }
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["R_omega_p", "&tmp_size", "eemzcdzxid_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 2))>;
+        for (i = 0; i < tmp_size; i++) {
+            trueCount = tmp_data[i];
+            nkuraloqpr[trueCount] = (izarshtadf.P_222 * localX->ol0aq4t2pf[trueCount] / izarshtadf.P_11 + imtn23idgd[trueCount] / eemzcdzxid_data[i]) * localB->h2feaakbey[27 * trueCount + 22];
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4blsmnyei", ["nkuraloqpr", "tmp_data", "&tmp_size", "imtn23idgd", "eemzcdzxid_p", "izarshtadf.P_222", "localX->ol0aq4t2pf", "izarshtadf.P_11", "localB->h2feaakbey", "%<::tSimStruct>"], 1, 28, 3))>;
+    }
+    FzUnSat[0] = imtn23idgd[0];
+    FzUnSat[1] = imtn23idgd[1];
+    FzUnSat[2] = imtn23idgd[2];
+    FzUnSat[3] = imtn23idgd[3];
+    mu_y_idx_0 = localB->cxmr05b0u1[0] * izarshtadf.P_187 / izarshtadf.P_20;
+    m3ezqvwkit_idx_0 = imtn23idgd[0] / izarshtadf.P_11;
+    nkuraloqpr[0] = (mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_227 + izarshtadf.P_226) * izarshtadf.P_187 - (muDoubleScalarAtan(izarshtadf.P_216 * m3ezqvwkit_idx_0) * izarshtadf.P_217 + izarshtadf.P_218 * m3ezqvwkit_idx_0) * (izarshtadf.P_11 / nkuraloqpr[0]);
+    mu_y_idx_0 = localB->cxmr05b0u1[1] * izarshtadf.P_187 / izarshtadf.P_20;
+    m3ezqvwkit_idx_0 = imtn23idgd[1] / izarshtadf.P_11;
+    nkuraloqpr[1] = (mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_227 + izarshtadf.P_226) * izarshtadf.P_187 - (muDoubleScalarAtan(izarshtadf.P_216 * m3ezqvwkit_idx_0) * izarshtadf.P_217 + izarshtadf.P_218 * m3ezqvwkit_idx_0) * (izarshtadf.P_11 / nkuraloqpr[1]);
+    mu_y_idx_0 = localB->cxmr05b0u1[2] * izarshtadf.P_187 / izarshtadf.P_20;
+    m3ezqvwkit_idx_0 = imtn23idgd[2] / izarshtadf.P_11;
+    nkuraloqpr[2] = (mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_227 + izarshtadf.P_226) * izarshtadf.P_187 - (muDoubleScalarAtan(izarshtadf.P_216 * m3ezqvwkit_idx_0) * izarshtadf.P_217 + izarshtadf.P_218 * m3ezqvwkit_idx_0) * (izarshtadf.P_11 / nkuraloqpr[2]);
+    mu_y_idx_0 = localB->cxmr05b0u1[3] * izarshtadf.P_187 / izarshtadf.P_20;
+    m3ezqvwkit_idx_0 = imtn23idgd[3] / izarshtadf.P_11;
+    nkuraloqpr[3] = (mu_y_idx_0 * mu_y_idx_0 * izarshtadf.P_227 + izarshtadf.P_226) * izarshtadf.P_187 - (muDoubleScalarAtan(izarshtadf.P_216 * m3ezqvwkit_idx_0) * izarshtadf.P_217 + izarshtadf.P_218 * m3ezqvwkit_idx_0) * (izarshtadf.P_11 / nkuraloqpr[3]);
+    for (i = 0; i < 4; i++) {
+        or1pah3dt3 = imtn23idgd[i];
+        if (or1pah3dt3 < izarshtadf.P_13) {
+            or1pah3dt3 = izarshtadf.P_13;
+            imtn23idgd[i] = izarshtadf.P_13;
+        }
+        if (or1pah3dt3 > izarshtadf.P_12) {
+            imtn23idgd[i] = izarshtadf.P_12;
+        }
+        if (nkuraloqpr[i] < 0.001) {
+            nkuraloqpr[i] = 0.001;
+        }
+    }
+    m3ezqvwkit_idx_0 = (imtn23idgd[0] - Fzo_prime[0]) / Fzo_prime[0];
+    eiihbvg0nv[0] = m3ezqvwkit_idx_0;
+    epsilon_gamma[0] = (izarshtadf.P_46 * m3ezqvwkit_idx_0 + 1.0) * izarshtadf.P_45;
+    m3ezqvwkit_idx_0 = (imtn23idgd[1] - Fzo_prime[1]) / Fzo_prime[1];
+    eiihbvg0nv[1] = m3ezqvwkit_idx_0;
+    epsilon_gamma[1] = (izarshtadf.P_46 * m3ezqvwkit_idx_0 + 1.0) * izarshtadf.P_45;
+    m3ezqvwkit_idx_0 = (imtn23idgd[2] - Fzo_prime[2]) / Fzo_prime[2];
+    eiihbvg0nv[2] = m3ezqvwkit_idx_0;
+    epsilon_gamma[2] = (izarshtadf.P_46 * m3ezqvwkit_idx_0 + 1.0) * izarshtadf.P_45;
+    m3ezqvwkit_idx_0 = (imtn23idgd[3] - Fzo_prime[3]) / Fzo_prime[3];
+    eiihbvg0nv[3] = m3ezqvwkit_idx_0;
+    epsilon_gamma[3] = (izarshtadf.P_46 * m3ezqvwkit_idx_0 + 1.0) * izarshtadf.P_45;
+    eemzcdzxid_e = nkuraloqpr[0] * localB->cxmr05b0u1[0] - localB->l5f5e51b2t[0];
+    eemzcdzxid_p[0] = eemzcdzxid_e;
+    c4pihn5jgj[0] = eemzcdzxid_e / n4qzq0wcyz[0];
+    eemzcdzxid_e = nkuraloqpr[1] * localB->cxmr05b0u1[1] - localB->l5f5e51b2t[1];
+    eemzcdzxid_p[1] = eemzcdzxid_e;
+    c4pihn5jgj[1] = eemzcdzxid_e / n4qzq0wcyz[1];
+    eemzcdzxid_e = nkuraloqpr[2] * localB->cxmr05b0u1[2] - localB->l5f5e51b2t[2];
+    eemzcdzxid_p[2] = eemzcdzxid_e;
+    c4pihn5jgj[2] = eemzcdzxid_e / n4qzq0wcyz[2];
+    eemzcdzxid_e = nkuraloqpr[3] * localB->cxmr05b0u1[3] - localB->l5f5e51b2t[3];
+    c4pihn5jgj[3] = eemzcdzxid_e / n4qzq0wcyz[3];
+    fzbcvayacp[0] = muDoubleScalarAtan2(localB->bwzc3y3ooz[0], n4qzq0wcyz[0]);
+    fzbcvayacp[1] = muDoubleScalarAtan2(localB->bwzc3y3ooz[1], n4qzq0wcyz[1]);
+    fzbcvayacp[2] = muDoubleScalarAtan2(localB->bwzc3y3ooz[2], n4qzq0wcyz[2]);
+    fzbcvayacp[3] = muDoubleScalarAtan2(localB->bwzc3y3ooz[3], n4qzq0wcyz[3]);
+    for (i = 0; i < 4; i++) {
+        or1pah3dt3 = c4pihn5jgj[i];
+        if (or1pah3dt3 < izarshtadf.P_17) {
+            or1pah3dt3 = izarshtadf.P_17;
+            c4pihn5jgj[i] = izarshtadf.P_17;
+        }
+        if (or1pah3dt3 > izarshtadf.P_16) {
+            c4pihn5jgj[i] = izarshtadf.P_16;
+        }
+        or1pah3dt3 = fzbcvayacp[i];
+        if (or1pah3dt3 < izarshtadf.P_1) {
+            or1pah3dt3 = izarshtadf.P_1;
+            fzbcvayacp[i] = izarshtadf.P_1;
+        }
+        if (or1pah3dt3 > izarshtadf.P_0) {
+            fzbcvayacp[i] = izarshtadf.P_0;
+        }
+    }
+    kappa_x[0] = (izarshtadf.P_57 * eiihbvg0nv[0] + izarshtadf.P_56) * localB->h2feaakbey[10] + c4pihn5jgj[0];
+    kappa_x[1] = (izarshtadf.P_57 * eiihbvg0nv[1] + izarshtadf.P_56) * localB->h2feaakbey[37] + c4pihn5jgj[1];
+    kappa_x[2] = (izarshtadf.P_57 * eiihbvg0nv[2] + izarshtadf.P_56) * localB->h2feaakbey[64] + c4pihn5jgj[2];
+    kappa_x[3] = (izarshtadf.P_57 * m3ezqvwkit_idx_0 + izarshtadf.P_56) * localB->h2feaakbey[91] + c4pihn5jgj[3];
+    or1pah3dt3 = muDoubleScalarSin(ai3ndf3ja2[0]);
+    gamma_star[0] = or1pah3dt3;
+    mu_y_idx_0 = -n4qzq0wcyz[0] * c4pihn5jgj[0];
+    Vsy_tmp = muDoubleScalarTan(fzbcvayacp[0]);
+    m3ezqvwkit_idx_2 = -n4qzq0wcyz[0] * Vsy_tmp;
+    m3ezqvwkit_idx_1 = m3ezqvwkit_idx_2 * m3ezqvwkit_idx_2;
+    dosyb5bkip[0] = muDoubleScalarSqrt(mu_y_idx_0 * mu_y_idx_0 + m3ezqvwkit_idx_1);
+    R_omega[0] = muDoubleScalarSqrt(localB->l5f5e51b2t[0] * localB->l5f5e51b2t[0] + m3ezqvwkit_idx_1);
+    dd20ekst0q = muDoubleScalarSin(ai3ndf3ja2[1]);
+    gamma_star[1] = dd20ekst0q;
+    mu_y_idx_0 = -n4qzq0wcyz[1] * c4pihn5jgj[1];
+    Vsy_tmp_p = muDoubleScalarTan(fzbcvayacp[1]);
+    m3ezqvwkit_idx_2 = -n4qzq0wcyz[1] * Vsy_tmp_p;
+    mu_y_idx_1 = m3ezqvwkit_idx_2 * m3ezqvwkit_idx_2;
+    dosyb5bkip[1] = muDoubleScalarSqrt(mu_y_idx_0 * mu_y_idx_0 + mu_y_idx_1);
+    R_omega[1] = muDoubleScalarSqrt(localB->l5f5e51b2t[1] * localB->l5f5e51b2t[1] + mu_y_idx_1);
+    e_y = muDoubleScalarSin(ai3ndf3ja2[2]);
+    gamma_star[2] = e_y;
+    mu_y_idx_0 = -n4qzq0wcyz[2] * c4pihn5jgj[2];
+    Vsy_tmp_e = muDoubleScalarTan(fzbcvayacp[2]);
+    m3ezqvwkit_idx_2 = -n4qzq0wcyz[2] * Vsy_tmp_e;
+    mu_y_idx_2 = m3ezqvwkit_idx_2 * m3ezqvwkit_idx_2;
+    dosyb5bkip[2] = muDoubleScalarSqrt(mu_y_idx_0 * mu_y_idx_0 + mu_y_idx_2);
+    R_omega[2] = muDoubleScalarSqrt(localB->l5f5e51b2t[2] * localB->l5f5e51b2t[2] + mu_y_idx_2);
+    gamma_star_tmp = muDoubleScalarSin(ai3ndf3ja2[3]);
+    gamma_star[3] = gamma_star_tmp;
+    mu_y_idx_0 = -n4qzq0wcyz[3] * c4pihn5jgj[3];
+    Vsy_tmp_i = muDoubleScalarTan(fzbcvayacp[3]);
+    m3ezqvwkit_idx_2 = -n4qzq0wcyz[3] * Vsy_tmp_i;
+    m3ezqvwkit_idx_2 *= m3ezqvwkit_idx_2;
+    R_omega[3] = muDoubleScalarSqrt(localB->l5f5e51b2t[3] * localB->l5f5e51b2t[3] + m3ezqvwkit_idx_2);
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["localB->l5f5e51b2t", "izarshtadf.P_188", "phi_t", "lam_Cz", "%<::tSimStruct>"], 1, 28, 4))>;
+    tempInds[0] = (muDoubleScalarSqrt(eemzcdzxid_p[0] * eemzcdzxid_p[0] + m3ezqvwkit_idx_1) < izarshtadf.P_188);
+    fohy1okpri = dosyb5bkip[0] * localB->h2feaakbey[3] / izarshtadf.P_20 + 1.0;
+    dosyb5bkip[0] = fohy1okpri;
+    lam_mux[0] /= fohy1okpri;
+    tempInds[1] = (muDoubleScalarSqrt(eemzcdzxid_p[1] * eemzcdzxid_p[1] + mu_y_idx_1) < izarshtadf.P_188);
+    fohy1okpri = dosyb5bkip[1] * localB->h2feaakbey[30] / izarshtadf.P_20 + 1.0;
+    dosyb5bkip[1] = fohy1okpri;
+    lam_mux[1] /= fohy1okpri;
+    tempInds[2] = (muDoubleScalarSqrt(eemzcdzxid_p[2] * eemzcdzxid_p[2] + mu_y_idx_2) < izarshtadf.P_188);
+    fohy1okpri = dosyb5bkip[2] * localB->h2feaakbey[57] / izarshtadf.P_20 + 1.0;
+    dosyb5bkip[2] = fohy1okpri;
+    lam_mux[2] /= fohy1okpri;
+    tempInds[3] = (muDoubleScalarSqrt(eemzcdzxid_e * eemzcdzxid_e + m3ezqvwkit_idx_2) < izarshtadf.P_188);
+    fohy1okpri = muDoubleScalarSqrt(mu_y_idx_0 * mu_y_idx_0 + m3ezqvwkit_idx_2) * localB->h2feaakbey[84] / izarshtadf.P_20 + 1.0;
+    lam_mux[3] /= fohy1okpri;
+    xddot = hdhhddtroz[0] * hdhhddtroz[0];
+    rdot = lam_muy[0] / dosyb5bkip[0];
+    lam_muy_prime[0] = rdot * 10.0 / (9.0 * rdot + 1.0);
+    eemzcdzxid_e = or1pah3dt3 * or1pah3dt3;
+    mu_y_idx_0 = ((izarshtadf.P_82 * hdhhddtroz[0] + 1.0) + xddot * izarshtadf.P_83) * (izarshtadf.P_39 * eiihbvg0nv[0] + izarshtadf.P_38) * (1.0 - eemzcdzxid_e * izarshtadf.P_40) * rdot;
+    phi_t[0] = -localB->k4zuackhsl / phi_t[0] * muDoubleScalarCos(fzbcvayacp[0]);
+    yddot = hdhhddtroz[1] * hdhhddtroz[1];
+    rdot = lam_muy[1] / dosyb5bkip[1];
+    lam_muy_prime[1] = rdot * 10.0 / (9.0 * rdot + 1.0);
+    m3ezqvwkit_idx_1 = dd20ekst0q * dd20ekst0q;
+    mu_y_idx_1 = ((izarshtadf.P_82 * hdhhddtroz[1] + 1.0) + yddot * izarshtadf.P_83) * (izarshtadf.P_39 * eiihbvg0nv[1] + izarshtadf.P_38) * (1.0 - m3ezqvwkit_idx_1 * izarshtadf.P_40) * rdot;
+    phi_t[1] = -localB->k4zuackhsl / phi_t[1] * muDoubleScalarCos(fzbcvayacp[1]);
+    Dx_tmp = hdhhddtroz[2] * hdhhddtroz[2];
+    rdot = lam_muy[2] / dosyb5bkip[2];
+    lam_muy_prime[2] = rdot * 10.0 / (9.0 * rdot + 1.0);
+    m3ezqvwkit_idx_2 = e_y * e_y;
+    mu_y_idx_2 = ((izarshtadf.P_82 * hdhhddtroz[2] + 1.0) + Dx_tmp * izarshtadf.P_83) * (izarshtadf.P_39 * eiihbvg0nv[2] + izarshtadf.P_38) * (1.0 - m3ezqvwkit_idx_2 * izarshtadf.P_40) * rdot;
+    phi_t[2] = -localB->k4zuackhsl / phi_t[2] * muDoubleScalarCos(fzbcvayacp[2]);
+    Dx_tmp_p = hdhhddtroz[3] * hdhhddtroz[3];
+    rdot = lam_muy[3] / fohy1okpri;
+    lam_muy_prime[3] = rdot * 10.0 / (9.0 * rdot + 1.0);
+    fohy1okpri = gamma_star_tmp * gamma_star_tmp;
+    rdot *= ((izarshtadf.P_82 * hdhhddtroz[3] + 1.0) + Dx_tmp_p * izarshtadf.P_83) * (izarshtadf.P_39 * m3ezqvwkit_idx_0 + izarshtadf.P_38) * (1.0 - fohy1okpri * izarshtadf.P_40);
+    phi_t[3] = -localB->k4zuackhsl / phi_t[3] * muDoubleScalarCos(fzbcvayacp[3]);
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (tempInds[i]) {
+            trueCount++;
+        }
+    }
+    tmp_size_p = trueCount;
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (tempInds[i]) {
+            tmp_data_p[trueCount] = i;
+            trueCount++;
+        }
+    }
+    for (i = 0; i < tmp_size_p; i++) {
+        eemzcdzxid_data[i] = localB->l5f5e51b2t[tmp_data_p[i]];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["eemzcdzxid_data", "&tmp_size_p", "tmp_data_e", "&tmp_size", "%<::tSimStruct>"], 1, 28, 46))>;
+    if (tmp_size_p == tmp_size) {
+        for (i = 0; i < tmp_size_p; i++) {
+            eemzcdzxid_data[i] = localB->l5f5e51b2t[tmp_data_p[i]];
+        }
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["eemzcdzxid_data", "&tmp_size_p", "R_omega_p", "&tmp_size", "%<::tSimStruct>"], 1, 28, 5))>;
+        for (i = 0; i < tmp_size_p; i++) {
+            eemzcdzxid_data[i] = R_omega_p[i] / izarshtadf.P_188 * phi_t[tmp_data_p[i]];
+        }
+        for (i = 0; i < tmp_size_p; i++) {
+            phi_t[tmp_data_p[i]] = eemzcdzxid_data[i];
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4blsmnye", ["phi_t", "tmp_data_p", "&tmp_size_p", "localB->l5f5e51b2t", "izarshtadf.P_188", "%<::tSimStruct>"], 1, 28, 6))>;
+    }
+    %<(SLibCGCallSubFcn("etyirrpn2a4", ["R_omega", "R_omega_p", "%<::tSimStruct>"], 1, 28, 7))>;
+    cwefdql3v4_p[0] = (localB->k4zuackhsl - (1.0 - epsilon_gamma[0]) * muDoubleScalarAbs(localB->cxmr05b0u1[0]) * or1pah3dt3) * -(1.0 / R_omega_p[0]);
+    cwefdql3v4_p[1] = (localB->k4zuackhsl - (1.0 - epsilon_gamma[1]) * muDoubleScalarAbs(localB->cxmr05b0u1[1]) * dd20ekst0q) * -(1.0 / R_omega_p[1]);
+    cwefdql3v4_p[2] = (localB->k4zuackhsl - (1.0 - epsilon_gamma[2]) * muDoubleScalarAbs(localB->cxmr05b0u1[2]) * e_y) * -(1.0 / R_omega_p[2]);
+    cwefdql3v4_p[3] = (localB->k4zuackhsl - (1.0 - epsilon_gamma[3]) * muDoubleScalarAbs(localB->cxmr05b0u1[3]) * gamma_star_tmp) * -(1.0 / R_omega_p[3]);
+    if (izarshtadf.P_206 == 1.0) {
+        tempInds[0] = (muDoubleScalarAbs(cwefdql3v4_p[0]) > 0.01);
+        tempInds[1] = (muDoubleScalarAbs(cwefdql3v4_p[1]) > 0.01);
+        tempInds[2] = (muDoubleScalarAbs(cwefdql3v4_p[2]) > 0.01);
+        tempInds[3] = (muDoubleScalarAbs(cwefdql3v4_p[3]) > 0.01);
+    } else {
+        tempInds[0] = false;
+        tempInds[1] = false;
+        tempInds[2] = false;
+        tempInds[3] = false;
+    }
+    nomslipinds[0] = !tempInds[0];
+    n4qzq0wcyz[0] = izarshtadf.P_172 * eiihbvg0nv[0] + izarshtadf.P_171;
+    Eykappa[0] = izarshtadf.P_169 * eiihbvg0nv[0] + izarshtadf.P_168;
+    nomslipinds[1] = !tempInds[1];
+    n4qzq0wcyz[1] = izarshtadf.P_172 * eiihbvg0nv[1] + izarshtadf.P_171;
+    Eykappa[1] = izarshtadf.P_169 * eiihbvg0nv[1] + izarshtadf.P_168;
+    nomslipinds[2] = !tempInds[2];
+    n4qzq0wcyz[2] = izarshtadf.P_172 * eiihbvg0nv[2] + izarshtadf.P_171;
+    Eykappa[2] = izarshtadf.P_169 * eiihbvg0nv[2] + izarshtadf.P_168;
+    nomslipinds[3] = !tempInds[3];
+    n4qzq0wcyz[3] = izarshtadf.P_172 * m3ezqvwkit_idx_0 + izarshtadf.P_171;
+    Eykappa[3] = izarshtadf.P_169 * m3ezqvwkit_idx_0 + izarshtadf.P_168;
+    Bykappa[0] = (eemzcdzxid_e * izarshtadf.P_163 + izarshtadf.P_160) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_161 * fzbcvayacp[0])) * localB->h2feaakbey[19];
+    Bykappa[1] = (m3ezqvwkit_idx_1 * izarshtadf.P_163 + izarshtadf.P_160) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_161 * fzbcvayacp[1])) * localB->h2feaakbey[46];
+    Bykappa[2] = (m3ezqvwkit_idx_2 * izarshtadf.P_163 + izarshtadf.P_160) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_161 * fzbcvayacp[2])) * localB->h2feaakbey[73];
+    Bykappa[3] = (fohy1okpri * izarshtadf.P_163 + izarshtadf.P_160) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_161 * fzbcvayacp[3])) * localB->h2feaakbey[100];
+    for (i = 0; i < 4; i++) {
+        if (Eykappa[i] > 1.0) {
+            Eykappa[i] = 1.0;
+        }
+        if (Bykappa[i] < 0.0) {
+            Bykappa[i] = 0.0;
+        }
+    }
+    for (i = 0; i < 36; i++) {
+        zeta[i] = 1.0;
+    }
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (tempInds[i]) {
+            trueCount++;
+        }
+    }
+    bc_tmp_size = trueCount;
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (tempInds[i]) {
+            bc_tmp_data[trueCount] = i;
+            trueCount++;
+        }
+    }
+    for (i = 0; i < bc_tmp_size; i++) {
+        bc_data[i] = (int8_T)bc_tmp_data[i];
+    }
+    for (i = 0; i < bc_tmp_size; i++) {
+        zeta[9 * bc_data[i]] = 0.0;
+    }
+    tmp = %<(SLibCGCallSubFcn("e5tjr0p5gl", ["tempInds", "%<::tSimStruct>"], 1, 28, 8))>;
+    if (tmp) {
+        lam_Kygamma[0] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_37 * c4pihn5jgj[0]));
+        lam_Cz[0] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_43 * Vsy_tmp));
+        lam_Kygamma[1] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_37 * c4pihn5jgj[1]));
+        lam_Cz[1] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_43 * Vsy_tmp_p));
+        lam_Kygamma[2] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_37 * c4pihn5jgj[2]));
+        lam_Cz[2] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_43 * Vsy_tmp_e));
+        lam_Kygamma[3] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_37 * c4pihn5jgj[3]));
+        lam_Cz[3] = muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_43 * Vsy_tmp_i));
+        for (i = 0; i < bc_tmp_size; i++) {
+            trueCount = bc_tmp_data[i];
+            R_omega_p[i] = (izarshtadf.P_36 * eiihbvg0nv[trueCount] + 1.0) * izarshtadf.P_35 * lam_Kygamma[trueCount] * izarshtadf.P_187 * cwefdql3v4_p[trueCount];
+        }
+        %<(SLibCGCallSubFcn("mqgbilo3x5", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 9))>;
+        %<(SLibCGCallSubFcn("iit2n2dklb", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 10))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 1] = R_omega_p[i];
+            tmpDrphiVar_data[i] = cwefdql3v4_p[bc_tmp_data[i]];
+        }
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["tmpDrphiVar_data", "&bc_tmp_size", "eemzcdzxid_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 11))>;
+        for (i = 0; i < tmp_size_p; i++) {
+            R_omega_p[i] = izarshtadf.P_187 * eemzcdzxid_data[i];
+        }
+        if (tmp_size_p - 1 >= 0) {
+            memcpy(&tmpDrphiVar_data[0], &R_omega_p[0], (uint32_T)tmp_size_p * sizeof(real_T));
+        }
+        %<(SLibCGCallSubFcn("ovabakf0qvp", ["tmpDrphiVar_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 12))>;
+        if ((tmp_size_p == tmp_size_p) && ((tmp_size_p == 1 ? tmp_size_p : tmp_size_p) == bc_tmp_size)) {
+            tmp_size = bc_tmp_size;
+            for (i = 0; i < bc_tmp_size; i++) {
+                trueCount = bc_tmp_data[i];
+                dc_data[i] = (izarshtadf.P_42 * eiihbvg0nv[trueCount] + 1.0) * izarshtadf.P_41 * lam_Cz[trueCount] * (izarshtadf.P_44 * tmpDrphiVar_data[i] + R_omega_p[i]);
+            }
+        } else {
+            %<(SLibCGCallSubFcn("ewiatu4blsmny", ["dc_data", "&tmp_size", "izarshtadf.P_41", "izarshtadf.P_42", "eiihbvg0nv", "lam_Cz", "bc_tmp_data", "&bc_tmp_size", "R_omega_p", "&tmp_size_p", "izarshtadf.P_44", "tmpDrphiVar_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 13))>;
+        }
+        %<(SLibCGCallSubFcn("mqgbilo3x5", ["dc_data", "&tmp_size", "%<::tSimStruct>"], 1, 28, 14))>;
+        %<(SLibCGCallSubFcn("iit2n2dklb", ["dc_data", "&tmp_size", "%<::tSimStruct>"], 1, 28, 15))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 2] = dc_data[i];
+        }
+        m3ezqvwkit_idx_0 = izarshtadf.P_187 * izarshtadf.P_187 * izarshtadf.P_74;
+        for (i = 0; i < bc_tmp_size; i++) {
+            Vsy_tmp = cwefdql3v4_p[bc_tmp_data[i]];
+            R_omega_p[i] = Vsy_tmp * Vsy_tmp * m3ezqvwkit_idx_0;
+        }
+        %<(SLibCGCallSubFcn("mqgbilo3x5", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 16))>;
+        %<(SLibCGCallSubFcn("iit2n2dklb", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 17))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 3] = R_omega_p[i];
+        }
+    }
+    m3ezqvwkit_idx_0 = 1.0 - izarshtadf.P_69 * 0.0;
+    lam_muy[0] = (izarshtadf.P_73 * eiihbvg0nv[0] + izarshtadf.P_72) * imtn23idgd[0] * (izarshtadf.P_84 * hdhhddtroz[0] + 1.0) * localB->h2feaakbey[14];
+    Vsy_tmp_p = imtn23idgd[0] / Fzo_prime[0];
+    Mzphiinf[0] = Vsy_tmp_p;
+    Vsy_tmp_e = (izarshtadf.P_80 * hdhhddtroz[0] + 1.0) * (izarshtadf.P_67 * Fzo_prime[0]);
+    Vsy_tmp_i = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp_p / (eemzcdzxid_e * izarshtadf.P_71 + izarshtadf.P_68) / (izarshtadf.P_81 * hdhhddtroz[0] + 1.0)) * izarshtadf.P_70);
+    kx4jhai2wh[0] = (1.0 - izarshtadf.P_69 * muDoubleScalarAbs(or1pah3dt3)) * Vsy_tmp_e * Vsy_tmp_i * zeta[3] * localB->h2feaakbey[5];
+    R_omega_p[0] = Vsy_tmp_e * m3ezqvwkit_idx_0 * Vsy_tmp_i * zeta[3] * localB->h2feaakbey[5];
+    lam_muy[1] = (izarshtadf.P_73 * eiihbvg0nv[1] + izarshtadf.P_72) * imtn23idgd[1] * (izarshtadf.P_84 * hdhhddtroz[1] + 1.0) * localB->h2feaakbey[41];
+    Vsy_tmp_p = imtn23idgd[1] / Fzo_prime[1];
+    Mzphiinf[1] = Vsy_tmp_p;
+    Vsy_tmp_e = (izarshtadf.P_80 * hdhhddtroz[1] + 1.0) * (izarshtadf.P_67 * Fzo_prime[1]);
+    Vsy_tmp_i = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp_p / (m3ezqvwkit_idx_1 * izarshtadf.P_71 + izarshtadf.P_68) / (izarshtadf.P_81 * hdhhddtroz[1] + 1.0)) * izarshtadf.P_70);
+    kx4jhai2wh[1] = (1.0 - izarshtadf.P_69 * muDoubleScalarAbs(dd20ekst0q)) * Vsy_tmp_e * Vsy_tmp_i * zeta[12] * localB->h2feaakbey[32];
+    R_omega_p[1] = Vsy_tmp_e * m3ezqvwkit_idx_0 * Vsy_tmp_i * zeta[12] * localB->h2feaakbey[32];
+    lam_muy[2] = (izarshtadf.P_73 * eiihbvg0nv[2] + izarshtadf.P_72) * imtn23idgd[2] * (izarshtadf.P_84 * hdhhddtroz[2] + 1.0) * localB->h2feaakbey[68];
+    Vsy_tmp_p = imtn23idgd[2] / Fzo_prime[2];
+    Mzphiinf[2] = Vsy_tmp_p;
+    Vsy_tmp_e = (izarshtadf.P_80 * hdhhddtroz[2] + 1.0) * (izarshtadf.P_67 * Fzo_prime[2]);
+    Vsy_tmp_i = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp_p / (m3ezqvwkit_idx_2 * izarshtadf.P_71 + izarshtadf.P_68) / (izarshtadf.P_81 * hdhhddtroz[2] + 1.0)) * izarshtadf.P_70);
+    kx4jhai2wh[2] = (1.0 - izarshtadf.P_69 * muDoubleScalarAbs(e_y)) * Vsy_tmp_e * Vsy_tmp_i * zeta[21] * localB->h2feaakbey[59];
+    R_omega_p[2] = Vsy_tmp_e * m3ezqvwkit_idx_0 * Vsy_tmp_i * zeta[21] * localB->h2feaakbey[59];
+    lam_muy[3] = (izarshtadf.P_73 * eiihbvg0nv[3] + izarshtadf.P_72) * imtn23idgd[3] * (izarshtadf.P_84 * hdhhddtroz[3] + 1.0) * localB->h2feaakbey[95];
+    Vsy_tmp_p = imtn23idgd[3] / Fzo_prime[3];
+    Vsy_tmp_e = (izarshtadf.P_80 * hdhhddtroz[3] + 1.0) * (izarshtadf.P_67 * Fzo_prime[3]);
+    Vsy_tmp_i = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp_p / (fohy1okpri * izarshtadf.P_71 + izarshtadf.P_68) / (izarshtadf.P_81 * hdhhddtroz[3] + 1.0)) * izarshtadf.P_70);
+    Vsy_tmp = (1.0 - izarshtadf.P_69 * muDoubleScalarAbs(gamma_star_tmp)) * Vsy_tmp_e * Vsy_tmp_i * zeta[30] * localB->h2feaakbey[86];
+    kx4jhai2wh[3] = Vsy_tmp;
+    R_omega_p[3] = Vsy_tmp_e * m3ezqvwkit_idx_0 * Vsy_tmp_i * zeta[30] * localB->h2feaakbey[86];
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["kx4jhai2wh", "0.0001", "Fzo_prime", "lam_Cz", "%<::tSimStruct>"], 1, 28, 18))>;
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["R_omega_p", "0.0001", "eemzcdzxid_p", "lam_Cz", "%<::tSimStruct>"], 1, 28, 19))>;
+    x_idx_0 = izarshtadf.P_60;
+    if (izarshtadf.P_60 < 0.0) {
+        x_idx_0 = 0.0;
+    }
+    Vsy_tmp_e = muDoubleScalarTanh(localB->l5f5e51b2t[0]);
+    lam_Cz[0] = (izarshtadf.P_62 * eiihbvg0nv[0] + izarshtadf.P_61) * Vsy_tmp_e;
+    Vsy_tmp_i = muDoubleScalarTanh(localB->l5f5e51b2t[1]);
+    lam_Cz[1] = (izarshtadf.P_62 * eiihbvg0nv[1] + izarshtadf.P_61) * Vsy_tmp_i;
+    lam_Cz_tmp = muDoubleScalarTanh(localB->l5f5e51b2t[2]);
+    lam_Cz[2] = (izarshtadf.P_62 * eiihbvg0nv[2] + izarshtadf.P_61) * lam_Cz_tmp;
+    lam_Cz_tmp_p = muDoubleScalarTanh(localB->l5f5e51b2t[3]);
+    m3ezqvwkit_idx_0 = (izarshtadf.P_62 * eiihbvg0nv[3] + izarshtadf.P_61) * lam_Cz_tmp_p;
+    lam_Cz[3] = m3ezqvwkit_idx_0;
+    ab_idx_0 = izarshtadf.P_63;
+    if (izarshtadf.P_63 > 1.0) {
+        ab_idx_0 = 1.0;
+    }
+    dosyb5bkip[0] = lam_muy[0] / (1.0 - epsilon_gamma[0]) / (x_idx_0 * lam_Cz[0] * eemzcdzxid_p[0]);
+    R_omega_p[0] = izarshtadf.P_187 * cwefdql3v4_p[0];
+    dosyb5bkip[1] = lam_muy[1] / (1.0 - epsilon_gamma[1]) / (x_idx_0 * lam_Cz[1] * eemzcdzxid_p[1]);
+    R_omega_p[1] = izarshtadf.P_187 * cwefdql3v4_p[1];
+    dosyb5bkip[2] = lam_muy[2] / (1.0 - epsilon_gamma[2]) / (x_idx_0 * lam_Cz[2] * eemzcdzxid_p[2]);
+    R_omega_p[2] = izarshtadf.P_187 * cwefdql3v4_p[2];
+    dosyb5bkip[3] = lam_muy[3] / (1.0 - epsilon_gamma[3]) / (x_idx_0 * m3ezqvwkit_idx_0 * eemzcdzxid_p[3]);
+    R_omega_p[3] = izarshtadf.P_187 * cwefdql3v4_p[3];
+    %<(SLibCGCallSubFcn("magicsin_BC8OJFW4", ["lam_Cz", "x_idx_0", "dosyb5bkip", "ab_idx_0", "R_omega_p", "dc_data", "%<::tSimStruct>"], 1, 28, 20))>;
+    dosyb5bkip[0] = dc_data[0] * Vsy_tmp_e;
+    lam_Kygamma[0] = (izarshtadf.P_94 * eiihbvg0nv[0] + izarshtadf.P_93) * imtn23idgd[0] * or1pah3dt3 * zeta[2] * localB->h2feaakbey[14] * lam_muy_prime[0];
+    SHy[0] = 0.0;
+    eemzcdzxid_p[0] = c4pihn5jgj[0] + n4qzq0wcyz[0];
+    dosyb5bkip[1] = dc_data[1] * Vsy_tmp_i;
+    lam_Kygamma[1] = (izarshtadf.P_94 * eiihbvg0nv[1] + izarshtadf.P_93) * imtn23idgd[1] * dd20ekst0q * zeta[11] * localB->h2feaakbey[41] * lam_muy_prime[1];
+    SHy[1] = 0.0;
+    eemzcdzxid_p[1] = c4pihn5jgj[1] + n4qzq0wcyz[1];
+    dosyb5bkip[2] = dc_data[2] * lam_Cz_tmp;
+    lam_Kygamma[2] = (izarshtadf.P_94 * eiihbvg0nv[2] + izarshtadf.P_93) * imtn23idgd[2] * e_y * zeta[20] * localB->h2feaakbey[68] * lam_muy_prime[2];
+    SHy[2] = 0.0;
+    eemzcdzxid_p[2] = c4pihn5jgj[2] + n4qzq0wcyz[2];
+    dosyb5bkip[3] = dc_data[3] * lam_Cz_tmp_p;
+    lam_Kygamma[3] = (izarshtadf.P_94 * eiihbvg0nv[3] + izarshtadf.P_93) * imtn23idgd[3] * gamma_star_tmp * zeta[29] * localB->h2feaakbey[95] * lam_muy_prime[3];
+    SHy[3] = 0.0;
+    eemzcdzxid_p[3] = c4pihn5jgj[3] + n4qzq0wcyz[3];
+    %<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["izarshtadf.P_165", "Bykappa", "Eykappa", "eemzcdzxid_p", "R_omega_p", "%<::tSimStruct>"], 1, 28, 21))>;
+    %<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["izarshtadf.P_165", "Bykappa", "Eykappa", "n4qzq0wcyz", "dc_data", "%<::tSimStruct>"], 1, 28, 22))>;
+    Eykappa[0] = R_omega_p[0] / dc_data[0];
+    Eykappa[1] = R_omega_p[1] / dc_data[1];
+    Eykappa[2] = R_omega_p[2] / dc_data[2];
+    Eykappa[3] = R_omega_p[3] / dc_data[3];
+    for (i = 0; i < 4; i++) {
+        if (Eykappa[i] < 0.0) {
+            Eykappa[i] = 0.0;
+        }
+    }
+    if (tmp) {
+        for (i = 0; i < bc_tmp_size; i++) {
+            trueCount = bc_tmp_data[i];
+            zeta[9 * bc_data[i] + 4] = (dosyb5bkip[trueCount] + 1.0) - lam_Kygamma[trueCount] / Fzo_prime[trueCount];
+        }
+        m3ezqvwkit_idx_0 = izarshtadf.P_110 * izarshtadf.P_187;
+        for (i = 0; i < bc_tmp_size; i++) {
+            R_omega_p[i] = m3ezqvwkit_idx_0 * cwefdql3v4_p[bc_tmp_data[i]];
+        }
+        %<(SLibCGCallSubFcn("mqgbilo3x5", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 23))>;
+        %<(SLibCGCallSubFcn("iit2n2dklb", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 24))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 5] = R_omega_p[i];
+        }
+        m3ezqvwkit_idx_0 = izarshtadf.P_96 * izarshtadf.P_187;
+        for (i = 0; i < bc_tmp_size; i++) {
+            R_omega_p[i] = m3ezqvwkit_idx_0 * cwefdql3v4_p[bc_tmp_data[i]];
+        }
+        %<(SLibCGCallSubFcn("mqgbilo3x5", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 25))>;
+        %<(SLibCGCallSubFcn("iit2n2dklb", ["R_omega_p", "&bc_tmp_size", "%<::tSimStruct>"], 1, 28, 26))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 6] = R_omega_p[i];
+        }
+        Mzphiinf[0] = izarshtadf.P_105 * mu_y_idx_0 * izarshtadf.P_187 * imtn23idgd[0] * muDoubleScalarSqrt(Mzphiinf[0]) * localB->h2feaakbey[26];
+        Mzphiinf[1] = izarshtadf.P_105 * mu_y_idx_1 * izarshtadf.P_187 * imtn23idgd[1] * muDoubleScalarSqrt(Mzphiinf[1]) * localB->h2feaakbey[53];
+        Mzphiinf[2] = izarshtadf.P_105 * mu_y_idx_2 * izarshtadf.P_187 * imtn23idgd[2] * muDoubleScalarSqrt(Mzphiinf[2]) * localB->h2feaakbey[80];
+        Mzphiinf[3] = izarshtadf.P_105 * rdot * izarshtadf.P_187 * imtn23idgd[3] * muDoubleScalarSqrt(Vsy_tmp_p) * localB->h2feaakbey[107];
+        for (i = 0; i < 4; i++) {
+            if (Mzphiinf[i] < 0.0) {
+                Mzphiinf[i] = 1.0E-6;
+            }
+        }
+        m3ezqvwkit_idx_0 = izarshtadf.P_106 * izarshtadf.P_187;
+        n4qzq0wcyz[0] = muDoubleScalarAtan(m3ezqvwkit_idx_0 * muDoubleScalarAbs(phi_t[0]));
+        n4qzq0wcyz[1] = muDoubleScalarAtan(m3ezqvwkit_idx_0 * muDoubleScalarAbs(phi_t[1]));
+        n4qzq0wcyz[2] = muDoubleScalarAtan(m3ezqvwkit_idx_0 * muDoubleScalarAbs(phi_t[2]));
+        n4qzq0wcyz[3] = muDoubleScalarAtan(m3ezqvwkit_idx_0 * muDoubleScalarAbs(phi_t[3]));
+        dd20ekst0q = izarshtadf.P_108;
+        if (izarshtadf.P_108 < 0.0) {
+            dd20ekst0q = 0.0;
+        }
+        Vsy_tmp_e = izarshtadf.P_109;
+        if (izarshtadf.P_109 < 0.0) {
+            Vsy_tmp_e = 0.0;
+        }
+        or1pah3dt3 = muDoubleScalarSin(1.5707963267948966 * dd20ekst0q);
+        m3ezqvwkit_idx_0 = Mzphiinf[0] / or1pah3dt3;
+        lam_Cz[0] = m3ezqvwkit_idx_0;
+        eemzcdzxid_p[0] = ((izarshtadf.P_113 * eiihbvg0nv[0] + izarshtadf.P_112) * muDoubleScalarAbs(ai3ndf3ja2[0]) + (izarshtadf.P_120 * eiihbvg0nv[0] + izarshtadf.P_119)) * (imtn23idgd[0] * izarshtadf.P_187) * localB->h2feaakbey[15] / (dd20ekst0q * m3ezqvwkit_idx_0 * (1.0 - epsilon_gamma[0]) + muDoubleScalarSign(1.0 - epsilon_gamma[0]) * 0.0001);
+        R_omega_p[0] = -izarshtadf.P_187 * cwefdql3v4_p[0];
+        m3ezqvwkit_idx_0 = Mzphiinf[1] / or1pah3dt3;
+        lam_Cz[1] = m3ezqvwkit_idx_0;
+        eemzcdzxid_p[1] = ((izarshtadf.P_113 * eiihbvg0nv[1] + izarshtadf.P_112) * muDoubleScalarAbs(ai3ndf3ja2[1]) + (izarshtadf.P_120 * eiihbvg0nv[1] + izarshtadf.P_119)) * (imtn23idgd[1] * izarshtadf.P_187) * localB->h2feaakbey[42] / (dd20ekst0q * m3ezqvwkit_idx_0 * (1.0 - epsilon_gamma[1]) + muDoubleScalarSign(1.0 - epsilon_gamma[1]) * 0.0001);
+        R_omega_p[1] = -izarshtadf.P_187 * cwefdql3v4_p[1];
+        m3ezqvwkit_idx_0 = Mzphiinf[2] / or1pah3dt3;
+        lam_Cz[2] = m3ezqvwkit_idx_0;
+        eemzcdzxid_p[2] = ((izarshtadf.P_113 * eiihbvg0nv[2] + izarshtadf.P_112) * muDoubleScalarAbs(ai3ndf3ja2[2]) + (izarshtadf.P_120 * eiihbvg0nv[2] + izarshtadf.P_119)) * (imtn23idgd[2] * izarshtadf.P_187) * localB->h2feaakbey[69] / (dd20ekst0q * m3ezqvwkit_idx_0 * (1.0 - epsilon_gamma[2]) + muDoubleScalarSign(1.0 - epsilon_gamma[2]) * 0.0001);
+        R_omega_p[2] = -izarshtadf.P_187 * cwefdql3v4_p[2];
+        m3ezqvwkit_idx_0 = Mzphiinf[3] / or1pah3dt3;
+        lam_Cz[3] = m3ezqvwkit_idx_0;
+        eemzcdzxid_p[3] = ((izarshtadf.P_113 * eiihbvg0nv[3] + izarshtadf.P_112) * muDoubleScalarAbs(ai3ndf3ja2[3]) + (izarshtadf.P_120 * eiihbvg0nv[3] + izarshtadf.P_119)) * (imtn23idgd[3] * izarshtadf.P_187) * localB->h2feaakbey[96] / (dd20ekst0q * m3ezqvwkit_idx_0 * (1.0 - epsilon_gamma[3]) + muDoubleScalarSign(1.0 - epsilon_gamma[3]) * 0.0001);
+        R_omega_p[3] = -izarshtadf.P_187 * cwefdql3v4_p[3];
+        %<(SLibCGCallSubFcn("magicsin_BC8OJFW4", ["lam_Cz", "dd20ekst0q", "eemzcdzxid_p", "Vsy_tmp_e", "R_omega_p", "R_omega", "%<::tSimStruct>"], 1, 28, 27))>;
+        lam_Cz[0] = muDoubleScalarSign(R_omega[0]);
+        lam_Cz[1] = muDoubleScalarSign(R_omega[1]);
+        lam_Cz[2] = muDoubleScalarSign(R_omega[2]);
+        lam_Cz[3] = muDoubleScalarSign(R_omega[3]);
+        for (i = 0; i < 4; i++) {
+            if (lam_Cz[i] == 0.0) {
+                lam_Cz[i] = 1.0;
+            }
+        }
+        for (i = 0; i < bc_tmp_size; i++) {
+            trueCount = bc_tmp_data[i];
+            dc_data[i] = R_omega[trueCount];
+            R_omega_p[i] = R_omega[trueCount];
+        }
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["R_omega_p", "&bc_tmp_size", "eemzcdzxid_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 28))>;
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["dc_data", "&bc_tmp_size", "tmp_data_e", "&tmp_size", "%<::tSimStruct>"], 1, 28, 45))>;
+        if ((tmp_size == bc_tmp_size) && ((tmp_size_p == 1 ? bc_tmp_size : tmp_size_p) == bc_tmp_size)) {
+            for (i = 0; i < bc_tmp_size; i++) {
+                dc_data[i] = R_omega[bc_tmp_data[i]];
+            }
+            %<(SLibCGCallSubFcn("kh1usf0vag", ["dc_data", "&bc_tmp_size", "eemzcdzxid_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 29))>;
+            tmp_size_p = bc_tmp_size;
+            for (i = 0; i < bc_tmp_size; i++) {
+                trueCount = bc_tmp_data[i];
+                tmpDrphiVar_data[i] = Mzphiinf[trueCount] * 2.0 / 3.1415926535897931 * n4qzq0wcyz[trueCount] * Eykappa[trueCount] / (0.0001 * lam_Cz[trueCount] - eemzcdzxid_data[i]);
+            }
+        } else {
+            %<(SLibCGCallSubFcn("ewiatu4blsmn", ["tmpDrphiVar_data", "&tmp_size_p", "Mzphiinf", "n4qzq0wcyz", "Eykappa", "bc_tmp_data", "&bc_tmp_size", "R_omega", "lam_Cz", "%<::tSimStruct>"], 1, 28, 30))>;
+        }
+        trueCount = tmp_size_p - 1;
+        for (i = 0; i <= trueCount; i++) {
+            if (tmpDrphiVar_data[i] > 1.0) {
+                tmpDrphiVar_data[i] = 1.0;
+            }
+            if (tmpDrphiVar_data[i] < -1.0) {
+                tmpDrphiVar_data[i] = -1.0;
+            }
+        }
+        %<(SLibCGCallSubFcn("bqn1tkpksh", ["tmpDrphiVar_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 28, 31))>;
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 7] = 0.63661977236758138 * tmpDrphiVar_data[i];
+        }
+        for (i = 0; i < bc_tmp_size; i++) {
+            zeta[9 * bc_data[i] + 8] = R_omega[bc_tmp_data[i]] + 1.0;
+        }
+        if (bc_tmp_size == 4) {
+            for (i = 0; i < bc_tmp_size; i++) {
+                trueCount = bc_tmp_data[i];
+                SHy[bc_data[i]] = (localB->h2feaakbey[27 * i + 11] * (0.0 * eiihbvg0nv[trueCount]) * (real_T)tempInds[i] + dosyb5bkip[trueCount]) - lam_Kygamma[trueCount] / Fzo_prime[trueCount];
+            }
+        } else {
+            %<(SLibCGCallSubFcn("ewiatu4blsm", ["SHy", "bc_data", "&bc_tmp_size", "eiihbvg0nv", "bc_tmp_data", "&bc_tmp_size", "localB->h2feaakbey", "tempInds", "dosyb5bkip", "lam_Kygamma", "Fzo_prime", "%<::tSimStruct>"], 1, 28, 32))>;
+        }
+    }
+    n4qzq0wcyz[0] = izarshtadf.P_30 * localB->h2feaakbey[6];
+    n4qzq0wcyz[1] = izarshtadf.P_30 * localB->h2feaakbey[33];
+    n4qzq0wcyz[2] = izarshtadf.P_30 * localB->h2feaakbey[60];
+    n4qzq0wcyz[3] = izarshtadf.P_30 * localB->h2feaakbey[87];
+    epsilon_gamma[0] = ((izarshtadf.P_78 * hdhhddtroz[0] + 1.0) + izarshtadf.P_79 * xddot) * (izarshtadf.P_33 * eiihbvg0nv[0] + izarshtadf.P_32) * (1.0 - ai3ndf3ja2[0] * ai3ndf3ja2[0] * izarshtadf.P_34) * lam_mux[0] * imtn23idgd[0] * zeta[1];
+    epsilon_gamma[1] = ((izarshtadf.P_78 * hdhhddtroz[1] + 1.0) + izarshtadf.P_79 * yddot) * (izarshtadf.P_33 * eiihbvg0nv[1] + izarshtadf.P_32) * (1.0 - ai3ndf3ja2[1] * ai3ndf3ja2[1] * izarshtadf.P_34) * lam_mux[1] * imtn23idgd[1] * zeta[10];
+    epsilon_gamma[2] = ((izarshtadf.P_78 * hdhhddtroz[2] + 1.0) + izarshtadf.P_79 * Dx_tmp) * (izarshtadf.P_33 * eiihbvg0nv[2] + izarshtadf.P_32) * (1.0 - ai3ndf3ja2[2] * ai3ndf3ja2[2] * izarshtadf.P_34) * lam_mux[2] * imtn23idgd[2] * zeta[19];
+    epsilon_gamma[3] = ((izarshtadf.P_78 * hdhhddtroz[3] + 1.0) + izarshtadf.P_79 * Dx_tmp_p) * (izarshtadf.P_33 * eiihbvg0nv[3] + izarshtadf.P_32) * (1.0 - ai3ndf3ja2[3] * ai3ndf3ja2[3] * izarshtadf.P_34) * lam_mux[3] * imtn23idgd[3] * zeta[28];
+    m3ezqvwkit_idx_0 = eiihbvg0nv[0] * eiihbvg0nv[0];
+    Bykappa[0] = ((izarshtadf.P_48 * eiihbvg0nv[0] + izarshtadf.P_47) + m3ezqvwkit_idx_0 * izarshtadf.P_49) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[0]) * izarshtadf.P_50) * localB->h2feaakbey[8];
+    lam_Cz_tmp_p = eiihbvg0nv[1] * eiihbvg0nv[1];
+    Bykappa[1] = ((izarshtadf.P_48 * eiihbvg0nv[1] + izarshtadf.P_47) + lam_Cz_tmp_p * izarshtadf.P_49) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[1]) * izarshtadf.P_50) * localB->h2feaakbey[35];
+    Vsy_tmp_p = eiihbvg0nv[2] * eiihbvg0nv[2];
+    Bykappa[2] = ((izarshtadf.P_48 * eiihbvg0nv[2] + izarshtadf.P_47) + Vsy_tmp_p * izarshtadf.P_49) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[2]) * izarshtadf.P_50) * localB->h2feaakbey[62];
+    Vsy_tmp_i = eiihbvg0nv[3] * eiihbvg0nv[3];
+    Bykappa[3] = ((izarshtadf.P_48 * eiihbvg0nv[3] + izarshtadf.P_47) + Vsy_tmp_i * izarshtadf.P_49) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[3]) * izarshtadf.P_50) * localB->h2feaakbey[89];
+    for (i = 0; i < 4; i++) {
+        if (n4qzq0wcyz[i] < 0.0) {
+            n4qzq0wcyz[i] = 0.0;
+        }
+        if (epsilon_gamma[i] < 0.0) {
+            epsilon_gamma[i] = 0.0;
+        }
+        if (Bykappa[i] > 1.0) {
+            Bykappa[i] = 1.0;
+        }
+    }
+    cwefdql3v4_p[0] = (izarshtadf.P_65 * eiihbvg0nv[0] + izarshtadf.P_64) * imtn23idgd[0] * muDoubleScalarExp(izarshtadf.P_66 * eiihbvg0nv[0]) * ((izarshtadf.P_76 * hdhhddtroz[0] + 1.0) + xddot * izarshtadf.P_77) * localB->h2feaakbey[4];
+    R_omega_p[0] = n4qzq0wcyz[0] * epsilon_gamma[0];
+    cwefdql3v4_p[1] = (izarshtadf.P_65 * eiihbvg0nv[1] + izarshtadf.P_64) * imtn23idgd[1] * muDoubleScalarExp(izarshtadf.P_66 * eiihbvg0nv[1]) * ((izarshtadf.P_76 * hdhhddtroz[1] + 1.0) + yddot * izarshtadf.P_77) * localB->h2feaakbey[31];
+    R_omega_p[1] = n4qzq0wcyz[1] * epsilon_gamma[1];
+    cwefdql3v4_p[2] = (izarshtadf.P_65 * eiihbvg0nv[2] + izarshtadf.P_64) * imtn23idgd[2] * muDoubleScalarExp(izarshtadf.P_66 * eiihbvg0nv[2]) * ((izarshtadf.P_76 * hdhhddtroz[2] + 1.0) + Dx_tmp * izarshtadf.P_77) * localB->h2feaakbey[58];
+    R_omega_p[2] = n4qzq0wcyz[2] * epsilon_gamma[2];
+    or1pah3dt3 = (izarshtadf.P_65 * eiihbvg0nv[3] + izarshtadf.P_64) * imtn23idgd[3] * muDoubleScalarExp(izarshtadf.P_66 * eiihbvg0nv[3]) * ((izarshtadf.P_76 * hdhhddtroz[3] + 1.0) + Dx_tmp_p * izarshtadf.P_77) * localB->h2feaakbey[85];
+    R_omega_p[3] = n4qzq0wcyz[3] * epsilon_gamma[3];
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["R_omega_p", "0.0001", "eemzcdzxid_p", "lam_Cz", "%<::tSimStruct>"], 1, 28, 33))>;
+    lam_Cz[0] = izarshtadf.P_167 * eiihbvg0nv[0] + izarshtadf.P_166;
+    lam_Cz[1] = izarshtadf.P_167 * eiihbvg0nv[1] + izarshtadf.P_166;
+    lam_Cz[2] = izarshtadf.P_167 * eiihbvg0nv[2] + izarshtadf.P_166;
+    lam_Cz[3] = izarshtadf.P_167 * eiihbvg0nv[3] + izarshtadf.P_166;
+    R_omega[0] = (eemzcdzxid_e * izarshtadf.P_159 + izarshtadf.P_157) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_158 * c4pihn5jgj[0])) * localB->h2feaakbey[18];
+    R_omega[1] = (m3ezqvwkit_idx_1 * izarshtadf.P_159 + izarshtadf.P_157) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_158 * c4pihn5jgj[1])) * localB->h2feaakbey[45];
+    R_omega[2] = (m3ezqvwkit_idx_2 * izarshtadf.P_159 + izarshtadf.P_157) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_158 * c4pihn5jgj[2])) * localB->h2feaakbey[72];
+    R_omega[3] = (fohy1okpri * izarshtadf.P_159 + izarshtadf.P_157) * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_158 * c4pihn5jgj[3])) * localB->h2feaakbey[99];
+    for (i = 0; i < 4; i++) {
+        if (lam_Cz[i] > 1.0) {
+            lam_Cz[i] = 1.0;
+        }
+        if (R_omega[i] < 0.0) {
+            R_omega[i] = 0.0;
+        }
+    }
+    %<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["izarshtadf.P_164", "R_omega", "lam_Cz", "fzbcvayacp", "R_omega_p", "%<::tSimStruct>"], 1, 28, 34))>;
+    %<(SLibCGCallSubFcn("magiccos_RICJxYVg", ["izarshtadf.P_164", "R_omega", "lam_Cz", "dc_data", "%<::tSimStruct>"], 1, 28, 35))>;
+    dosyb5bkip[0] = R_omega_p[0] / dc_data[0];
+    dosyb5bkip[1] = R_omega_p[1] / dc_data[1];
+    dosyb5bkip[2] = R_omega_p[2] / dc_data[2];
+    dosyb5bkip[3] = R_omega_p[3] / dc_data[3];
+    for (i = 0; i < 4; i++) {
+        if (dosyb5bkip[i] < 0.0) {
+            dosyb5bkip[i] = 0.0;
+        }
+    }
+    lam_Cz[0] = cwefdql3v4_p[0] / eemzcdzxid_p[0];
+    lam_Cz[1] = cwefdql3v4_p[1] / eemzcdzxid_p[1];
+    lam_Cz[2] = cwefdql3v4_p[2] / eemzcdzxid_p[2];
+    lam_Cz[3] = or1pah3dt3 / eemzcdzxid_p[3];
+    %<(SLibCGCallSubFcn("magicsin_bqt92mPI", ["epsilon_gamma", "n4qzq0wcyz", "lam_Cz", "Bykappa", "kappa_x", "R_omega_p", "%<::tSimStruct>"], 1, 28, 36))>;
+    lam_mux[0] = ((izarshtadf.P_90 * eiihbvg0nv[0] + izarshtadf.P_89) * imtn23idgd[0] * (lam_mux[0] * 10.0 / (9.0 * lam_mux[0] + 1.0)) * localB->h2feaakbey[12] * zeta[1] + R_omega_p[0]) * dosyb5bkip[0];
+    phi_t[0] = izarshtadf.P_31 * localB->h2feaakbey[7];
+    lam_mux[1] = ((izarshtadf.P_90 * eiihbvg0nv[1] + izarshtadf.P_89) * imtn23idgd[1] * (lam_mux[1] * 10.0 / (9.0 * lam_mux[1] + 1.0)) * localB->h2feaakbey[39] * zeta[10] + R_omega_p[1]) * dosyb5bkip[1];
+    phi_t[1] = izarshtadf.P_31 * localB->h2feaakbey[34];
+    lam_mux[2] = ((izarshtadf.P_90 * eiihbvg0nv[2] + izarshtadf.P_89) * imtn23idgd[2] * (lam_mux[2] * 10.0 / (9.0 * lam_mux[2] + 1.0)) * localB->h2feaakbey[66] * zeta[19] + R_omega_p[2]) * dosyb5bkip[2];
+    phi_t[2] = izarshtadf.P_31 * localB->h2feaakbey[61];
+    lam_mux[3] = ((izarshtadf.P_90 * eiihbvg0nv[3] + izarshtadf.P_89) * imtn23idgd[3] * (lam_mux[3] * 10.0 / (9.0 * lam_mux[3] + 1.0)) * localB->h2feaakbey[93] * zeta[28] + R_omega_p[3]) * dosyb5bkip[3];
+    phi_t[3] = izarshtadf.P_31 * localB->h2feaakbey[88];
+    for (i = 0; i < 4; i++) {
+        if (phi_t[i] < 0.0) {
+            phi_t[i] = 0.0;
+        }
+    }
+    dd20ekst0q = mu_y_idx_0 * imtn23idgd[0];
+    mu_y_idx_0 = dd20ekst0q;
+    fohy1okpri = dd20ekst0q * zeta[2];
+    dosyb5bkip[0] = fohy1okpri;
+    kappa_x[0] = phi_t[0] * fohy1okpri;
+    dd20ekst0q = mu_y_idx_1 * imtn23idgd[1];
+    mu_y_idx_1 = dd20ekst0q;
+    fohy1okpri = dd20ekst0q * zeta[11];
+    dosyb5bkip[1] = fohy1okpri;
+    kappa_x[1] = phi_t[1] * fohy1okpri;
+    dd20ekst0q = mu_y_idx_2 * imtn23idgd[2];
+    mu_y_idx_2 = dd20ekst0q;
+    fohy1okpri = dd20ekst0q * zeta[20];
+    dosyb5bkip[2] = fohy1okpri;
+    kappa_x[2] = phi_t[2] * fohy1okpri;
+    dd20ekst0q = rdot * imtn23idgd[3];
+    fohy1okpri = dd20ekst0q * zeta[29];
+    dosyb5bkip[3] = fohy1okpri;
+    kappa_x[3] = phi_t[3] * fohy1okpri;
+    %<(SLibCGCallSubFcn("etyirrpn2a", ["kappa_x", "0.0001", "epsilon_gamma", "lam_Cz", "%<::tSimStruct>"], 1, 28, 37))>;
+    epsilon_gamma[0] = kx4jhai2wh[0] / epsilon_gamma[0];
+    epsilon_gamma[1] = kx4jhai2wh[1] / epsilon_gamma[1];
+    epsilon_gamma[2] = kx4jhai2wh[2] / epsilon_gamma[2];
+    epsilon_gamma[3] = Vsy_tmp / epsilon_gamma[3];
+    if (%<(SLibCGCallSubFcn("e5tjr0p5gl", ["nomslipinds", "%<::tSimStruct>"], 1, 28, 38))>) {
+        trueCount = 0;
+        for (i = 0; i < 4; i++) {
+            if (nomslipinds[i]) {
+                trueCount++;
+            }
+        }
+        tmp_size_p = trueCount;
+        trueCount = 0;
+        for (i = 0; i < 4; i++) {
+            if (nomslipinds[i]) {
+                sb_tmp_data[trueCount] = i;
+                trueCount++;
+            }
+        }
+        for (i = 0; i < tmp_size_p; i++) {
+            bc_data[i] = (int8_T)sb_tmp_data[i];
+        }
+        if (tmp_size_p == 4) {
+            for (i = 0; i < tmp_size_p; i++) {
+                trueCount = sb_tmp_data[i];
+                SHy[bc_data[i]] = ((localB->h2feaakbey[27 * i + 11] * (0.0 * eiihbvg0nv[trueCount]) * (real_T)nomslipinds[i] + (lam_muy[trueCount] * gamma_star[trueCount] - lam_Kygamma[trueCount]) / Fzo_prime[trueCount] * zeta[9 * trueCount]) + zeta[9 * trueCount + 4]) - 1.0;
+            }
+        } else {
+            %<(SLibCGCallSubFcn("ewiatu4bls", ["SHy", "bc_data", "&tmp_size_p", "eiihbvg0nv", "sb_tmp_data", "&tmp_size_p", "localB->h2feaakbey", "nomslipinds", "lam_muy", "gamma_star", "lam_Kygamma", "Fzo_prime", "zeta", "%<::tSimStruct>"], 1, 28, 39))>;
+        }
+    }
+    lam_muy_prime[0] = 0.0 * eiihbvg0nv[0] * imtn23idgd[0] * localB->h2feaakbey[13] * lam_muy_prime[0] * zeta[2] + lam_Kygamma[0];
+    Vsy_tmp_e = fzbcvayacp[0] + SHy[0];
+    R_omega[0] = Vsy_tmp_e;
+    lam_Cz[0] = muDoubleScalarSign(Vsy_tmp_e);
+    lam_muy_prime[1] = 0.0 * eiihbvg0nv[1] * imtn23idgd[1] * localB->h2feaakbey[40] * lam_muy_prime[1] * zeta[11] + lam_Kygamma[1];
+    Vsy_tmp_e = fzbcvayacp[1] + SHy[1];
+    R_omega[1] = Vsy_tmp_e;
+    lam_Cz[1] = muDoubleScalarSign(Vsy_tmp_e);
+    lam_muy_prime[2] = 0.0 * eiihbvg0nv[2] * imtn23idgd[2] * localB->h2feaakbey[67] * lam_muy_prime[2] * zeta[20] + lam_Kygamma[2];
+    Vsy_tmp_e = fzbcvayacp[2] + SHy[2];
+    R_omega[2] = Vsy_tmp_e;
+    lam_Cz[2] = muDoubleScalarSign(Vsy_tmp_e);
+    lam_muy_prime[3] = 0.0 * eiihbvg0nv[3] * imtn23idgd[3] * localB->h2feaakbey[94] * lam_muy_prime[3] * zeta[29] + lam_Kygamma[3];
+    Vsy_tmp_e = fzbcvayacp[3] + SHy[3];
+    R_omega[3] = Vsy_tmp_e;
+    lam_Cz[3] = muDoubleScalarSign(Vsy_tmp_e);
+    for (i = 0; i < 4; i++) {
+        if (lam_Cz[i] == 0.0) {
+            lam_Cz[i] = 1.0;
+        }
+    }
+    eemzcdzxid_p[0] = ((gamma_star[0] * gamma_star[0] * izarshtadf.P_55 + 1.0) - izarshtadf.P_54 * gamma_star[0] * lam_Cz[0]) * (izarshtadf.P_52 * eiihbvg0nv[0] + izarshtadf.P_51) * localB->h2feaakbey[9];
+    eemzcdzxid_p[1] = ((gamma_star[1] * gamma_star[1] * izarshtadf.P_55 + 1.0) - izarshtadf.P_54 * gamma_star[1] * lam_Cz[1]) * (izarshtadf.P_52 * eiihbvg0nv[1] + izarshtadf.P_51) * localB->h2feaakbey[36];
+    eemzcdzxid_p[2] = ((e_y * e_y * izarshtadf.P_55 + 1.0) - izarshtadf.P_54 * e_y * lam_Cz[2]) * (izarshtadf.P_52 * eiihbvg0nv[2] + izarshtadf.P_51) * localB->h2feaakbey[63];
+    eemzcdzxid_p[3] = ((gamma_star_tmp * gamma_star_tmp * izarshtadf.P_55 + 1.0) - izarshtadf.P_54 * gamma_star_tmp * lam_Cz[3]) * (izarshtadf.P_52 * eiihbvg0nv[3] + izarshtadf.P_51) * localB->h2feaakbey[90];
+    for (i = 0; i < 4; i++) {
+        if (eemzcdzxid_p[i] > 1.0) {
+            eemzcdzxid_p[i] = 1.0;
+        }
+    }
+    %<(SLibCGCallSubFcn("magicsin_bqt92mPI", ["dosyb5bkip", "phi_t", "epsilon_gamma", "eemzcdzxid_p", "R_omega", "R_omega_p", "%<::tSimStruct>"], 1, 28, 40))>;
+    lam_muy_prime[0] = (0.0 * eiihbvg0nv[0] + izarshtadf.P_176 * gamma_star[0]) * mu_y_idx_0 * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_177 * fzbcvayacp[0])) * zeta[2] * muDoubleScalarSin(muDoubleScalarAtan(izarshtadf.P_179 * c4pihn5jgj[0]) * izarshtadf.P_178) * localB->h2feaakbey[20] + (R_omega_p[0] + lam_muy_prime[0]) * Eykappa[0];
+    dc_data[0] = localB->h2feaakbey[25];
+    lam_muy_prime[1] = (0.0 * eiihbvg0nv[1] + izarshtadf.P_176 * gamma_star[1]) * mu_y_idx_1 * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_177 * fzbcvayacp[1])) * zeta[11] * muDoubleScalarSin(muDoubleScalarAtan(izarshtadf.P_179 * c4pihn5jgj[1]) * izarshtadf.P_178) * localB->h2feaakbey[47] + (R_omega_p[1] + lam_muy_prime[1]) * Eykappa[1];
+    dc_data[1] = localB->h2feaakbey[52];
+    lam_muy_prime[2] = (0.0 * eiihbvg0nv[2] + izarshtadf.P_176 * e_y) * mu_y_idx_2 * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_177 * fzbcvayacp[2])) * zeta[20] * muDoubleScalarSin(muDoubleScalarAtan(izarshtadf.P_179 * c4pihn5jgj[2]) * izarshtadf.P_178) * localB->h2feaakbey[74] + (R_omega_p[2] + lam_muy_prime[2]) * Eykappa[2];
+    dc_data[2] = localB->h2feaakbey[79];
+    lam_muy_prime[3] = (0.0 * eiihbvg0nv[3] + izarshtadf.P_176 * gamma_star_tmp) * dd20ekst0q * muDoubleScalarCos(muDoubleScalarAtan(izarshtadf.P_177 * fzbcvayacp[3])) * zeta[29] * muDoubleScalarSin(muDoubleScalarAtan(izarshtadf.P_179 * c4pihn5jgj[3]) * izarshtadf.P_178) * localB->h2feaakbey[101] + (R_omega_p[3] + lam_muy_prime[3]) * Eykappa[3];
+    dc_data[3] = localB->h2feaakbey[106];
+    %<(SLibCGCallSubFcn("rollingMoment_IvRBPgtr", ["lam_mux", "localB->l5f5e51b2t", "FzUnSat", "a212wubcu4", "ai3ndf3ja2", "izarshtadf.P_20", "izarshtadf.P_187", "izarshtadf.P_11", "izarshtadf.P_22", "izarshtadf.P_144", "izarshtadf.P_145", "izarshtadf.P_146", "izarshtadf.P_147", "izarshtadf.P_148", "izarshtadf.P_149", "izarshtadf.P_150", "izarshtadf.P_151", "dc_data", "R_omega_p", "%<::tSimStruct>"], 1, 28, 41))>;
+    dosyb5bkip[0] = muDoubleScalarTanh(10.0 * localB->cxmr05b0u1[0]) * R_omega_p[0];
+    ai3ndf3ja2[0] = muDoubleScalarAbs(cwefdql3v4_p[0] / (((izarshtadf.P_24 * eiihbvg0nv[0] + 1.0) + m3ezqvwkit_idx_0 * izarshtadf.P_25) * izarshtadf.P_19 * (izarshtadf.P_26 * hdhhddtroz[0] + 1.0)));
+    hdhhddtroz[0] = muDoubleScalarAbs(kx4jhai2wh[0] / (((izarshtadf.P_27 * eiihbvg0nv[0] + 1.0) + m3ezqvwkit_idx_0 * izarshtadf.P_28) * izarshtadf.P_18 * (izarshtadf.P_29 * hdhhddtroz[0] + 1.0)));
+    dosyb5bkip[1] = muDoubleScalarTanh(10.0 * localB->cxmr05b0u1[1]) * R_omega_p[1];
+    ai3ndf3ja2[1] = muDoubleScalarAbs(cwefdql3v4_p[1] / (((izarshtadf.P_24 * eiihbvg0nv[1] + 1.0) + lam_Cz_tmp_p * izarshtadf.P_25) * izarshtadf.P_19 * (izarshtadf.P_26 * hdhhddtroz[1] + 1.0)));
+    hdhhddtroz[1] = muDoubleScalarAbs(kx4jhai2wh[1] / (((izarshtadf.P_27 * eiihbvg0nv[1] + 1.0) + lam_Cz_tmp_p * izarshtadf.P_28) * izarshtadf.P_18 * (izarshtadf.P_29 * hdhhddtroz[1] + 1.0)));
+    dosyb5bkip[2] = muDoubleScalarTanh(10.0 * localB->cxmr05b0u1[2]) * R_omega_p[2];
+    ai3ndf3ja2[2] = muDoubleScalarAbs(cwefdql3v4_p[2] / (((izarshtadf.P_24 * eiihbvg0nv[2] + 1.0) + Vsy_tmp_p * izarshtadf.P_25) * izarshtadf.P_19 * (izarshtadf.P_26 * hdhhddtroz[2] + 1.0)));
+    hdhhddtroz[2] = muDoubleScalarAbs(kx4jhai2wh[2] / (((izarshtadf.P_27 * eiihbvg0nv[2] + 1.0) + Vsy_tmp_p * izarshtadf.P_28) * izarshtadf.P_18 * (izarshtadf.P_29 * hdhhddtroz[2] + 1.0)));
+    dosyb5bkip[3] = muDoubleScalarTanh(10.0 * localB->cxmr05b0u1[3]) * R_omega_p[3];
+    ai3ndf3ja2[3] = muDoubleScalarAbs(or1pah3dt3 / (((izarshtadf.P_24 * eiihbvg0nv[3] + 1.0) + Vsy_tmp_i * izarshtadf.P_25) * izarshtadf.P_19 * (izarshtadf.P_26 * hdhhddtroz[3] + 1.0)));
+    hdhhddtroz[3] = muDoubleScalarAbs(Vsy_tmp / (((izarshtadf.P_27 * eiihbvg0nv[3] + 1.0) + Vsy_tmp_i * izarshtadf.P_28) * izarshtadf.P_18 * (izarshtadf.P_29 * hdhhddtroz[3] + 1.0)));
+} else {
+    imtn23idgd[0] = m4uvcqvy2c_idx_0;
+    R_omega_p[0] = izarshtadf.P_194;
+    dc_data[0] = izarshtadf.P_195;
+    imtn23idgd[1] = m4uvcqvy2c_idx_1;
+    R_omega_p[1] = izarshtadf.P_194;
+    dc_data[1] = izarshtadf.P_195;
+    imtn23idgd[2] = m4uvcqvy2c_idx_2;
+    R_omega_p[2] = izarshtadf.P_194;
+    dc_data[2] = izarshtadf.P_195;
+    imtn23idgd[3] = m4uvcqvy2c_idx_3;
+    R_omega_p[3] = izarshtadf.P_194;
+    dc_data[3] = izarshtadf.P_195;
+    %<(SLibCGCallSubFcn("cm10ecv2oc", ["localB->cxmr05b0u1", "localB->l5f5e51b2t", "localB->bwzc3y3ooz", "cwefdql3v4_p", "R_omega_p", "dc_data", "localB->h2feaakbey", "eemzcdzxid_p", "izarshtadf.P_206", "izarshtadf.P_87", "izarshtadf.P_88", "izarshtadf.P_12", "izarshtadf.P_13", "izarshtadf.P_188", "izarshtadf.P_16", "izarshtadf.P_17", "izarshtadf.P_0", "izarshtadf.P_1", "izarshtadf.P_4", "izarshtadf.P_3", "izarshtadf.P_20", "izarshtadf.P_187", "izarshtadf.P_173", "izarshtadf.P_22", "izarshtadf.P_11", "izarshtadf.P_230[38]", "izarshtadf.P_230[43]", "izarshtadf.P_230[42]", "izarshtadf.P_230[44]", "izarshtadf.P_230[45]", "izarshtadf.P_230[46]", "izarshtadf.P_230[47]", "izarshtadf.P_230[48]", "izarshtadf.P_230[49]", "izarshtadf.P_230[51]", "izarshtadf.P_230[52]", "izarshtadf.P_230[54]", "izarshtadf.P_230[55]", "izarshtadf.P_230[62]", "izarshtadf.P_230[63]", "izarshtadf.P_230[134]", "izarshtadf.P_230[135]", "izarshtadf.P_230[136]", "izarshtadf.P_230[137]", "izarshtadf.P_230[138]", "izarshtadf.P_230[139]", "izarshtadf.P_230[140]", "izarshtadf.P_230[141]", "izarshtadf.P_230[142]", "izarshtadf.P_230[143]", "izarshtadf.P_230[144]", "izarshtadf.P_230[145]", "izarshtadf.P_230[146]", "izarshtadf.P_230[147]", "izarshtadf.P_230[148]", "izarshtadf.P_230[149]", "izarshtadf.P_230[150]", "izarshtadf.P_230[151]", "izarshtadf.P_230[152]", "izarshtadf.P_230[153]", "izarshtadf.P_230[154]", "izarshtadf.P_230[155]", "izarshtadf.P_230[156]", "izarshtadf.P_230[157]", "izarshtadf.P_230[158]", "izarshtadf.P_230[161]", "izarshtadf.P_230[162]", "izarshtadf.P_230[163]", "izarshtadf.P_230[164]", "izarshtadf.P_230[165]", "izarshtadf.P_230[166]", "izarshtadf.P_230[167]", "izarshtadf.P_230[168]", "izarshtadf.P_230[169]", "izarshtadf.P_230[170]", "izarshtadf.P_230[174]", "izarshtadf.P_230[175]", "izarshtadf.P_230[176]", "izarshtadf.P_230[177]", "izarshtadf.P_230[178]", "izarshtadf.P_230[179]", "izarshtadf.P_230[180]", "izarshtadf.P_230[182]", "izarshtadf.P_230[183]", "izarshtadf.P_230[184]", "izarshtadf.P_230[185]", "izarshtadf.P_230[186]", "izarshtadf.P_230[187]", "izarshtadf.P_230[188]", "izarshtadf.P_230[189]", "izarshtadf.P_230[190]", "izarshtadf.P_230[195]", "izarshtadf.P_230[196]", "izarshtadf.P_230[197]", "izarshtadf.P_230[198]", "izarshtadf.P_230[199]", "izarshtadf.P_230[200]", "izarshtadf.P_230[201]", "izarshtadf.P_230[202]", "izarshtadf.P_230[203]", "izarshtadf.P_230[205]", "izarshtadf.P_230[206]", "izarshtadf.P_230[207]", "izarshtadf.P_230[208]", "izarshtadf.P_230[209]", "izarshtadf.P_230[210]", "izarshtadf.P_230[213]", "izarshtadf.P_230[214]", "izarshtadf.P_230[215]", "izarshtadf.P_230[216]", "izarshtadf.P_230[217]", "izarshtadf.P_230[218]", "izarshtadf.P_230[219]", "izarshtadf.P_230[220]", "izarshtadf.P_230[221]", "izarshtadf.P_230[222]", "izarshtadf.P_230[223]", "izarshtadf.P_230[224]", "izarshtadf.P_230[225]", "izarshtadf.P_230[226]", "izarshtadf.P_230[227]", "izarshtadf.P_230[229]", "izarshtadf.P_230[230]", "izarshtadf.P_230[231]", "izarshtadf.P_230[232]", "izarshtadf.P_230[233]", "izarshtadf.P_230[234]", "izarshtadf.P_230[235]", "izarshtadf.P_230[237]", "izarshtadf.P_230[240]", "izarshtadf.P_230[242]", "izarshtadf.P_230[242]", "izarshtadf.P_230[243]", "izarshtadf.P_230[244]", "izarshtadf.P_230[245]", "izarshtadf.P_230[246]", "izarshtadf.P_230[248]", "izarshtadf.P_230[251]", "izarshtadf.P_230[252]", "izarshtadf.P_230[253]", "izarshtadf.P_230[254]", "izarshtadf.P_230[256]", "izarshtadf.P_230[257]", "izarshtadf.P_230[258]", "izarshtadf.P_230[259]", "izarshtadf.P_230[260]", "izarshtadf.P_230[261]", "izarshtadf.P_230[262]", "izarshtadf.P_230[263]", "izarshtadf.P_230[264]", "izarshtadf.P_230[265]", "izarshtadf.P_230[266]", "izarshtadf.P_230[267]", "izarshtadf.P_230[268]", "izarshtadf.P_230[269]", "izarshtadf.P_230[270]", "izarshtadf.P_230[271]", "izarshtadf.P_230[272]", "izarshtadf.P_230[273]", "izarshtadf.P_230[274]", "izarshtadf.P_230[275]", "izarshtadf.P_230[276]", "izarshtadf.P_230[277]", "izarshtadf.P_230[278]", "izarshtadf.P_189", "izarshtadf.P_230[86]", "izarshtadf.P_230[87]", "izarshtadf.P_230[88]", "izarshtadf.P_230[89]", "izarshtadf.P_230[171]", "izarshtadf.P_230[172]", "izarshtadf.P_230[173]", "izarshtadf.P_230[50]", "izarshtadf.P_230[64]", "izarshtadf.P_230[65]", "izarshtadf.P_230[79]", "izarshtadf.P_230[80]", "izarshtadf.P_230[81]", "izarshtadf.P_230[82]", "izarshtadf.P_230[83]", "izarshtadf.P_230[84]", "bv5e24gcbb_p", "localX->ol0aq4t2pf", "imtn23idgd", "izarshtadf.P_255", "lam_mux", "lam_muy_prime", "kx4jhai2wh", "dosyb5bkip", "n4qzq0wcyz", "nkuraloqpr", "c4pihn5jgj", "fzbcvayacp", "ai3ndf3ja2", "hdhhddtroz", "eiihbvg0nv", "a212wubcu4", "%<::tSimStruct>"], 1, 28, 42))>;
+}
+or1pah3dt3 = localB->cxmr05b0u1[0] * nkuraloqpr[0];
+if (ai3ndf3ja2[0] > izarshtadf.P_240) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_240;
+} else if (ai3ndf3ja2[0] < izarshtadf.P_241) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_241;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[0];
+}
+dd20ekst0q = muDoubleScalarAbs(localB->l5f5e51b2t[0] - or1pah3dt3);
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_242) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_242;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_243) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_243;
+}
+localB->pj5d5vbqrm[0] = (lam_mux[0] - bv5e24gcbb_p[0]) * m3ezqvwkit_idx_0;
+if (hdhhddtroz[0] > izarshtadf.P_244) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_244;
+} else if (hdhhddtroz[0] < izarshtadf.P_245) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_245;
+} else {
+    m3ezqvwkit_idx_0 = hdhhddtroz[0];
+}
+m3ezqvwkit_idx_0 = muDoubleScalarAbs(localB->bwzc3y3ooz[0] - or1pah3dt3) / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_246) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_246;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_247) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_247;
+}
+localB->kmlprmskk2[0] = (lam_muy_prime[0] - localX->ol0aq4t2pf[0]) * m3ezqvwkit_idx_0;
+if (ai3ndf3ja2[0] > izarshtadf.P_248) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_248;
+} else if (ai3ndf3ja2[0] < izarshtadf.P_249) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_249;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[0];
+}
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_250) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_250;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_251) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_251;
+}
+localB->ec2omykrbe[0] = (dosyb5bkip[0] - chhinxp222_idx_0) * m3ezqvwkit_idx_0;
+mmyrcwyceu[0] = bv5e24gcbb_p[0];
+mmyrcwyceu[4] = localX->ol0aq4t2pf[0];
+mmyrcwyceu[8] = m4uvcqvy2c_idx_0;
+or1pah3dt3 = localB->cxmr05b0u1[1] * nkuraloqpr[1];
+if (ai3ndf3ja2[1] > izarshtadf.P_240) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_240;
+} else if (ai3ndf3ja2[1] < izarshtadf.P_241) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_241;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[1];
+}
+dd20ekst0q = muDoubleScalarAbs(localB->l5f5e51b2t[1] - or1pah3dt3);
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_242) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_242;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_243) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_243;
+}
+localB->pj5d5vbqrm[1] = (lam_mux[1] - bv5e24gcbb_p[1]) * m3ezqvwkit_idx_0;
+if (hdhhddtroz[1] > izarshtadf.P_244) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_244;
+} else if (hdhhddtroz[1] < izarshtadf.P_245) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_245;
+} else {
+    m3ezqvwkit_idx_0 = hdhhddtroz[1];
+}
+m3ezqvwkit_idx_0 = muDoubleScalarAbs(localB->bwzc3y3ooz[1] - or1pah3dt3) / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_246) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_246;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_247) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_247;
+}
+localB->kmlprmskk2[1] = (lam_muy_prime[1] - localX->ol0aq4t2pf[1]) * m3ezqvwkit_idx_0;
+if (ai3ndf3ja2[1] > izarshtadf.P_248) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_248;
+} else if (ai3ndf3ja2[1] < izarshtadf.P_249) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_249;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[1];
+}
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_250) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_250;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_251) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_251;
+}
+localB->ec2omykrbe[1] = (dosyb5bkip[1] - chhinxp222_idx_1) * m3ezqvwkit_idx_0;
+mmyrcwyceu[1] = bv5e24gcbb_p[1];
+mmyrcwyceu[5] = localX->ol0aq4t2pf[1];
+mmyrcwyceu[9] = m4uvcqvy2c_idx_1;
+or1pah3dt3 = localB->cxmr05b0u1[2] * nkuraloqpr[2];
+if (ai3ndf3ja2[2] > izarshtadf.P_240) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_240;
+} else if (ai3ndf3ja2[2] < izarshtadf.P_241) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_241;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[2];
+}
+dd20ekst0q = muDoubleScalarAbs(localB->l5f5e51b2t[2] - or1pah3dt3);
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_242) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_242;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_243) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_243;
+}
+localB->pj5d5vbqrm[2] = (lam_mux[2] - bv5e24gcbb_p[2]) * m3ezqvwkit_idx_0;
+if (hdhhddtroz[2] > izarshtadf.P_244) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_244;
+} else if (hdhhddtroz[2] < izarshtadf.P_245) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_245;
+} else {
+    m3ezqvwkit_idx_0 = hdhhddtroz[2];
+}
+m3ezqvwkit_idx_0 = muDoubleScalarAbs(localB->bwzc3y3ooz[2] - or1pah3dt3) / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_246) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_246;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_247) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_247;
+}
+localB->kmlprmskk2[2] = (lam_muy_prime[2] - localX->ol0aq4t2pf[2]) * m3ezqvwkit_idx_0;
+if (ai3ndf3ja2[2] > izarshtadf.P_248) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_248;
+} else if (ai3ndf3ja2[2] < izarshtadf.P_249) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_249;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[2];
+}
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_250) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_250;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_251) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_251;
+}
+localB->ec2omykrbe[2] = (dosyb5bkip[2] - chhinxp222_idx_2) * m3ezqvwkit_idx_0;
+mmyrcwyceu[2] = bv5e24gcbb_p[2];
+mmyrcwyceu[6] = localX->ol0aq4t2pf[2];
+mmyrcwyceu[10] = m4uvcqvy2c_idx_2;
+or1pah3dt3 = localB->cxmr05b0u1[3] * nkuraloqpr[3];
+if (ai3ndf3ja2[3] > izarshtadf.P_240) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_240;
+} else if (ai3ndf3ja2[3] < izarshtadf.P_241) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_241;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[3];
+}
+dd20ekst0q = muDoubleScalarAbs(localB->l5f5e51b2t[3] - or1pah3dt3);
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_242) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_242;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_243) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_243;
+}
+localB->pj5d5vbqrm[3] = (lam_mux[3] - bv5e24gcbb_p[3]) * m3ezqvwkit_idx_0;
+if (hdhhddtroz[3] > izarshtadf.P_244) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_244;
+} else if (hdhhddtroz[3] < izarshtadf.P_245) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_245;
+} else {
+    m3ezqvwkit_idx_0 = hdhhddtroz[3];
+}
+m3ezqvwkit_idx_0 = muDoubleScalarAbs(localB->bwzc3y3ooz[3] - or1pah3dt3) / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_246) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_246;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_247) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_247;
+}
+localB->kmlprmskk2[3] = (lam_muy_prime[3] - localX->ol0aq4t2pf[3]) * m3ezqvwkit_idx_0;
+if (ai3ndf3ja2[3] > izarshtadf.P_248) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_248;
+} else if (ai3ndf3ja2[3] < izarshtadf.P_249) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_249;
+} else {
+    m3ezqvwkit_idx_0 = ai3ndf3ja2[3];
+}
+m3ezqvwkit_idx_0 = dd20ekst0q / m3ezqvwkit_idx_0;
+if (m3ezqvwkit_idx_0 > izarshtadf.P_250) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_250;
+} else if (m3ezqvwkit_idx_0 < izarshtadf.P_251) {
+    m3ezqvwkit_idx_0 = izarshtadf.P_251;
+}
+localB->ec2omykrbe[3] = (dosyb5bkip[3] - chhinxp222_idx_3) * m3ezqvwkit_idx_0;
+mmyrcwyceu[3] = bv5e24gcbb_p[3];
+mmyrcwyceu[7] = localX->ol0aq4t2pf[3];
+mmyrcwyceu[11] = m4uvcqvy2c_idx_3;
+for (i = 0; i < 4; i++) {
+    gtnu3btlhv[3 * i] = mmyrcwyceu[i];
+    gtnu3btlhv[3 * i + 1] = mmyrcwyceu[i + 4];
+    gtnu3btlhv[3 * i + 2] = mmyrcwyceu[i + 8];
+}
+if (%<(SLibCGIRIsSampleHit(2, 13))>) {
+    localB->pnikc0ax5e[0] = localB->a0nkjo3fkj[0];
+    localB->pnikc0ax5e[1] = izarshtadf.P_260[0];
+    localB->pnikc0ax5e[3] = localB->a0nkjo3fkj[1];
+    localB->pnikc0ax5e[4] = izarshtadf.P_260[1];
+    localB->pnikc0ax5e[6] = localB->a0nkjo3fkj[2];
+    localB->pnikc0ax5e[7] = izarshtadf.P_260[2];
+    localB->pnikc0ax5e[9] = localB->a0nkjo3fkj[3];
+    localB->pnikc0ax5e[10] = izarshtadf.P_260[3];
+    localB->pnikc0ax5e[2] = p3hmlvzciy + izarshtadf.P_259[0];
+    localB->pnikc0ax5e[5] = koutmp4ixp + izarshtadf.P_259[1];
+    localB->pnikc0ax5e[8] = njhq4xcks4 + izarshtadf.P_259[2];
+    localB->pnikc0ax5e[11] = co5cofqc3o + izarshtadf.P_259[3];
+}
+fu3cohzr0a = 0;
+while (fu3cohzr0a < 4) {
+%<SLibCGIRIteratorContainer(10, "&fu3cohzr0a")>\
+    ftsmejlxj5_p[0] = localB->pnikc0ax5e[3 * fu3cohzr0a];
+    ftsmejlxj5_p[1] = localB->pnikc0ax5e[3 * fu3cohzr0a + 1];
+    ftsmejlxj5_p[2] = localB->pnikc0ax5e[3 * fu3cohzr0a + 2];
+    iwk1ba05r0[0] = gtnu3btlhv[3 * fu3cohzr0a];
+    iwk1ba05r0[1] = gtnu3btlhv[3 * fu3cohzr0a + 1];
+    iwk1ba05r0[2] = gtnu3btlhv[3 * fu3cohzr0a + 2];
+    if (%<(SLibCGIRIsSampleHit(2, 9))>) {
+        muDoubleScalarSinCos(ftsmejlxj5_p[2], &dbni30djfc_p[0], &or1pah3dt3);
+        muDoubleScalarSinCos(ftsmejlxj5_p[1], &dbni30djfc_p[1], &koutmp4ixp);
+        muDoubleScalarSinCos(ftsmejlxj5_p[0], &dbni30djfc_p[2], &njhq4xcks4);
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[0] = or1pah3dt3 * koutmp4ixp;
+        co5cofqc3o = dbni30djfc_p[1] * dbni30djfc_p[2];
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[1] = co5cofqc3o * or1pah3dt3 - dbni30djfc_p[0] * njhq4xcks4;
+        p3hmlvzciy = dbni30djfc_p[1] * njhq4xcks4;
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[2] = p3hmlvzciy * or1pah3dt3 + dbni30djfc_p[0] * dbni30djfc_p[2];
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[3] = dbni30djfc_p[0] * koutmp4ixp;
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[4] = co5cofqc3o * dbni30djfc_p[0] + or1pah3dt3 * njhq4xcks4;
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[5] = p3hmlvzciy * dbni30djfc_p[0] - or1pah3dt3 * dbni30djfc_p[2];
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[6] = -dbni30djfc_p[1];
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[7] = koutmp4ixp * dbni30djfc_p[2];
+        localB->fw0humw23b[fu3cohzr0a].otiahtfbng[8] = koutmp4ixp * njhq4xcks4;
+    }
+    m3ezqvwkit_idx_0 = iwk1ba05r0[1];
+    m3ezqvwkit_idx_1 = iwk1ba05r0[0];
+    m3ezqvwkit_idx_2 = iwk1ba05r0[2];
+    for (i = 0; i < 3; i++) {
+        ftsmejlxj5_p[i] = (localB->fw0humw23b[fu3cohzr0a].otiahtfbng[i + 3] * m3ezqvwkit_idx_0 + localB->fw0humw23b[fu3cohzr0a].otiahtfbng[i] * m3ezqvwkit_idx_1) + localB->fw0humw23b[fu3cohzr0a].otiahtfbng[i + 6] * m3ezqvwkit_idx_2;
+    }
+    localB->jmdtkdogk0[fu3cohzr0a] = ftsmejlxj5_p[1];
+    localB->drp1l5ecyb[fu3cohzr0a] = ftsmejlxj5_p[0];
+    fu3cohzr0a++;
+}
+m4uvcqvy2c_idx_0 = localB->drp1l5ecyb[0];
+m4uvcqvy2c_idx_2 = localB->jmdtkdogk0[0];
+chhinxp222_idx_0 = localB->drp1l5ecyb[2];
+chhinxp222_idx_2 = localB->jmdtkdogk0[2];
+m4uvcqvy2c_idx_1 = localB->drp1l5ecyb[1];
+m4uvcqvy2c_idx_3 = localB->jmdtkdogk0[1];
+chhinxp222_idx_1 = localB->drp1l5ecyb[3];
+chhinxp222_idx_3 = localB->jmdtkdogk0[3];
+if (%<(SLibCGIRIsSampleHit(2, 13))>) {
+%<tlcOutputsFcnOfS13B5>\
+%<tlcOutputsFcnOfS13B6>\
+}
+muDoubleScalarSinCos(localB->odufjmwvlq[2], &p3hmlvzciy, &koutmp4ixp);
+njhq4xcks4 = localB->odufjmwvlq[0] - (koutmp4ixp * localB->l5c4cjumb3[0] + p3hmlvzciy * localB->l5c4cjumb3[1]);
+or1pah3dt3 = njhq4xcks4;
+m3ezqvwkit_idx_0 = muDoubleScalarTanh(izarshtadf.P_298[0] * njhq4xcks4);
+ftsmejlxj5_p[0] = m3ezqvwkit_idx_0 - izarshtadf.P_481[0];
+dbni30djfc_p[0] = njhq4xcks4 * njhq4xcks4;
+njhq4xcks4 = localB->odufjmwvlq[1] - (koutmp4ixp * localB->l5c4cjumb3[1] - p3hmlvzciy * localB->l5c4cjumb3[0]);
+koutmp4ixp = njhq4xcks4;
+ftsmejlxj5_p[1] = muDoubleScalarTanh(izarshtadf.P_298[1] * njhq4xcks4) - izarshtadf.P_481[1];
+dbni30djfc_p[1] = njhq4xcks4 * njhq4xcks4;
+njhq4xcks4 = izarshtadf.P_480 - localB->l5c4cjumb3[2];
+ftsmejlxj5_p[2] = muDoubleScalarTanh(izarshtadf.P_298[2] * njhq4xcks4) - izarshtadf.P_481[2];
+njhq4xcks4 = (dbni30djfc_p[0] + dbni30djfc_p[1]) + njhq4xcks4 * njhq4xcks4;
+if (%<(LibIsMajorTimeStep())>) {
+    if (localDW->kishugiqhj != 0) {
+        %<(RTMSetBlockStateForSolverChangedAtMajorStep())>;
+        %<(RTMSetContTimeOutputInconsistentWithStateAtMajorStep())>;
+        localDW->kishugiqhj = 0;
+    }
+    p3hmlvzciy = muDoubleScalarSqrt(njhq4xcks4);
+} else if (njhq4xcks4 < 0.0) {
+    p3hmlvzciy = -muDoubleScalarSqrt(muDoubleScalarAbs(njhq4xcks4));
+    localDW->kishugiqhj = 1;
+} else {
+    p3hmlvzciy = muDoubleScalarSqrt(njhq4xcks4);
+}
+p3hmlvzciy *= p3hmlvzciy;
+prc2prvbk2_p[0] = izarshtadf.P_5;
+njhq4xcks4 = muDoubleScalarAtan2(koutmp4ixp, or1pah3dt3);
+prc2prvbk2_p[1] = look1_binlcpw(njhq4xcks4, izarshtadf.P_192, izarshtadf.P_8, 15U);
+prc2prvbk2_p[2] = izarshtadf.P_6;
+prc2prvbk2_p[3] = look1_binlxpw(njhq4xcks4, izarshtadf.P_300, izarshtadf.P_299, 1U);
+prc2prvbk2_p[4] = m3ezqvwkit_idx_0 * izarshtadf.P_7;
+prc2prvbk2_p[5] = look1_binlxpw(njhq4xcks4, izarshtadf.P_192, izarshtadf.P_9, 15U);
+njhq4xcks4 = 0.5 * izarshtadf.P_2 * izarshtadf.P_95 / izarshtadf.P_156;
+for (i = 0; i < 6; i++) {
+    prc2prvbk2_p[i] = p3hmlvzciy * prc2prvbk2_p[i] / izarshtadf.P_186 * njhq4xcks4;
+}
+Vsy_tmp_p = izarshtadf.P_190 + izarshtadf.P_191;
+dd20ekst0q = -(ftsmejlxj5_p[0] * prc2prvbk2_p[0]);
+localB->mpxh1wnrhk[0] = dd20ekst0q;
+or1pah3dt3 = dd20ekst0q;
+co5cofqc3o = -(prc2prvbk2_p[3] * Vsy_tmp_p);
+localB->jfvcmdydhl[0] = co5cofqc3o;
+ftsmejlxj5_p[0] = co5cofqc3o;
+dd20ekst0q = -(ftsmejlxj5_p[1] * prc2prvbk2_p[1]);
+localB->mpxh1wnrhk[1] = dd20ekst0q;
+koutmp4ixp = dd20ekst0q;
+co5cofqc3o = -(prc2prvbk2_p[4] * Vsy_tmp_p);
+localB->jfvcmdydhl[1] = co5cofqc3o;
+ftsmejlxj5_p[1] = co5cofqc3o;
+dd20ekst0q = -(ftsmejlxj5_p[2] * prc2prvbk2_p[2]);
+localB->mpxh1wnrhk[2] = dd20ekst0q;
+co5cofqc3o = -(prc2prvbk2_p[5] * Vsy_tmp_p);
+localB->jfvcmdydhl[2] = co5cofqc3o;
+fohy1okpri = localB->odufjmwvlq[1] * localB->odufjmwvlq[3];
+Vsy_tmp_e = izarshtadf.P_202 * izarshtadf.P_198;
+Vsy_tmp_i = Vsy_tmp_e * 0.0;
+xddot = (((((m4uvcqvy2c_idx_0 + m4uvcqvy2c_idx_1) + chhinxp222_idx_0) + chhinxp222_idx_1) - Vsy_tmp_i) + or1pah3dt3) / izarshtadf.P_202 + fohy1okpri;
+rdot = m4uvcqvy2c_idx_2 + m4uvcqvy2c_idx_3;
+yddot = (((rdot + chhinxp222_idx_2) + chhinxp222_idx_3) + koutmp4ixp) / izarshtadf.P_202 + -localB->odufjmwvlq[0] * localB->odufjmwvlq[3];
+njhq4xcks4 = (0.0 - izarshtadf.P_197) * 0.0;
+rdot = (((((rdot * izarshtadf.P_190 - (chhinxp222_idx_2 + chhinxp222_idx_3) * izarshtadf.P_191) + izarshtadf.P_208[0] / 2.0 * (m4uvcqvy2c_idx_0 - m4uvcqvy2c_idx_1)) + izarshtadf.P_208[1] / 2.0 * (chhinxp222_idx_0 - chhinxp222_idx_1)) + co5cofqc3o) - njhq4xcks4) / izarshtadf.P_15;
+Vsy_tmp = localB->odufjmwvlq[0] * localB->odufjmwvlq[3];
+p3hmlvzciy = (0.0 * izarshtadf.P_199 - ftsmejlxj5_p[0]) - njhq4xcks4;
+njhq4xcks4 = p3hmlvzciy - (koutmp4ixp - (Vsy_tmp + yddot) * izarshtadf.P_202) * izarshtadf.P_199;
+co5cofqc3o = (((or1pah3dt3 - (xddot - fohy1okpri) * izarshtadf.P_202) - Vsy_tmp_i) * izarshtadf.P_199 - 0.0 * izarshtadf.P_199) - ftsmejlxj5_p[1];
+dd20ekst0q = -dd20ekst0q - Vsy_tmp_e;
+for (i = 0; i < 11; i++) {
+    if (i == 0) {
+        B1 = p3hmlvzciy - (koutmp4ixp - Vsy_tmp * izarshtadf.P_202) * izarshtadf.P_199;
+        B2 = (((or1pah3dt3 - (0.0 - fohy1okpri) * izarshtadf.P_202) - Vsy_tmp_i) * izarshtadf.P_199 - 0.0 * izarshtadf.P_199) - ftsmejlxj5_p[1];
+        e_y = B2 * izarshtadf.P_208[0];
+        gamma_star_tmp = B2 * izarshtadf.P_208[1];
+        mu_y_idx_0 = dd20ekst0q * izarshtadf.P_191;
+        mu_y_idx_1 = 2.0 * B1 * izarshtadf.P_190 + 2.0 * B1 * izarshtadf.P_191;
+        mu_y_idx_2 = 2.0 * dd20ekst0q * izarshtadf.P_190 * izarshtadf.P_197;
+        m3ezqvwkit_idx_0 = 2.0 * dd20ekst0q * izarshtadf.P_191 * izarshtadf.P_197;
+        eemzcdzxid_e = mu_y_idx_0 * izarshtadf.P_208[0];
+        mu_y_idx_0 *= izarshtadf.P_208[1];
+        m3ezqvwkit_idx_1 = Vsy_tmp_p * 2.0 * (izarshtadf.P_208[0] + izarshtadf.P_208[1]);
+        m3ezqvwkit_idx_2 = (((mu_y_idx_1 + e_y) + gamma_star_tmp) + mu_y_idx_2) + m3ezqvwkit_idx_0;
+        nkuraloqpr[0] = -(-((m3ezqvwkit_idx_2 - eemzcdzxid_e) - mu_y_idx_0) / m3ezqvwkit_idx_1) * 2.0;
+        e_y = (((mu_y_idx_1 - e_y) - gamma_star_tmp) + mu_y_idx_2) + m3ezqvwkit_idx_0;
+        nkuraloqpr[1] = -(((e_y + eemzcdzxid_e) + mu_y_idx_0) / m3ezqvwkit_idx_1) * 2.0;
+        gamma_star_tmp = dd20ekst0q * izarshtadf.P_190;
+        mu_y_idx_0 = gamma_star_tmp * izarshtadf.P_208[0];
+        gamma_star_tmp *= izarshtadf.P_208[1];
+        nkuraloqpr[2] = -(-((e_y - mu_y_idx_0) - gamma_star_tmp) / m3ezqvwkit_idx_1) * 2.0;
+        nkuraloqpr[3] = -(((m3ezqvwkit_idx_2 + mu_y_idx_0) + gamma_star_tmp) / m3ezqvwkit_idx_1) * 2.0;
+        %<(SLibCGCallSubFcn("bgik5e4neb", ["nkuraloqpr", "%<::tSimStruct>"], 1, 28, 43))>;
+    }
+    B1 = m4uvcqvy2c_idx_0;
+    B2 = m4uvcqvy2c_idx_1;
+    B3 = chhinxp222_idx_0;
+    e_y = co5cofqc3o * izarshtadf.P_208[0];
+    gamma_star_tmp = co5cofqc3o * izarshtadf.P_208[1];
+    mu_y_idx_0 = dd20ekst0q * izarshtadf.P_191;
+    mu_y_idx_1 = 2.0 * njhq4xcks4 * izarshtadf.P_190 + 2.0 * njhq4xcks4 * izarshtadf.P_191;
+    mu_y_idx_2 = 2.0 * dd20ekst0q * izarshtadf.P_190 * izarshtadf.P_197;
+    m3ezqvwkit_idx_0 = 2.0 * dd20ekst0q * izarshtadf.P_191 * izarshtadf.P_197;
+    eemzcdzxid_e = mu_y_idx_0 * izarshtadf.P_208[0];
+    mu_y_idx_0 *= izarshtadf.P_208[1];
+    m3ezqvwkit_idx_1 = (izarshtadf.P_190 + izarshtadf.P_191) * 2.0 * (izarshtadf.P_208[0] + izarshtadf.P_208[1]);
+    m3ezqvwkit_idx_2 = (((mu_y_idx_1 + e_y) + gamma_star_tmp) + mu_y_idx_2) + m3ezqvwkit_idx_0;
+    nkuraloqpr[0] = -(-((m3ezqvwkit_idx_2 - eemzcdzxid_e) - mu_y_idx_0) / m3ezqvwkit_idx_1) * 2.0;
+    e_y = (((mu_y_idx_1 - e_y) - gamma_star_tmp) + mu_y_idx_2) + m3ezqvwkit_idx_0;
+    nkuraloqpr[1] = -(((e_y + eemzcdzxid_e) + mu_y_idx_0) / m3ezqvwkit_idx_1) * 2.0;
+    gamma_star_tmp = dd20ekst0q * izarshtadf.P_190;
+    mu_y_idx_0 = gamma_star_tmp * izarshtadf.P_208[0];
+    gamma_star_tmp *= izarshtadf.P_208[1];
+    nkuraloqpr[2] = -(-((e_y - mu_y_idx_0) - gamma_star_tmp) / m3ezqvwkit_idx_1) * 2.0;
+    nkuraloqpr[3] = -(((m3ezqvwkit_idx_2 + mu_y_idx_0) + gamma_star_tmp) / m3ezqvwkit_idx_1) * 2.0;
+    %<(SLibCGCallSubFcn("bgik5e4neb", ["nkuraloqpr", "%<::tSimStruct>"], 1, 28, 44))>;
+}
+localB->eqqsx5po0f[0] = xddot;
+localB->eqqsx5po0f[1] = yddot;
+localB->eqqsx5po0f[2] = localB->odufjmwvlq[3];
+localB->eqqsx5po0f[3] = rdot;
+localB->jcbkvsxit2[0] = xddot;
+localB->jcbkvsxit2[1] = yddot;
+localB->jcbkvsxit2[2] = rdot;
+localB->gdegj0h12m[0] = B1;
+localB->gdegj0h12m[1] = m4uvcqvy2c_idx_2;
+localB->gdegj0h12m[2] = nkuraloqpr[0];
+localB->gdegj0h12m[3] = B2;
+localB->gdegj0h12m[4] = m4uvcqvy2c_idx_3;
+localB->gdegj0h12m[5] = nkuraloqpr[1];
+localB->gdegj0h12m[6] = B3;
+localB->gdegj0h12m[7] = chhinxp222_idx_2;
+localB->gdegj0h12m[8] = nkuraloqpr[2];
+localB->gdegj0h12m[9] = chhinxp222_idx_1;
+localB->gdegj0h12m[10] = chhinxp222_idx_3;
+localB->gdegj0h12m[11] = nkuraloqpr[3];
+localB->n30wmteuj5[0] = B1 / izarshtadf.P_21 * 2.0;
+localB->n30wmteuj5[1] = m4uvcqvy2c_idx_2 / izarshtadf.P_21 * 2.0;
+localB->n30wmteuj5[2] = nkuraloqpr[0] / izarshtadf.P_21 / 2.0 * 2.0;
+localB->n30wmteuj5[3] = B2 / izarshtadf.P_21 * 2.0;
+localB->n30wmteuj5[4] = m4uvcqvy2c_idx_3 / izarshtadf.P_21 * 2.0;
+localB->n30wmteuj5[5] = nkuraloqpr[1] / izarshtadf.P_21 / 2.0 * 2.0;
+localB->n30wmteuj5[6] = B3 / izarshtadf.P_23 * 2.0;
+localB->n30wmteuj5[7] = chhinxp222_idx_2 / izarshtadf.P_23 * 2.0;
+localB->n30wmteuj5[8] = nkuraloqpr[2] / izarshtadf.P_23 / 2.0 * 2.0;
+localB->n30wmteuj5[9] = chhinxp222_idx_1 / izarshtadf.P_23 * 2.0;
+localB->n30wmteuj5[10] = chhinxp222_idx_3 / izarshtadf.P_23 * 2.0;
+localB->n30wmteuj5[11] = nkuraloqpr[3] / izarshtadf.P_23 / 2.0 * 2.0;
+localB->k1ahaa4pol[0] = (xddot - localB->odufjmwvlq[1] * localB->odufjmwvlq[3]) * izarshtadf.P_202;
+localB->k1ahaa4pol[1] = (localB->odufjmwvlq[0] * localB->odufjmwvlq[3] + yddot) * izarshtadf.P_202;
+localB->k1ahaa4pol[2] = 0.0;
+localB->jh14zbkbdb[0] = 0.0;
+localB->jh14zbkbdb[1] = rdot * izarshtadf.P_15;
+localB->jh14zbkbdb[2] = 0.0;
+localB->kyyjssq23i[0] = 0.0;
+localB->kyyjssq23i[1] = 0.0;
+localB->kyyjssq23i[2] = Vsy_tmp_e;
+*hablc1zwlo = localB->jcbkvsxit2[0];
+*foh2yumiw1 = localB->jcbkvsxit2[1];
+*pftx0tlsql = localB->jcbkvsxit2[2];
+*fwdi0jz0zn = localB->k1ahaa4pol[0];
+*i5einxcayk = localB->k1ahaa4pol[1];
+*hy1g3iyh3t = localB->k1ahaa4pol[2];
+*kptm4kmuto = localB->gdegj0h12m[0];
+*caoa1bsxlm = localB->gdegj0h12m[1];
+*hpayziexwy = localB->gdegj0h12m[2];
+*acavft2xjx = localB->gdegj0h12m[3];
+*mxqgjtzxjh = localB->gdegj0h12m[4];
+*orz54suet0 = localB->gdegj0h12m[5];
+*nwyvjm2brs = localB->gdegj0h12m[6];
+*cwc2nozsxn = localB->gdegj0h12m[7];
+*nsnnpj0z4o = localB->gdegj0h12m[8];
+*c3jn25guf1 = localB->gdegj0h12m[9];
+*pyn5pqwz4o = localB->gdegj0h12m[10];
+*oow4o4cinu = localB->gdegj0h12m[11];
+*h524snwuwx = localB->n30wmteuj5[0];
+*mcxbxp55xx = localB->n30wmteuj5[1];
+*alcnfk1zn3 = localB->n30wmteuj5[2];
+*n1vtlkzyqd = localB->n30wmteuj5[3];
+*l4g3rzxvfu = localB->n30wmteuj5[4];
+*bvdme1hrkw = localB->n30wmteuj5[5];
+*fl1afuoyrn = localB->n30wmteuj5[6];
+*d5o1pnbrsg = localB->n30wmteuj5[7];
+*ozm0xk1zlv = localB->n30wmteuj5[8];
+*dj3ut22qhb = localB->d1ovqkqe05[0];
+*kdzgc2215x = localB->d1ovqkqe05[1];
+*enq4xl5v3e = localB->n30wmteuj5[9];
+*omx43ci2w1 = localB->n30wmteuj5[10];
+*ktlnqqshut = localB->n30wmteuj5[11];
+*m12jjzm2tn = localB->mpxh1wnrhk[0];
+*kzaf2hbuy5 = localB->mpxh1wnrhk[1];
+*dl1hrszhxl = localB->mpxh1wnrhk[2];
+*dwu1x1b3h1 = localB->kyyjssq23i[0];
+*bvkr4f4lw4 = localB->kyyjssq23i[1];
+*esngctmy5s = localB->kyyjssq23i[2];
+*fz4gxnkudz = localB->jh14zbkbdb[0];
+*cqgulnsz4f = localB->jh14zbkbdb[1];
+*ejrum3qxej = localB->jh14zbkbdb[2];
+*i3skmv0bop = localB->jfvcmdydhl[0];
+*c1df35uckv = localB->jfvcmdydhl[1];
+*k3feeeefd3 = localB->jfvcmdydhl[2];
+*a0ahyggff5 = localB->kdjo14dy4y[0];
+*jcoosjbdtr = localB->kdjo14dy4y[1];
+*fx3trc0bai = localB->niuqftwyy3[0];
+*peyzpnofva = localB->niuqftwyy3[1];
+*k0tp51pmig = localB->niuqftwyy3[2];
+localB->i5nvrx24e2[2] = hek1ox05rk_idx_2 + *cxcwwsbqo2;
+*f0fxnajilj = localB->i5nvrx24e2[2];
+*gvdrrc0vqu = localB->hzo2z3os5h[0];
+*dsruklkvj2 = localB->hzo2z3os5h[1];
+*n1gfzry2qd = localB->hzo2z3os5h[2];
+localB->ojp2w3qevc[2] = j4duleeubb_p[2] + *cxcwwsbqo2;
+*kqqa0k4pom = localB->ojp2w3qevc[2];
+*hd1brnjqfi = localB->avnmeyvwxh[0];
+*nugrdufqfy = localB->avnmeyvwxh[1];
+*hoc4q3kwlg = localB->ifgmiol1io[0];
+*dj41hik0ys = localB->ifgmiol1io[1];
+*h5ovs1xgpe = localB->ifgmiol1io[2];
+localB->fvdlagfvfg[2] = m5ddekvp3i_p[2] + *cxcwwsbqo2;
+*jhzs0bfmh2 = localB->fvdlagfvfg[2];
+*befxbctczt = localB->odufjmwvlq[2];
+*abugyiry42 = localB->k2csnfwxuu[0];
+*byn1qlvcr2 = localB->k2csnfwxuu[1];
+*ncuctmq51m = localB->k2csnfwxuu[2];
+localB->i5nvrx24e2[0] = hek1ox05rk_idx_0 + localB->odufjmwvlq[0];
+localB->ojp2w3qevc[0] = j4duleeubb_p[0] + localB->odufjmwvlq[0];
+localB->fvdlagfvfg[0] = m5ddekvp3i_p[0] + localB->odufjmwvlq[0];
+localB->hvyvboixve[0] = fu35uxztk4_p[0] + localB->odufjmwvlq[0];
+localB->i5nvrx24e2[1] = hek1ox05rk_idx_1 + localB->odufjmwvlq[1];
+localB->ojp2w3qevc[1] = j4duleeubb_p[1] + localB->odufjmwvlq[1];
+localB->fvdlagfvfg[1] = m5ddekvp3i_p[1] + localB->odufjmwvlq[1];
+localB->hvyvboixve[1] = fu35uxztk4_p[1] + localB->odufjmwvlq[1];
+*clse3t1nqw = localB->i5nvrx24e2[0];
+*lqddlg500w = localB->i5nvrx24e2[1];
+*cqa1qfkb54 = localB->ojp2w3qevc[0];
+*btlckuxue0 = localB->ojp2w3qevc[1];
+*jtb5yl2izh = localB->fvdlagfvfg[0];
+*jmm1qdypy3 = localB->fvdlagfvfg[1];
+localB->hvyvboixve[2] = fu35uxztk4_p[2] + *cxcwwsbqo2;
+*lwg1zg0sla = localB->hvyvboixve[0];
+*i0m4ttd02j = localB->hvyvboixve[1];
+*gx5wtnx3rr = localB->hvyvboixve[2];
+if (%<(SLibCGIRIsSampleHit(1, 24))>) {
+    *bt50kthdgd = localB->bwxr5kx0lh[0];
+    *ecelwjphwu = localB->bwxr5kx0lh[1];
+    *cmwbpil1cy = localB->jwpcqxehbp[0];
+    *pdawo3lzfi = localB->jwpcqxehbp[1];
+    *il3fdj5gqh = localB->jwpcqxehbp[2];
+}
+*jwsncf51w2 = localB->c1qw0ocafm[0];
+*as4dikkpwd = localB->c1qw0ocafm[1];
+*fyxgffc3ki = localB->c1qw0ocafm[2];
+localB->okmamar2i2[0] = mra411h1rq_p[0] + localB->odufjmwvlq[0];
+localB->okmamar2i2[1] = mra411h1rq_p[1] + localB->odufjmwvlq[1];
+localB->okmamar2i2[2] = mra411h1rq_p[2] + *cxcwwsbqo2;
+*lmbqckmdiw = localB->okmamar2i2[0];
+*jzi0pyb0cq = localB->okmamar2i2[1];
+*osryvvhbjj = localB->okmamar2i2[2];
+localB->camwyn0dzu[2] = ake4vbzosr_p[2] + *cxcwwsbqo2;
+*ddmo1j2gxs = localB->camwyn0dzu[2];
+localB->camwyn0dzu[0] = ake4vbzosr_p[0] + localB->odufjmwvlq[0];
+hek1ox05rk_idx_0 = 0.0 * localB->odufjmwvlq[0];
+localB->camwyn0dzu[1] = ake4vbzosr_p[1] + localB->odufjmwvlq[1];
+hek1ox05rk_idx_1 = 0.0 * localB->odufjmwvlq[1];
+*cjyrb5jcwj = localB->camwyn0dzu[0];
+*jzecwnh522 = localB->camwyn0dzu[1];
+j4duleeubb_p[0] = 0.0 * localB->okmamar2i2[0];
+j4duleeubb_p[1] = 0.0 * localB->okmamar2i2[1];
+localB->gshpymhfb4[0] = hek1ox05rk_idx_0 + j4duleeubb_p[0];
+localB->gshpymhfb4[1] = hek1ox05rk_idx_1 + j4duleeubb_p[1];
+*hqosgww1o4 = localB->gshpymhfb4[0];
+*hs5fdjwrno = localB->gshpymhfb4[1];
+localB->morqfq1leu[0] = localB->hvyvboixve[0] * localB->gdegj0h12m[9];
+localB->c102cm3amx[0] = localB->gdegj0h12m[0] * localB->i5nvrx24e2[0];
+localB->eczbqfvog5[0] = localB->ojp2w3qevc[0] * localB->gdegj0h12m[3];
+localB->egbakxyqpx[0] = localB->fvdlagfvfg[0] * localB->gdegj0h12m[6];
+localB->morqfq1leu[1] = localB->hvyvboixve[1] * localB->gdegj0h12m[10];
+localB->c102cm3amx[1] = localB->gdegj0h12m[1] * localB->i5nvrx24e2[1];
+localB->eczbqfvog5[1] = localB->ojp2w3qevc[1] * localB->gdegj0h12m[4];
+localB->egbakxyqpx[1] = localB->fvdlagfvfg[1] * localB->gdegj0h12m[7];
+localB->morqfq1leu[2] = localB->hvyvboixve[2] * localB->gdegj0h12m[11];
+localB->c102cm3amx[2] = localB->gdegj0h12m[2] * localB->i5nvrx24e2[2];
+localB->eczbqfvog5[2] = localB->ojp2w3qevc[2] * localB->gdegj0h12m[5];
+localB->egbakxyqpx[2] = localB->fvdlagfvfg[2] * localB->gdegj0h12m[8];
+*csmrggjkvx = localB->morqfq1leu[0];
+*kabaml3fn5 = localB->morqfq1leu[1];
+*bsiytdjmtu = localB->c102cm3amx[0];
+*gd0s2crdgh = localB->c102cm3amx[1];
+*din1ryh2pg = localB->eczbqfvog5[0];
+*crktah4g0e = localB->eczbqfvog5[1];
+*ljpdtliz1i = localB->egbakxyqpx[0];
+*eg2eh402gv = localB->egbakxyqpx[1];
+localB->c2osbqaqzf[0] = localB->odufjmwvlq[0] * localB->mpxh1wnrhk[0];
+localB->c2osbqaqzf[1] = localB->odufjmwvlq[1] * localB->mpxh1wnrhk[1];
+localB->c2osbqaqzf[2] = *cxcwwsbqo2 * localB->mpxh1wnrhk[2];
+*cc4v1bpoq1 = localB->c2osbqaqzf[0];
+*afds5gwumk = localB->c2osbqaqzf[1];
+localB->hm0mgpg2wc[0] = *mgxwk4kyvq * localB->jfvcmdydhl[0];
+localB->hm0mgpg2wc[1] = *ohfutn4w42 * localB->jfvcmdydhl[1];
+localB->hm0mgpg2wc[2] = localB->jfvcmdydhl[2] * localB->odufjmwvlq[3];
+*ellc3ht121 = localB->hm0mgpg2wc[2];
+hek1ox05rk_idx_2 = localB->niuqftwyy3[1];
+B1 = localB->niuqftwyy3[0];
+B2 = localB->niuqftwyy3[2];
+for (i = 0; i < 3; i++) {
+    m5ddekvp3i_p[i] = (mosy5wbylc_p[i + 3] * hek1ox05rk_idx_2 + mosy5wbylc_p[i] * B1) + mosy5wbylc_p[i + 6] * B2;
+}
+localB->hd40ijcfza[0] = localB->d1ovqkqe05[0] + m5ddekvp3i_p[0];
+localB->hd40ijcfza[1] = localB->d1ovqkqe05[1] + m5ddekvp3i_p[1];
+localB->hd40ijcfza[2] = *ahhpsc2vv2 + m5ddekvp3i_p[2];
+*pfvy1srian = localB->hd40ijcfza[0];
+*gmygvknfou = localB->hd40ijcfza[1];
+*p5hla31xet = localB->hd40ijcfza[2];
+localB->btdxqx4qjp = localX->bkturor5nr;
+%<tlcOutputsFcnOfS24B9>\
+if (localB->c01nnxdpya != 0.0) {
+    localB->kefboe1552 = localB->i3zah01fdw;
+} else {
+    localB->kefboe1552 = localB->c01nnxdpya;
+}
+%<tlcOutputsFcnOfS24B10>\
+if (%<(SLibCGIRIsSampleHit(2, 24))>) {
+%<tlcOutputsFcnOfS24B11>\
+    if (localDW->dcjcwhdxxp > izarshtadf.P_306) {
+        localB->ob5n24qbla[0] = izarshtadf.P_306;
+    } else if (localDW->dcjcwhdxxp < izarshtadf.P_307) {
+        localB->ob5n24qbla[0] = izarshtadf.P_307;
+    } else {
+        localB->ob5n24qbla[0] = localDW->dcjcwhdxxp;
+    }
+    if (localDW->ofzz4bcnlf > izarshtadf.P_306) {
+        localB->ob5n24qbla[1] = izarshtadf.P_306;
+    } else if (localDW->ofzz4bcnlf < izarshtadf.P_307) {
+        localB->ob5n24qbla[1] = izarshtadf.P_307;
+    } else {
+        localB->ob5n24qbla[1] = localDW->ofzz4bcnlf;
+    }
+    if (localDW->pz1gstardx > izarshtadf.P_306) {
+        localB->ob5n24qbla[2] = izarshtadf.P_306;
+    } else if (localDW->pz1gstardx < izarshtadf.P_307) {
+        localB->ob5n24qbla[2] = izarshtadf.P_307;
+    } else {
+        localB->ob5n24qbla[2] = localDW->pz1gstardx;
+    }
+    if (localDW->c4cbqtzvsv > izarshtadf.P_306) {
+        localB->ob5n24qbla[3] = izarshtadf.P_306;
+    } else if (localDW->c4cbqtzvsv < izarshtadf.P_307) {
+        localB->ob5n24qbla[3] = izarshtadf.P_307;
+    } else {
+        localB->ob5n24qbla[3] = localDW->c4cbqtzvsv;
+    }
+}
+localB->jwpval1bwm[0] = (localB->ob5n24qbla[0] - lkgzij3obv_p) * izarshtadf.P_209;
+localB->jwpval1bwm[1] = (localB->ob5n24qbla[1] - owmlrlnhp3_idx_2) * izarshtadf.P_209;
+localB->jwpval1bwm[2] = (localB->ob5n24qbla[2] - iehexxz52y_idx_2) * izarshtadf.P_209;
+localB->jwpval1bwm[3] = (localB->ob5n24qbla[3] - mtyhn2pzkf) * izarshtadf.P_209;
+switch ((int32_T)(izarshtadf.P_476 - (izarshtadf.P_308 * muDoubleScalarCeil(localB->kefboe1552) + muDoubleScalarCeil(localB->pbvljfha1b)))) {
+  case 1:
+    localB->h1hyiap4gx = -localB->kefboe1552;
+    break;
+  case 2:
+    localB->h1hyiap4gx = localB->pbvljfha1b;
+    break;
+  default:
+    localB->h1hyiap4gx = izarshtadf.P_475;
+    break;
+}
+%<tlcOutputsFcnOfS24B13>\
+localB->lxjwgj42io = izarshtadf.P_309 * localB->h1hyiap4gx;
+if (%<(RTMGetIsModeUpdateTimeStep())>) {
+    localDW->ftvfalg2sq = localB->lxjwgj42io >= izarshtadf.P_310 ? 1 : localB->lxjwgj42io > izarshtadf.P_311 ? 0 : -1;
+}
+localB->eaoq2vdwf3 = ((localDW->ftvfalg2sq == 1 ? izarshtadf.P_310 : localDW->ftvfalg2sq == -1 ? izarshtadf.P_311 : localB->lxjwgj42io) - hbcim53f5k_p) * izarshtadf.P_210;
+%<tlcOutputsFcnOfS24B14>\
+hbcim53f5k_p = izarshtadf.P_465 * localB->odufjmwvlq[0];
+%<tlcOutputsFcnOfS24B15>\
+%<tlcOutputsFcnOfS24B16>\
+if ((localB->camwyn0dzu[0] >= -izarshtadf.P_212) && (localB->camwyn0dzu[0] <= izarshtadf.P_212)) {
+    hbcim53f5k_p = 0.2 / (3.0 - muDoubleScalarPower(localB->camwyn0dzu[0] / 0.1, 2.0));
+} else {
+    hbcim53f5k_p = muDoubleScalarAbs(localB->camwyn0dzu[0]);
+}
+*oitgmgvxkh = muDoubleScalarAtan(localB->camwyn0dzu[1] / hbcim53f5k_p);
+prc2prvbk2_p[0] = j4duleeubb_p[0];
+prc2prvbk2_p[1] = j4duleeubb_p[1];
+prc2prvbk2_p[2] = 0.0 * localB->okmamar2i2[2];
+j4duleeubb_p[2] = 0.0 * localB->odufjmwvlq[3];
+prc2prvbk2_p[3] = 0.0 * *mgxwk4kyvq;
+ktda3n3ifj_p[0] = hek1ox05rk_idx_0;
+prc2prvbk2_p[4] = 0.0 * *ohfutn4w42;
+ktda3n3ifj_p[1] = hek1ox05rk_idx_1;
+prc2prvbk2_p[5] = j4duleeubb_p[2];
+ktda3n3ifj_p[2] = 0.0 * *cxcwwsbqo2;
+hek1ox05rk_idx_2 = 0.0 * localB->odufjmwvlq[3];
+ktda3n3ifj_p[3] = 0.0 * *mgxwk4kyvq;
+gf3ppugwlf_p[0] = localB->c2osbqaqzf[0];
+gf3ppugwlf_p[3] = localB->hm0mgpg2wc[0];
+ktda3n3ifj_p[4] = 0.0 * *ohfutn4w42;
+gf3ppugwlf_p[1] = localB->c2osbqaqzf[1];
+gf3ppugwlf_p[4] = localB->hm0mgpg2wc[1];
+ktda3n3ifj_p[5] = hek1ox05rk_idx_2;
+gf3ppugwlf_p[2] = localB->c2osbqaqzf[2];
+gf3ppugwlf_p[5] = localB->hm0mgpg2wc[2];
+/* Unit Conversion - from: m/s^2 to: gn
+ Expression: output = (0.101972*input) + (0) */
+*o12peppemy = (localB->jcbkvsxit2[0] - localB->odufjmwvlq[1] * localB->odufjmwvlq[3]) * 0.10197162129779282;
+/* Unit Conversion - from: gn to: m/s^2
+ Expression: output = (9.80665*input) + (0) */
+*omwlk2kjgx = izarshtadf.P_202 * localB->odufjmwvlq[0] * (9.8066500000000012 * *o12peppemy);
+/* Unit Conversion - from: m/s^2 to: gn
+ Expression: output = (0.101972*input) + (0) */
+*fbkeleck0k = (localB->odufjmwvlq[0] * localB->odufjmwvlq[3] + localB->jcbkvsxit2[1]) * 0.10197162129779282;
+/* Unit Conversion - from: gn to: m/s^2
+ Expression: output = (9.80665*input) + (0) */
+*cbzs2pz2ft = izarshtadf.P_202 * localB->odufjmwvlq[1] * (9.8066500000000012 * *fbkeleck0k);
+*mywsnd34zl = izarshtadf.P_15 * localB->odufjmwvlq[3] * localB->jcbkvsxit2[2];
+njhq4xcks4 = -0.0;
+for (i = 0; i < 6; i++) {
+    njhq4xcks4 += prc2prvbk2_p[i];
+}
+*au5qrszl0k = njhq4xcks4;
+njhq4xcks4 = -0.0;
+for (i = 0; i < 6; i++) {
+    njhq4xcks4 += ktda3n3ifj_p[i];
+}
+*ckf4zmmsmn = njhq4xcks4;
+njhq4xcks4 = -0.0;
+for (i = 0; i < 6; i++) {
+    njhq4xcks4 += gf3ppugwlf_p[i];
+}
+*gihnl5bqns = njhq4xcks4;
+*esjdjrp3t4 = hek1ox05rk_idx_2 + j4duleeubb_p[2];
+if ((localB->odufjmwvlq[0] >= -izarshtadf.P_212) && (localB->odufjmwvlq[0] <= izarshtadf.P_212)) {
+    hbcim53f5k_p = 0.2 / (3.0 - muDoubleScalarPower(localB->odufjmwvlq[0] / 0.1, 2.0));
+} else {
+    hbcim53f5k_p = muDoubleScalarAbs(localB->odufjmwvlq[0]);
+}
+*kgmaixgxju = muDoubleScalarAtan(localB->odufjmwvlq[1] / hbcim53f5k_p);
+muDoubleScalarSinCos(fh4bzzfcm4_idx_0, &iwk1ba05r0[0], &hbcim53f5k_p);
+muDoubleScalarSinCos(*dpfnomih21, &iwk1ba05r0[1], &lkgzij3obv_p);
+muDoubleScalarSinCos(*kh4bdqeora, &iwk1ba05r0[2], &owmlrlnhp3_idx_2);
+nhpdara0mt[0] = hbcim53f5k_p * lkgzij3obv_p;
+nhpdara0mt[1] = pb03mnnx5d_tmp * hbcim53f5k_p - iwk1ba05r0[0] * owmlrlnhp3_idx_2;
+nhpdara0mt[2] = pb03mnnx5d_tmp_p * hbcim53f5k_p + iwk1ba05r0[0] * iwk1ba05r0[2];
+nhpdara0mt[3] = iwk1ba05r0[0] * lkgzij3obv_p;
+nhpdara0mt[4] = pb03mnnx5d_tmp * iwk1ba05r0[0] + hbcim53f5k_p * owmlrlnhp3_idx_2;
+nhpdara0mt[5] = pb03mnnx5d_tmp_p * iwk1ba05r0[0] - hbcim53f5k_p * iwk1ba05r0[2];
+nhpdara0mt[6] = -iwk1ba05r0[1];
+nhpdara0mt[7] = pb03mnnx5d_tmp_e;
+nhpdara0mt[8] = pb03mnnx5d_tmp_i;
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(1, 28, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 28, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 28, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 3
+%assign ::GlobalCurrentTID = 3
+%<SLibCGIRAccessLocalDWork(207, 3)> %% kvsf2axtt4
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T a0nkjo3fkj_tmp;
+real_T ed5otmes3i_tmp;
+int32_T i;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%assign tlcOutputsFcnOfS13B20 = OpaqueTLCBlockFcn("Outputs", 13, 20, 1, 29, 0)
+for (i = 0; i < 4; i++) {
+    localB->h2feaakbey[27 * i] = izarshtadf.P_252[i];
+    localB->h2feaakbey[27 * i + 1] = izarshtadf.P_196;
+    localB->h2feaakbey[27 * i + 2] = izarshtadf.P_196;
+    localB->h2feaakbey[27 * i + 3] = izarshtadf.P_253[i];
+    memcpy(&localB->h2feaakbey[i * 27 + 4], &izarshtadf.P_254[i * 23], 23U * sizeof(real_T));
+    localB->emjgnepdic[i] = izarshtadf.P_256 * 0.0;
+    localB->kzgyhdf5ic_cl54gopm0x[i] = izarshtadf.P_257 * 0.0;
+}
+kvsf2axtt4 = 0;
+while (kvsf2axtt4 < 4) {
+%<SLibCGIRIteratorContainer(8, "&kvsf2axtt4")>\
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[6], "Output",3)
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3rTID3",6,0)
+%<SLibCG_AccessArg(1 ,29, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("baf0a14e3rTID3",6,2)
+%<SLibCG_AccessArg(1 ,29, 13)>
+%<SLibCGIRAccessLocalDWork(207, 3)> %% kvsf2axtt4
+%endif
+
+%<SLibCGIRGenReusableSysCall("baf0a14e3rTID3", ["%<::tSimStruct>", "izarshtadf.P_193", "&localB->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t", "&izarshtadf.aeaqmjbn3j.pn4gg5ls0t"], 6, 0, 6, 3, 6, 24)>\
+%assign ss = ::CompiledModel.System[6]
+%if !LibSystemIsInlined(ss)
+;
+%else
+\
+%endif
+%endif
+    kvsf2axtt4++;
+}
+a0nkjo3fkj_tmp = izarshtadf.P_194 + izarshtadf.P_258;
+localB->a0nkjo3fkj[0] = a0nkjo3fkj_tmp;
+ed5otmes3i_tmp = izarshtadf.P_194 + izarshtadf.P_261;
+localB->ed5otmes3i[0] = ed5otmes3i_tmp;
+localB->a0nkjo3fkj[1] = a0nkjo3fkj_tmp;
+localB->ed5otmes3i[1] = ed5otmes3i_tmp;
+localB->a0nkjo3fkj[2] = a0nkjo3fkj_tmp;
+localB->ed5otmes3i[2] = ed5otmes3i_tmp;
+localB->a0nkjo3fkj[3] = a0nkjo3fkj_tmp;
+localB->ed5otmes3i[3] = ed5otmes3i_tmp;
+%<tlcOutputsFcnOfS13B20>\
+localB->pzgjr5jomr = izarshtadf.P_470 + izarshtadf.P_471;
+localB->fwlllyfpq1[0] = izarshtadf.P_469;
+localB->fwlllyfpq1[1] = izarshtadf.P_468;
+localB->i2qdeyak4i[0] = izarshtadf.P_211;
+localB->i2qdeyak4i[1] = izarshtadf.P_213;
+localB->i2qdeyak4i[2] = izarshtadf.P_204;
+localB->i2qdeyak4i[3] = izarshtadf.P_205;
+localB->klrnznry03 = izarshtadf.P_482 * izarshtadf.P_208[0];
+localB->bgkpptdarc = izarshtadf.P_483 * izarshtadf.P_208[0];
+localB->hzo2z3os5h_mbvzarwird = izarshtadf.P_484 * izarshtadf.P_208[1];
+localB->dpqsdxcv0m = izarshtadf.P_485 * izarshtadf.P_208[1];
+*oxj304jy1x = izarshtadf.P_489;
+*cmziqyg3kq = -(izarshtadf.P_202 * izarshtadf.P_198 * *oxj304jy1x);
+*ahhpsc2vv2 = izarshtadf.P_490;
+*jzajoqdi5m = izarshtadf.P_491;
+*axou1ejsns = izarshtadf.P_492;
+*kh4bdqeora = izarshtadf.P_493;
+*ltd5fhipuy = izarshtadf.P_494;
+*mgxwk4kyvq = izarshtadf.P_495;
+*ohfutn4w42 = izarshtadf.P_496;
+*cxcwwsbqo2 = izarshtadf.P_497;
+*dpfnomih21 = izarshtadf.P_498;
+*i4pjeozuzf = izarshtadf.P_499;
+localB->l5c4cjumb3[0] = 0.0;
+localB->l5c4cjumb3[1] = 0.0;
+localB->l5c4cjumb3[2] = 0.0;
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Output", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))
+%<SLibCG_AccessArg(1, 29, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 29, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Output", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Output"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 29, 0)>
+%endif
+%<LibSetSystemField(system, "CachedOutput3LocalVars", localVarDecl)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction
+%function OutputsFcnProtoTypeForTID(block, system, tid) Output
+%if tid == 0
+%assign ::GlobalCurrentTID = 0
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Current_Macchina3DOF(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 28, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Current_Macchina3DOF", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>const real_T *hygc5rvpil\
+%assign comma = ", "
+%<comma>real_T *dj3ut22qhb\
+%assign comma = ", "
+%<comma>real_T *kdzgc2215x\
+%assign comma = ", "
+%<comma>real_T *ahhpsc2vv2\
+%assign comma = ", "
+%<comma>real_T *a0ahyggff5\
+%assign comma = ", "
+%<comma>real_T *jcoosjbdtr\
+%assign comma = ", "
+%<comma>real_T *oxj304jy1x\
+%assign comma = ", "
+%<comma>real_T *kh4bdqeora\
+%assign comma = ", "
+%<comma>real_T *dpfnomih21\
+%assign comma = ", "
+%<comma>real_T *befxbctczt\
+%assign comma = ", "
+%<comma>real_T *pfvy1srian\
+%assign comma = ", "
+%<comma>real_T *gmygvknfou\
+%assign comma = ", "
+%<comma>real_T *p5hla31xet\
+%assign comma = ", "
+%<comma>real_T *lxrp005lhu\
+%assign comma = ", "
+%<comma>real_T *n04boasq2h\
+%assign comma = ", "
+%<comma>real_T *pvihppahlz\
+%assign comma = ", "
+%<comma>real_T *dgy45demut\
+%assign comma = ", "
+%<comma>real_T *frk3iuylmx\
+%assign comma = ", "
+%<comma>real_T *jtqqdcpckv\
+%assign comma = ", "
+%<comma>real_T *n2i3wczmzf\
+%assign comma = ", "
+%<comma>real_T *nepc2nvveo\
+%assign comma = ", "
+%<comma>real_T *mf3bogwtld\
+%assign comma = ", "
+%<comma>real_T *grh5hjeybz\
+%assign comma = ", "
+%<comma>real_T *mg50quuw05\
+%assign comma = ", "
+%<comma>real_T *jjdupr2jb1\
+%assign comma = ", "
+%<comma>real_T *irxpz2hnvb\
+%assign comma = ", "
+%<comma>real_T *itqh0ujd0w\
+%assign comma = ", "
+%<comma>real_T *p1crcxvp1f\
+%assign comma = ", "
+%<comma>real_T *nhe3ndg5yk\
+%assign comma = ", "
+%<comma>real_T *dxdkcx54wc\
+%assign comma = ", "
+%<comma>real_T *euweb3ebxq\
+%assign comma = ", "
+%<comma>real_T *m5lzgipsce\
+%assign comma = ", "
+%<comma>real_T *cgc4vug52r\
+%assign comma = ", "
+%<comma>real_T *jrfqeop4xn\
+%assign comma = ", "
+%<comma>real_T *b1vc4qwi1o\
+%assign comma = ", "
+%<comma>real_T *pbr2hhohbt\
+%assign comma = ", "
+%<comma>real_T *g4tai322x0\
+%assign comma = ", "
+%<comma>real_T *jppcfon0ef\
+%assign comma = ", "
+%<comma>real_T *nqgwt5tip2\
+%assign comma = ", "
+%<comma>real_T *i3dlzpox5n\
+%assign comma = ", "
+%<comma>real_T *od5it0x2uv\
+%assign comma = ", "
+%<comma>real_T *pwiri50szq\
+%assign comma = ", "
+%<comma>real_T *czd0y5v4id\
+%assign comma = ", "
+%<comma>real_T *nhbvkzsajt\
+%assign comma = ", "
+%<comma>real_T *ngviqeevse\
+%assign comma = ", "
+%<comma>real_T *hj3whlktf4\
+%assign comma = ", "
+%<comma>real_T *jaeezo5lzo\
+%assign comma = ", "
+%<comma>real_T *j11t3nzw5v\
+%assign comma = ", "
+%<comma>real_T *cxcwwsbqo2\
+%assign comma = ", "
+%<comma>real_T *kgmaixgxju\
+%assign comma = ", "
+%<comma>real_T *mgxwk4kyvq\
+%assign comma = ", "
+%<comma>real_T *ohfutn4w42\
+%assign comma = ", "
+%<comma>real_T *fngqiqdiuh\
+%assign comma = ", "
+%<comma>real_T *o12peppemy\
+%assign comma = ", "
+%<comma>real_T *fbkeleck0k\
+%assign comma = ", "
+%<comma>real_T *hablc1zwlo\
+%assign comma = ", "
+%<comma>real_T *foh2yumiw1\
+%assign comma = ", "
+%<comma>real_T *pftx0tlsql\
+%assign comma = ", "
+%<comma>real_T nhpdara0mt[9]\
+%assign comma = ", "
+%<comma>real_T *fwdi0jz0zn\
+%assign comma = ", "
+%<comma>real_T *i5einxcayk\
+%assign comma = ", "
+%<comma>real_T *hy1g3iyh3t\
+%assign comma = ", "
+%<comma>real_T *kptm4kmuto\
+%assign comma = ", "
+%<comma>real_T *caoa1bsxlm\
+%assign comma = ", "
+%<comma>real_T *hpayziexwy\
+%assign comma = ", "
+%<comma>real_T *acavft2xjx\
+%assign comma = ", "
+%<comma>real_T *mxqgjtzxjh\
+%assign comma = ", "
+%<comma>real_T *orz54suet0\
+%assign comma = ", "
+%<comma>real_T *nwyvjm2brs\
+%assign comma = ", "
+%<comma>real_T *cwc2nozsxn\
+%assign comma = ", "
+%<comma>real_T *nsnnpj0z4o\
+%assign comma = ", "
+%<comma>real_T *c3jn25guf1\
+%assign comma = ", "
+%<comma>real_T *pyn5pqwz4o\
+%assign comma = ", "
+%<comma>real_T *oow4o4cinu\
+%assign comma = ", "
+%<comma>real_T *h524snwuwx\
+%assign comma = ", "
+%<comma>real_T *mcxbxp55xx\
+%assign comma = ", "
+%<comma>real_T *alcnfk1zn3\
+%assign comma = ", "
+%<comma>real_T *n1vtlkzyqd\
+%assign comma = ", "
+%<comma>real_T *l4g3rzxvfu\
+%assign comma = ", "
+%<comma>real_T *bvdme1hrkw\
+%assign comma = ", "
+%<comma>real_T *fl1afuoyrn\
+%assign comma = ", "
+%<comma>real_T *d5o1pnbrsg\
+%assign comma = ", "
+%<comma>real_T *ozm0xk1zlv\
+%assign comma = ", "
+%<comma>real_T *enq4xl5v3e\
+%assign comma = ", "
+%<comma>real_T *omx43ci2w1\
+%assign comma = ", "
+%<comma>real_T *ktlnqqshut\
+%assign comma = ", "
+%<comma>real_T *m12jjzm2tn\
+%assign comma = ", "
+%<comma>real_T *kzaf2hbuy5\
+%assign comma = ", "
+%<comma>real_T *dl1hrszhxl\
+%assign comma = ", "
+%<comma>real_T *dwu1x1b3h1\
+%assign comma = ", "
+%<comma>real_T *bvkr4f4lw4\
+%assign comma = ", "
+%<comma>real_T *esngctmy5s\
+%assign comma = ", "
+%<comma>real_T *fz4gxnkudz\
+%assign comma = ", "
+%<comma>real_T *cqgulnsz4f\
+%assign comma = ", "
+%<comma>real_T *ejrum3qxej\
+%assign comma = ", "
+%<comma>real_T *i3skmv0bop\
+%assign comma = ", "
+%<comma>real_T *c1df35uckv\
+%assign comma = ", "
+%<comma>real_T *k3feeeefd3\
+%assign comma = ", "
+%<comma>real_T *fx3trc0bai\
+%assign comma = ", "
+%<comma>real_T *peyzpnofva\
+%assign comma = ", "
+%<comma>real_T *k0tp51pmig\
+%assign comma = ", "
+%<comma>real_T *clse3t1nqw\
+%assign comma = ", "
+%<comma>real_T *lqddlg500w\
+%assign comma = ", "
+%<comma>real_T *f0fxnajilj\
+%assign comma = ", "
+%<comma>real_T *gvdrrc0vqu\
+%assign comma = ", "
+%<comma>real_T *dsruklkvj2\
+%assign comma = ", "
+%<comma>real_T *n1gfzry2qd\
+%assign comma = ", "
+%<comma>real_T *cqa1qfkb54\
+%assign comma = ", "
+%<comma>real_T *btlckuxue0\
+%assign comma = ", "
+%<comma>real_T *kqqa0k4pom\
+%assign comma = ", "
+%<comma>real_T *hd1brnjqfi\
+%assign comma = ", "
+%<comma>real_T *nugrdufqfy\
+%assign comma = ", "
+%<comma>real_T *hoc4q3kwlg\
+%assign comma = ", "
+%<comma>real_T *dj41hik0ys\
+%assign comma = ", "
+%<comma>real_T *h5ovs1xgpe\
+%assign comma = ", "
+%<comma>real_T *jtb5yl2izh\
+%assign comma = ", "
+%<comma>real_T *jmm1qdypy3\
+%assign comma = ", "
+%<comma>real_T *jhzs0bfmh2\
+%assign comma = ", "
+%<comma>real_T *abugyiry42\
+%assign comma = ", "
+%<comma>real_T *byn1qlvcr2\
+%assign comma = ", "
+%<comma>real_T *ncuctmq51m\
+%assign comma = ", "
+%<comma>real_T *lwg1zg0sla\
+%assign comma = ", "
+%<comma>real_T *i0m4ttd02j\
+%assign comma = ", "
+%<comma>real_T *gx5wtnx3rr\
+%assign comma = ", "
+%<comma>real_T *bt50kthdgd\
+%assign comma = ", "
+%<comma>real_T *ecelwjphwu\
+%assign comma = ", "
+%<comma>real_T *jwsncf51w2\
+%assign comma = ", "
+%<comma>real_T *as4dikkpwd\
+%assign comma = ", "
+%<comma>real_T *fyxgffc3ki\
+%assign comma = ", "
+%<comma>real_T *lmbqckmdiw\
+%assign comma = ", "
+%<comma>real_T *jzi0pyb0cq\
+%assign comma = ", "
+%<comma>real_T *osryvvhbjj\
+%assign comma = ", "
+%<comma>real_T *ckf4zmmsmn\
+%assign comma = ", "
+%<comma>real_T *au5qrszl0k\
+%assign comma = ", "
+%<comma>real_T *gihnl5bqns\
+%assign comma = ", "
+%<comma>real_T *cmwbpil1cy\
+%assign comma = ", "
+%<comma>real_T *pdawo3lzfi\
+%assign comma = ", "
+%<comma>real_T *il3fdj5gqh\
+%assign comma = ", "
+%<comma>real_T *cjyrb5jcwj\
+%assign comma = ", "
+%<comma>real_T *jzecwnh522\
+%assign comma = ", "
+%<comma>real_T *ddmo1j2gxs\
+%assign comma = ", "
+%<comma>real_T *oitgmgvxkh\
+%assign comma = ", "
+%<comma>real_T *hqosgww1o4\
+%assign comma = ", "
+%<comma>real_T *hs5fdjwrno\
+%assign comma = ", "
+%<comma>real_T *esjdjrp3t4\
+%assign comma = ", "
+%<comma>real_T *bsiytdjmtu\
+%assign comma = ", "
+%<comma>real_T *gd0s2crdgh\
+%assign comma = ", "
+%<comma>real_T *din1ryh2pg\
+%assign comma = ", "
+%<comma>real_T *crktah4g0e\
+%assign comma = ", "
+%<comma>real_T *ljpdtliz1i\
+%assign comma = ", "
+%<comma>real_T *eg2eh402gv\
+%assign comma = ", "
+%<comma>real_T *csmrggjkvx\
+%assign comma = ", "
+%<comma>real_T *kabaml3fn5\
+%assign comma = ", "
+%<comma>real_T *cc4v1bpoq1\
+%assign comma = ", "
+%<comma>real_T *afds5gwumk\
+%assign comma = ", "
+%<comma>real_T *ellc3ht121\
+%assign comma = ", "
+%<comma>real_T *omwlk2kjgx\
+%assign comma = ", "
+%<comma>real_T *cbzs2pz2ft\
+%assign comma = ", "
+%<comma>real_T *mywsnd34zl\
+%assign comma = ", "
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%<comma>cagkfquavz *localX\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 28, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%if tid == 3
+%assign ::GlobalCurrentTID = 3
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Current_Macchina3DOFTID3(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 29, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Current_Macchina3DOFTID3", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>real_T *ahhpsc2vv2\
+%assign comma = ", "
+%<comma>real_T *oxj304jy1x\
+%assign comma = ", "
+%<comma>real_T *kh4bdqeora\
+%assign comma = ", "
+%<comma>real_T *dpfnomih21\
+%assign comma = ", "
+%<comma>real_T *cxcwwsbqo2\
+%assign comma = ", "
+%<comma>real_T *mgxwk4kyvq\
+%assign comma = ", "
+%<comma>real_T *ohfutn4w42\
+%assign comma = ", "
+%<comma>real_T *jzajoqdi5m\
+%assign comma = ", "
+%<comma>real_T *ltd5fhipuy\
+%assign comma = ", "
+%<comma>real_T *axou1ejsns\
+%assign comma = ", "
+%<comma>real_T *i4pjeozuzf\
+%assign comma = ", "
+%<comma>real_T *cmziqyg3kq\
+%assign comma = ", "
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 29, fcnProtoType)>
+%assign ::GlobalCurrentTID = []
+%endif
+%endfunction

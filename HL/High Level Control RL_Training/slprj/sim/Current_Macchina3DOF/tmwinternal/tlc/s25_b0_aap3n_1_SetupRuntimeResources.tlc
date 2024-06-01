@@ -1,0 +1,65 @@
+%implements s25_b0_aap3n_1_SetupRuntimeResources "C"
+
+%function SetupRuntimeResources(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcSetupRuntimeResourcesFcnOfS13B20 = OpaqueTLCBlockFcn("SetupRuntimeResources", 13, 20, 1, 25, 0)
+%assign tlcSetupRuntimeResourcesFcnOfS13B1 = OpaqueTLCBlockFcn("SetupRuntimeResources", 13, 1, 1, 25, 1)
+%assign tlcSetupRuntimeResourcesFcnOfS13B5 = OpaqueTLCBlockFcn("SetupRuntimeResources", 13, 5, 1, 25, 2)
+%assign tlcSetupRuntimeResourcesFcnOfS13B6 = OpaqueTLCBlockFcn("SetupRuntimeResources", 13, 6, 1, 25, 3)
+%assign tlcSetupRuntimeResourcesFcnOfS24B1 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 1, 1, 25, 4)
+%assign tlcSetupRuntimeResourcesFcnOfS24B9 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 9, 1, 25, 5)
+%assign tlcSetupRuntimeResourcesFcnOfS24B10 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 10, 1, 25, 6)
+%assign tlcSetupRuntimeResourcesFcnOfS24B11 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 11, 1, 25, 7)
+%assign tlcSetupRuntimeResourcesFcnOfS24B13 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 13, 1, 25, 8)
+%assign tlcSetupRuntimeResourcesFcnOfS24B14 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 14, 1, 25, 9)
+%assign tlcSetupRuntimeResourcesFcnOfS24B15 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 15, 1, 25, 10)
+%assign tlcSetupRuntimeResourcesFcnOfS24B16 = OpaqueTLCBlockFcn("SetupRuntimeResources", 24, 16, 1, 25, 11)
+%<tlcSetupRuntimeResourcesFcnOfS13B20>\
+%<tlcSetupRuntimeResourcesFcnOfS13B1>\
+%<tlcSetupRuntimeResourcesFcnOfS13B5>\
+%<tlcSetupRuntimeResourcesFcnOfS13B6>\
+%<tlcSetupRuntimeResourcesFcnOfS24B1>\
+%<tlcSetupRuntimeResourcesFcnOfS24B9>\
+%<tlcSetupRuntimeResourcesFcnOfS24B10>\
+%<tlcSetupRuntimeResourcesFcnOfS24B11>\
+%<tlcSetupRuntimeResourcesFcnOfS24B13>\
+%<tlcSetupRuntimeResourcesFcnOfS24B14>\
+%<tlcSetupRuntimeResourcesFcnOfS24B15>\
+%<tlcSetupRuntimeResourcesFcnOfS24B16>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("SetupRuntimeResources", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SetupRuntimeResources"))
+%<SLibCG_AccessArg(1, 25, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 25, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "SetupRuntimeResources", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SetupRuntimeResources"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 25, 0)>
+%endif
+%endfunction
+%function SetupRuntimeResourcesFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void lsd4gumnjx(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 25, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("lsd4gumnjx", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%if SLibCG_ArgAccessed(1, 25, 1)
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(1, 25, 2)
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 25, fcnProtoType)>
+%endfunction

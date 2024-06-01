@@ -24,7 +24,7 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "/Users/francesco/Repository/FS/Low_Level/ESP32_actuator_test/giusto",
+                "/Users/francesco/Repository/FS/Low_Level/ESP32_actuator_test",
                 "/Users/francesco/Library/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.1-442a798083/esp32/qio_qspi/include",
                 "/Users/francesco/Library/Arduino15/packages/esp32/hardware/esp32/3.0.0/cores/esp32",
                 "/Users/francesco/Library/Arduino15/packages/esp32/hardware/esp32/3.0.0/variants/esp32",

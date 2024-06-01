@@ -1,0 +1,19 @@
+initOpts = rlAgentInitializationOptions(NumHiddenUnit=256);
+agent = rlDDPGAgent(obsInfo,actInfo,initOpts);
+
+actor = getActor(agent)
+critic = getCritic(agent)
+
+anet = getModel(actor)
+alayers = anet.Layers
+
+cnet = getModel(critic)
+clayers = cnet.Layers
+
+###############
+
+plot(cnet)
+
+reinforcementLearningDesigner
+
+creare greedy polici e controllare la creazione del blocco datagfdsa

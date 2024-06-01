@@ -1,0 +1,55 @@
+%implements s25_b0_aap3n_1_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS13B1 = OpaqueTLCBlockFcn("Terminate", 13, 1, 1, 35, 0)
+%assign tlcTerminateFcnOfS24B9 = OpaqueTLCBlockFcn("Terminate", 24, 9, 1, 35, 1)
+%assign tlcTerminateFcnOfS24B10 = OpaqueTLCBlockFcn("Terminate", 24, 10, 1, 35, 2)
+%assign tlcTerminateFcnOfS24B11 = OpaqueTLCBlockFcn("Terminate", 24, 11, 1, 35, 3)
+%assign tlcTerminateFcnOfS24B14 = OpaqueTLCBlockFcn("Terminate", 24, 14, 1, 35, 4)
+%assign tlcTerminateFcnOfS24B15 = OpaqueTLCBlockFcn("Terminate", 24, 15, 1, 35, 5)
+%assign tlcTerminateFcnOfS24B16 = OpaqueTLCBlockFcn("Terminate", 24, 16, 1, 35, 6)
+%<tlcTerminateFcnOfS13B1>\
+%<tlcTerminateFcnOfS24B9>\
+%<tlcTerminateFcnOfS24B10>\
+%<tlcTerminateFcnOfS24B11>\
+%<tlcTerminateFcnOfS24B14>\
+%<tlcTerminateFcnOfS24B15>\
+%<tlcTerminateFcnOfS24B16>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("Terminate", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Terminate"))
+%<SLibCG_AccessArg(1, 35, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 35, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "Terminate", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "Terminate"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 35, 0)>
+%endif
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void okqjt5xgg5(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 35, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("okqjt5xgg5", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%if SLibCG_ArgAccessed(1, 35, 1)
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(1, 35, 2)
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 35, fcnProtoType)>
+%endfunction

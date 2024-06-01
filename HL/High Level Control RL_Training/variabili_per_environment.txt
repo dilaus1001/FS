@@ -1,0 +1,5 @@
+obsDim=[11,1]
+obsInfo = rlNumericSpec(obsDim);
+actDim = [2 1];
+actInfo = rlNumericSpec(actDim,"LowerLimit",-1,"UpperLimit",1);
+env = rlSimulinkEnv("Environment","Environment/RL Agent",obsInfo,actInfo);

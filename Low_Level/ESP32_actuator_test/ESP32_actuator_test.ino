@@ -5,10 +5,10 @@ int encoderPinA = 33; // Encoder pin A
 int encoderPinB = 25; // Encoder pin B
 
 // Define the steps per revolution for your motor (e.g., 200 for a 1.8-degree step motor)
-#define STEPS_PER_REV 800
+#define STEPS_PER_REV 1600
 
 // Define the delay between steps in microseconds (this controls the speed)
-#define STEP_DELAY 500 // Adjust this value to change the speed
+#define STEP_DELAY 1000 // Adjust this value to change the speed
 
 long currentSteps = 0; // Variable to keep track of the current steps
 volatile long encoderCount = 0; // Variable to store encoder position

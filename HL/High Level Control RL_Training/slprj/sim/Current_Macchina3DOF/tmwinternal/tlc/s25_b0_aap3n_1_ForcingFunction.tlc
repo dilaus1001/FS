@@ -1,0 +1,73 @@
+%implements s25_b0_aap3n_1_ForcingFunction "C"
+
+%function ForcingFunction(block, system) Output
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%<SLibCGIRAccessLocalVar(206, 0, "")> %% febx31gzuq
+%<SLibCGIRAccessLocalVar(207, 0, "")> %% bd4mvhqsri
+%<SLibCGIRAccessLocalVar(208, 0, "")> %% mtl3yd055m
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+localXdot->nxwpeow2gx[0] = localB->eqqsx5po0f[0];
+localXdot->nxwpeow2gx[1] = localB->eqqsx5po0f[1];
+localXdot->nxwpeow2gx[2] = localB->eqqsx5po0f[2];
+localXdot->nxwpeow2gx[3] = localB->eqqsx5po0f[3];
+localXdot->fitr5s5e5d[0] = localB->kdjo14dy4y[0];
+localXdot->fitr5s5e5d[1] = localB->kdjo14dy4y[1];
+localXdot->owmqssc4wh = localB->btdxqx4qjp;
+localXdot->pyo5ewy0pk = localB->eaoq2vdwf3;
+localXdot->mtyhn2pzkf[0] = localB->jwpval1bwm[0];
+localXdot->bu2ly5qc2o[0] = localB->ec2omykrbe[0];
+localXdot->dgg1sdb2a2[0] = localB->pj5d5vbqrm[0];
+localXdot->mtyhn2pzkf[1] = localB->jwpval1bwm[1];
+localXdot->bu2ly5qc2o[1] = localB->ec2omykrbe[1];
+localXdot->dgg1sdb2a2[1] = localB->pj5d5vbqrm[1];
+localXdot->mtyhn2pzkf[2] = localB->jwpval1bwm[2];
+localXdot->bu2ly5qc2o[2] = localB->ec2omykrbe[2];
+localXdot->dgg1sdb2a2[2] = localB->pj5d5vbqrm[2];
+localXdot->mtyhn2pzkf[3] = localB->jwpval1bwm[3];
+localXdot->bu2ly5qc2o[3] = localB->ec2omykrbe[3];
+localXdot->dgg1sdb2a2[3] = localB->pj5d5vbqrm[3];
+for (kvsf2axtt4 = 0; kvsf2axtt4 < 4; kvsf2axtt4++) {
+    febx31gzuq = localB->c2qfpdtasy[kvsf2axtt4];
+    bd4mvhqsri = localB->emjgnepdic[kvsf2axtt4];
+    mtl3yd055m = localB->kzgyhdf5ic_cl54gopm0x[kvsf2axtt4];
+}
+localXdot->ol0aq4t2pf[0] = localB->kmlprmskk2[0];
+localXdot->ol0aq4t2pf[1] = localB->kmlprmskk2[1];
+localXdot->ol0aq4t2pf[2] = localB->kmlprmskk2[2];
+localXdot->ol0aq4t2pf[3] = localB->kmlprmskk2[3];
+localXdot->bkturor5nr = *plrfhr54vi;
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ForcingFunction", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ForcingFunction"))
+%<SLibCG_AccessArg(1, 32, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 32, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ForcingFunction", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ForcingFunction"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 32, 0)>
+%endif
+%endfunction
+%function ForcingFunctionFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Current_Macchina3DOF_ForcingFunction(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 32, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("Current_Macchina3DOF_ForcingFunction", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>const real_T *plrfhr54vi\
+%assign comma = ", "
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%<comma>pqsaux2ye5 *localXdot\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 32, fcnProtoType)>
+%endfunction

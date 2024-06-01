@@ -1,0 +1,308 @@
+%implements s25_b0_aap3n_1_SystemReset "C"
+
+%function SystemReset(block, system) Output
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+int32_T i;
+boolean_T tmp;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+localDW->nyu1c2jebf = 1;
+if (%<(LibIsFirstInitCond())>) {
+    localX->nxwpeow2gx[0] = 0.0;
+    localX->nxwpeow2gx[1] = 0.0;
+    localX->nxwpeow2gx[2] = 0.0;
+    localX->nxwpeow2gx[3] = 0.0;
+    tmp = %<(SLibCG_SE(SLibIsRapidAccelSimulating()))>;
+    if (tmp) {
+        tmp = %<(SLibCG_SE(RTMGetGlobalInitialStatesAvailable()))>;
+        localDW->nyu1c2jebf = !tmp;
+    } else {
+        localDW->nyu1c2jebf = 1;
+    }
+    localX->fitr5s5e5d[0] = 0.0;
+    localX->fitr5s5e5d[1] = 0.0;
+}
+localDW->oms0n1jkm5 = 1;
+if (%<(LibIsFirstInitCond())>) {
+    tmp = %<(SLibCG_SE(SLibIsRapidAccelSimulating()))>;
+    if (tmp) {
+        tmp = %<(SLibCG_SE(RTMGetGlobalInitialStatesAvailable()))>;
+        localDW->oms0n1jkm5 = !tmp;
+    } else {
+        localDW->oms0n1jkm5 = 1;
+    }
+}
+localX->owmqssc4wh = izarshtadf.P_269;
+localDW->in32qq1lum = %<LibGetMathConstant(LibRealNonFinite("-inf"), FcnGetDataTypeIdFromName("double"))>;
+localDW->dbs3eljnjr = localDW->in32qq1lum;
+localDW->kgz2p4ovl2 = izarshtadf.P_271;
+localDW->luiomh3fbt = localDW->kgz2p4ovl2;
+localDW->hy2consnqn = izarshtadf.P_275;
+localX->pyo5ewy0pk = izarshtadf.P_278;
+localDW->ljmwhirruz = izarshtadf.P_280;
+localDW->gc31phbpyu = izarshtadf.P_281;
+localDW->mzwpkkfpe4 = izarshtadf.P_282;
+localDW->pthq3l1h0h = izarshtadf.P_283;
+localDW->purbac2xn0 = izarshtadf.P_284;
+localDW->higvqfkulr = izarshtadf.P_285;
+localDW->diuf53dw5e = izarshtadf.P_286;
+localDW->obbb0borhj = izarshtadf.P_287;
+localDW->exzs0iny25 = izarshtadf.P_288;
+localDW->cxszqxcfpr = izarshtadf.P_289;
+localDW->oljco1dzmy = izarshtadf.P_290;
+localDW->ghxh3j34r0 = izarshtadf.P_291;
+localX->mtyhn2pzkf[0] = izarshtadf.P_292;
+localX->mtyhn2pzkf[1] = izarshtadf.P_292;
+localX->mtyhn2pzkf[2] = izarshtadf.P_292;
+localX->mtyhn2pzkf[3] = izarshtadf.P_292;
+localDW->okrb2fj2ln = izarshtadf.P_293;
+localDW->eplluvgf3n = izarshtadf.P_294;
+localDW->iik4tjpyrt = izarshtadf.P_295;
+localDW->oo0ecakpkc = izarshtadf.P_296;
+localDW->ae3ejcikld = izarshtadf.P_297;
+localX->bkturor5nr = izarshtadf.P_301;
+localDW->dcjcwhdxxp = izarshtadf.P_302;
+localDW->ofzz4bcnlf = izarshtadf.P_303;
+localDW->pz1gstardx = izarshtadf.P_304;
+localDW->c4cbqtzvsv = izarshtadf.P_305;
+localDW->nb3egabjlh = izarshtadf.P_312;
+localDW->dhfuijmdje = izarshtadf.P_313;
+localDW->fqdh1qbjlr = izarshtadf.P_314;
+localDW->bmtqsyakvl = izarshtadf.P_315;
+localDW->eui5e4hupi = izarshtadf.P_316;
+localDW->kjj4gb3iji = izarshtadf.P_317;
+localDW->gauvraw4u2 = izarshtadf.P_318;
+localDW->gdymvjxaxn = izarshtadf.P_319;
+localDW->idybj3masv = izarshtadf.P_320;
+localDW->ehf2tnbzn5 = izarshtadf.P_321;
+localDW->bvgci1sk4d = izarshtadf.P_322;
+localDW->necid01hql = izarshtadf.P_323;
+localDW->dtmh4wtaxu = izarshtadf.P_324;
+localDW->jaitmxdyss = izarshtadf.P_325;
+localDW->gavox2xdaj = izarshtadf.P_326;
+localDW->k2tbi1zrsm = izarshtadf.P_327;
+localDW->cz0sssfyox = izarshtadf.P_328;
+localDW->karxwg4m4l = izarshtadf.P_329;
+localDW->iys5adv05d = izarshtadf.P_330;
+localDW->ldbw3gyrkw = izarshtadf.P_331;
+localDW->i2updjqnvy = izarshtadf.P_332;
+localDW->baxfbyrspm = izarshtadf.P_333;
+localDW->dprmcbrb0q = izarshtadf.P_334;
+localDW->iw2imukfzm = izarshtadf.P_335;
+localDW->hx1pef0fyr = izarshtadf.P_336;
+localDW->knirodc4o3 = izarshtadf.P_337;
+localDW->epmdty144m = izarshtadf.P_338;
+localDW->dgayecmju0 = izarshtadf.P_339;
+localDW->d1sissrxau = izarshtadf.P_340;
+localDW->nwuuckzcwl = izarshtadf.P_341;
+localDW->gopd0xzryf = izarshtadf.P_342;
+localDW->kdsgtlk0lq = izarshtadf.P_343;
+localDW->n5kyxvs1tb = izarshtadf.P_344;
+localDW->er34ptndyc = izarshtadf.P_345;
+localDW->puq3xtpjym = izarshtadf.P_346;
+localDW->lcte4a3qtc = izarshtadf.P_347;
+localDW->iww12kqanu = izarshtadf.P_348;
+localDW->bc0uwihufj = izarshtadf.P_349;
+localDW->npiq21wezf = izarshtadf.P_350;
+localDW->dzy0nv3sjw = izarshtadf.P_351;
+localDW->n4sasebuun = izarshtadf.P_352;
+localDW->n0pfpj3qc0 = izarshtadf.P_353;
+localDW->d1ffd1tlan = izarshtadf.P_354;
+localDW->gkcguksyvc = izarshtadf.P_355;
+localDW->hp0uvsd2tt = izarshtadf.P_356;
+localDW->fp4e1wo50h = izarshtadf.P_357;
+localDW->n0qpt3wyzi = izarshtadf.P_358;
+localDW->kjifkoinpq = izarshtadf.P_359;
+localDW->nws5ogv5jj = izarshtadf.P_360;
+localDW->hfstectj0b = izarshtadf.P_361;
+localDW->auakqsvf5w = izarshtadf.P_362;
+localDW->o2svtbptwg = izarshtadf.P_363;
+localDW->fcjj4aotyn = izarshtadf.P_364;
+localDW->gprzojg5r2 = izarshtadf.P_365;
+localDW->jv50n4wm3t = izarshtadf.P_366;
+localDW->ncg1x5tp12 = izarshtadf.P_367;
+localDW->iho5oz5ssn = izarshtadf.P_368;
+localDW->iiwew03m2s = izarshtadf.P_369;
+localDW->ozx3ugyrrc = izarshtadf.P_370;
+localDW->izccrlolcr = izarshtadf.P_371;
+localDW->eq11xj410x = izarshtadf.P_372;
+localDW->hmjvdgiphx = izarshtadf.P_373;
+localDW->iksoocyf2a = izarshtadf.P_374;
+localDW->huehraleiw = izarshtadf.P_375;
+localDW->emza44rlyg = izarshtadf.P_376;
+localDW->ol14pt524b = izarshtadf.P_377;
+localDW->cssvztm5ll = izarshtadf.P_378;
+localDW->dlimbchxze = izarshtadf.P_379;
+localDW->my0fcwpeni = izarshtadf.P_380;
+localDW->hlmph0gyab = izarshtadf.P_381;
+localDW->ive0hbcw4t = izarshtadf.P_382;
+localDW->n1fweohdom = izarshtadf.P_383;
+localDW->cvapu5n1dn = izarshtadf.P_384;
+localDW->abwb2ecs51 = izarshtadf.P_385;
+localDW->dx0lltxkjj = izarshtadf.P_386;
+localDW->ewbt3hjldl = izarshtadf.P_387;
+localDW->gsacszjhly = izarshtadf.P_388;
+localDW->cfeyuztrsw = izarshtadf.P_389;
+localDW->a2q3yqnxni = izarshtadf.P_390;
+localDW->nr3wirshy4 = izarshtadf.P_391;
+localDW->fbabaouqm2 = izarshtadf.P_392;
+localDW->gqr25ryvtn = izarshtadf.P_393;
+localDW->grginhojnd = izarshtadf.P_394;
+localDW->bn1iexgi3g = izarshtadf.P_395;
+localDW->h0bzkeniza = izarshtadf.P_396;
+localDW->hmgeh1zf05 = izarshtadf.P_397;
+localDW->mfmdyhzspw = izarshtadf.P_398;
+localDW->a5cwm2l21s = izarshtadf.P_399;
+localDW->ec2xt0f4rh = izarshtadf.P_400;
+localDW->fzoxa5h3zu = izarshtadf.P_401;
+localDW->br3s0t0f1r = izarshtadf.P_402;
+localDW->c04p23bkuj = izarshtadf.P_403;
+localDW->di5kyen0x2 = izarshtadf.P_404;
+localDW->i1wxdx5r30 = izarshtadf.P_405;
+localDW->icrourb5rr = izarshtadf.P_406;
+localDW->otbxdnlouj = izarshtadf.P_407;
+localDW->cqwlgspvty = izarshtadf.P_408;
+localDW->j1qczlehj0 = izarshtadf.P_409;
+localDW->epdp5x52mq = izarshtadf.P_410;
+localDW->ea3ithycba = izarshtadf.P_411;
+localDW->phy323gb3g = izarshtadf.P_412;
+localDW->cfwoxexaji = izarshtadf.P_413;
+localDW->fwxsqlbpyc = izarshtadf.P_414;
+localDW->ikzfnp51ys = izarshtadf.P_415;
+localDW->ew2pilppaz = izarshtadf.P_416;
+localDW->khrw0lle5g = izarshtadf.P_417;
+localDW->hqfirdivam = izarshtadf.P_418;
+localDW->ef3uuyypvq = izarshtadf.P_419;
+localDW->imrqmsizc0 = izarshtadf.P_420;
+localDW->pt4krquahv = izarshtadf.P_421;
+localDW->drxhgfvtx1 = izarshtadf.P_422;
+localDW->j0wqke2d30 = izarshtadf.P_423;
+localDW->oiq0tucqnc = izarshtadf.P_424;
+localDW->obsb4u4yqe = izarshtadf.P_425;
+localDW->d4iyazyn1y = izarshtadf.P_426;
+localDW->oo32ncnnrt = izarshtadf.P_427;
+for (i = 0; i < 9; i++) {
+    localDW->gvdvyi4jyb[i] = izarshtadf.P_428;
+}
+localDW->lyqkmo4mcm = izarshtadf.P_429;
+localDW->emxdy2lj4u = izarshtadf.P_430;
+localDW->af2zzc5bd5 = izarshtadf.P_431;
+localDW->do3ruufset = izarshtadf.P_432;
+localDW->b3oipzoyn3 = izarshtadf.P_433;
+localDW->gyu1qpravc = izarshtadf.P_434;
+localDW->m4zogxnavh = izarshtadf.P_435;
+localDW->gpf3wtjdz1 = izarshtadf.P_436;
+localDW->jv3ubusmfn = izarshtadf.P_437;
+localDW->p2nw4twh0y = izarshtadf.P_438;
+localDW->m2yaihr5km = izarshtadf.P_439;
+localDW->btiodwm0c1 = izarshtadf.P_440;
+localDW->l4bypi2xnn = izarshtadf.P_441;
+localDW->iftaesu1oz = izarshtadf.P_442;
+localDW->e42h12cseu = izarshtadf.P_443;
+localDW->okvb3z4gkx = izarshtadf.P_444;
+localDW->giyqwtcnom = izarshtadf.P_445;
+localDW->ow4gaut0s3 = izarshtadf.P_446;
+localDW->ju31wgdqeu = izarshtadf.P_447;
+localDW->iancr4yoiu = izarshtadf.P_448;
+localDW->pcw2tdfuxt = izarshtadf.P_449;
+localDW->abl5e1n1zi = izarshtadf.P_450;
+localDW->d1l5zktib1 = izarshtadf.P_451;
+localDW->dz113ywod4 = izarshtadf.P_452;
+localDW->amjkste2d0 = izarshtadf.P_453;
+localDW->by4zaiey4g = izarshtadf.P_454;
+localDW->kfm521iuhd = izarshtadf.P_455;
+localDW->gs3y5fu4lw = izarshtadf.P_456;
+localDW->er53ryxzfd = izarshtadf.P_457;
+localDW->blogcshqqq = izarshtadf.P_458;
+localDW->gqlvjsv5k4 = izarshtadf.P_459;
+localDW->etqatgjwqp = izarshtadf.P_460;
+localDW->bhpdnhplaf = izarshtadf.P_461;
+localDW->kgdzdbvr4i = izarshtadf.P_462;
+localDW->icr0nunmyv = izarshtadf.P_463;
+localDW->i432qm2e5b = izarshtadf.P_464;
+localX->bu2ly5qc2o[0] = izarshtadf.P_231;
+localX->dgg1sdb2a2[0] = izarshtadf.P_233;
+localX->ol0aq4t2pf[0] = izarshtadf.P_238;
+localX->bu2ly5qc2o[1] = izarshtadf.P_231;
+localX->dgg1sdb2a2[1] = izarshtadf.P_233;
+localX->ol0aq4t2pf[1] = izarshtadf.P_238;
+localX->bu2ly5qc2o[2] = izarshtadf.P_231;
+localX->dgg1sdb2a2[2] = izarshtadf.P_233;
+localX->ol0aq4t2pf[2] = izarshtadf.P_238;
+localX->bu2ly5qc2o[3] = izarshtadf.P_231;
+localX->dgg1sdb2a2[3] = izarshtadf.P_233;
+localX->ol0aq4t2pf[3] = izarshtadf.P_238;
+%openfile locBufForEachIteration_24_2
+%if !SLibCGSysFcnIsEmptyForTid(CompiledModel.System[6], "SystemReset",0)
+%if SLibCG_SystemFcnArgAccessed("o52d0w5azp",6,0)
+%<SLibCG_AccessArg(1 ,27, 0)>
+%endif
+%if SLibCG_SystemFcnArgAccessed("o52d0w5azp",6,1)
+%<SLibCG_AccessArg(1 ,27, 1)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+%if SLibCG_SystemFcnArgAccessed("o52d0w5azp",6,2)
+%<SLibCG_AccessArg(1 ,27, 2)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+%if SLibCG_SystemFcnArgAccessed("o52d0w5azp",6,3)
+%<SLibCG_AccessArg(1 ,27, 3)>
+%<SLibCGIRAccessLocalDWork(207, 0)> %% kvsf2axtt4
+%endif
+
+%<SLibCGIRGenReusableSysCall("o52d0w5azp", ["%<::tSimStruct>", "&localB->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t", "&localDW->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t", "&localX->aeaqmjbn3j[kvsf2axtt4].pn4gg5ls0t"], 6, 0, 5, 0, 5, 24)>\
+%assign ss = ::CompiledModel.System[6]
+%if !LibSystemIsInlined(ss)
+;
+%else
+\
+%endif
+%endif
+%closefile locBufForEachIteration_24_2
+%if !ISEMPTY(locBufForEachIteration_24_2) && !WHITE_SPACE(locBufForEachIteration_24_2)
+for (kvsf2axtt4 = 0; kvsf2axtt4 < 4; kvsf2axtt4++) {
+%<locBufForEachIteration_24_2>
+}
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("SystemReset", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))
+%<SLibCG_AccessArg(1, 27, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 27, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "SystemReset", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 27, 0)>
+%endif
+%<LibSetSystemField(system, "CachedSystemResetLocalVars", localVarDecl)>
+%endfunction
+%function SystemResetFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void oll4z14034(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 27, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("oll4z14034", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%if SLibCG_ArgAccessed(1, 27, 1)
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%endif
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%<comma>cagkfquavz *localX\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 27, fcnProtoType)>
+%endfunction

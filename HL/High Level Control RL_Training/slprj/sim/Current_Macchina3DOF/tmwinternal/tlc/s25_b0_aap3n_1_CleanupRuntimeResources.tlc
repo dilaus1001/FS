@@ -1,0 +1,55 @@
+%implements s25_b0_aap3n_1_CleanupRuntimeResources "C"
+
+%function CleanupRuntimeResources(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcCleanupRuntimeResourcesFcnOfS13B1 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 13, 1, 1, 34, 0)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B9 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 9, 1, 34, 1)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B10 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 10, 1, 34, 2)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B11 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 11, 1, 34, 3)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B14 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 14, 1, 34, 4)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B15 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 15, 1, 34, 5)
+%assign tlcCleanupRuntimeResourcesFcnOfS24B16 = OpaqueTLCBlockFcn("CleanupRuntimeResources", 24, 16, 1, 34, 6)
+%<tlcCleanupRuntimeResourcesFcnOfS13B1>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B9>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B10>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B11>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B14>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B15>\
+%<tlcCleanupRuntimeResourcesFcnOfS24B16>\
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("CleanupRuntimeResources", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "CleanupRuntimeResources"))
+%<SLibCG_AccessArg(1, 34, 0)>
+%endif
+%if SLibCG_ArgAccessed(1, 34, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "CleanupRuntimeResources", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "CleanupRuntimeResources"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 34, 0)>
+%endif
+%endfunction
+%function CleanupRuntimeResourcesFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void obgh54vtpx(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(1, 34, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("obgh54vtpx", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%if SLibCG_ArgAccessed(1, 34, 1)
+%<comma>aftv2bezeg *localB\
+%assign comma = ", "
+%endif
+%if SLibCG_ArgAccessed(1, 34, 2)
+%<comma>ecv4f2jhab *localDW\
+%assign comma = ", "
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 34, fcnProtoType)>
+%endfunction

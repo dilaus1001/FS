@@ -1,0 +1,4 @@
+traiettoria = generatoreTraiettoria(); % Genera la traiettoria 
+%observation = [0;0;0;1;0;0;0];
+h=1;
+w=0.55;

@@ -1,0 +1,36 @@
+function traiettoria2 = generatoreTraiettoria2()
+    % Genera una traiettoria a forma di infinito
+    t_sinistra = linspace(-pi/2, pi/2, 10000); % Genera 10000 punti da sinistra a destra
+
+    x = cos(t_sinistra) ./ (1 + sin(t_sinistra).^2);
+    y = cos(t_sinistra) .* sin(t_sinistra) ./ (1 + sin(t_sinistra).^2);
+
+    % Ruota la traiettoria di -45 gradi in senso antiorario
+    theta = pi/4; % 45 gradi in radianti
+    x_rotato = x*cos(theta) - y*sin(theta);
+    y_rotato = x*sin(theta) + y*cos(theta);
+
+    y_rotato = y_rotato*10;
+    x_rotato = x_rotato*20;
+
+    % Rimuovi gli ultimi 100 punti
+    x_rotato = x_rotato(1:end-100);
+    y_rotato = y_rotato(1:end-100);
+
+    % Rimuovi i primi 100 punti
+    x_rotato = x_rotato(101:end);
+    y_rotato = y_rotato(101:end);
+
+    % Crea la traiettoria ruotata
+    figure;
+    plot(x_rotato, y_rotato, 'b-');
+
+    title('Traiettoria Ruotata di -45 Gradi in Senso Antiorario (Da 0,0 a Destra)');
+    xlabel('X');
+    ylabel('Y');
+    grid on;
+    axis equal;
+
+    % Restituisci la traiettoria senza i primi e ultimi 100 punti
+    traiettoria2 = [x_rotato', y_rotato'];
+end

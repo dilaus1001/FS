@@ -1,0 +1,43 @@
+%implements s25_b0_aap3n_0_SystemReset "C"
+
+%function SystemReset(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+localDW->oa5gdakthq = 0U;
+localDW->ieeu02c0uq = bu4b1ichw4;
+localX->pfuldfdkac = 0.0;
+localB->ba5pmoem1g = 0.0;
+%closefile cfgTxt
+%<cfgTxt>
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("SystemReset", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))
+%<SLibCG_AccessArg(0, 4, 0)>
+%endif
+%if SLibCG_ArgAccessed(0, 4, 0)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "SystemReset", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "SystemReset"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 4, 0)>
+%endif
+%endfunction
+%function SystemResetFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void o52d0w5azp(\
+%assign comma = ""
+%if SLibCG_ArgAccessed(0, 4, 0)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("o52d0w5azp", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>ng3wuoy0x4 *localB\
+%assign comma = ", "
+%<comma>bzxao5q2yr *localDW\
+%assign comma = ", "
+%<comma>fwwav5wd2v *localX\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

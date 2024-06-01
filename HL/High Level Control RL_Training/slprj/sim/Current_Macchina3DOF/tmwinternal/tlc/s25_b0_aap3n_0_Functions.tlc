@@ -1,0 +1,93 @@
+%implements s25_b0_aap3n_0_Functions "C"
+
+%function o200cqztpc_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+localB->pcqpimuvii = (muDoubleScalarAbs(Tout) >= Tfmaxs);
+localDW->gaadmn305b = 4;
+return localB->pcqpimuvii;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("o200cqztpc", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "o200cqztpc"))
+%<SLibCG_AccessArg(0, 0, 2)>
+%endif
+%if SLibCG_ArgAccessed(0, 0, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "o200cqztpc", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "o200cqztpc"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 0, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static boolean_T o200cqztpc(\
+%assign comma = ""
+%<comma>real_T Tout\
+%assign comma = ", "
+%<comma>real_T Tfmaxs\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 0, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("o200cqztpc", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>ng3wuoy0x4 *localB\
+%assign comma = ", "
+%<comma>bzxao5q2yr *localDW\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function iy55uvi0oj_Fcn1(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+localB->mt0t4mcbwi = localP->P_8[(((uint32_T)(muDoubleScalarAbs(((0.0 - Tout) - localB->ios2kpavdj) + localB->ios2kpavdj) >= Tfmaxs) + ((uint32_T)(muDoubleScalarAbs(-Tout) <= Tfmaxs) << 1)) << 1) + localDW->nin2lunjbk];
+localDW->nin2lunjbk = localB->mt0t4mcbwi;
+localDW->kvaq2i2lap = 4;
+return localB->mt0t4mcbwi;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[0].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("iy55uvi0oj", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "iy55uvi0oj"))
+%<SLibCG_AccessArg(0, 1, 2)>
+%endif
+%if SLibCG_ArgAccessed(0, 1, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "iy55uvi0oj", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "iy55uvi0oj"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(0, 1, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static boolean_T iy55uvi0oj(\
+%assign comma = ""
+%<comma>real_T Tout\
+%assign comma = ", "
+%<comma>real_T Tfmaxs\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(0, 1, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("iy55uvi0oj", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%<comma>ng3wuoy0x4 *localB\
+%assign comma = ", "
+%<comma>bzxao5q2yr *localDW\
+%assign comma = ", "
+%<comma>cudyrusc0t *localP\
+%assign comma = ", "
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%return fcnBuff
+%endfunction
+

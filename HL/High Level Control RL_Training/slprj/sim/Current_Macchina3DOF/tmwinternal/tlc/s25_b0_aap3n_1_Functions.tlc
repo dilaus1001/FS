@@ -1,0 +1,3279 @@
+%implements s25_b0_aap3n_1_Functions "C"
+
+%function etyirrpn2a_Fcn0(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T x_data[4];
+real_T varargin_1;
+real_T x;
+int32_T i;
+int32_T partialTrueCount_tmp;
+int32_T trueCount;
+int8_T tmp_data[4];
+int8_T tmp_data_p[4];
+yabs[0] = muDoubleScalarAbs(u[0]);
+yabs[1] = muDoubleScalarAbs(u[1]);
+yabs[2] = muDoubleScalarAbs(u[2]);
+yabs[3] = muDoubleScalarAbs(u[3]);
+x = 2.0 * tol;
+trueCount = 0;
+partialTrueCount_tmp = 0;
+for (i = 0; i < 4; i++) {
+    if (yabs[i] < tol) {
+        tmp_data[trueCount] = (int8_T)i;
+        partialTrueCount_tmp = trueCount + 1;
+        trueCount++;
+    }
+}
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (yabs[i] < tol) {
+        tmp_data_p[trueCount] = (int8_T)i;
+        trueCount++;
+    }
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    varargin_1 = yabs[tmp_data_p[trueCount]] / tol;
+    x_data[trueCount] = x / (3.0 - varargin_1 * varargin_1);
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    yabs[tmp_data[trueCount]] = x_data[trueCount];
+}
+y[0] = yabs[0];
+y[1] = yabs[1];
+y[2] = yabs[2];
+y[3] = yabs[3];
+for (i = 0; i < 4; i++) {
+    if (u[i] < 0.0) {
+        y[i] = -yabs[i];
+    }
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("etyirrpn2a", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "etyirrpn2a"))
+%<SLibCG_AccessArg(1, 0, 4)>
+%endif
+%if SLibCG_ArgAccessed(1, 0, 4)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "etyirrpn2a", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "etyirrpn2a"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 0, 4)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void etyirrpn2a(\
+%assign comma = ""
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T tol\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%<comma>real_T yabs[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 0, 4)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("etyirrpn2a", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 0, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ovabakf0qv_Fcn1(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+b = x_size[1];
+for (k = 0; k < b; k++) {
+    x_data[0] = muDoubleScalarSqrt(x_data[0]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ovabakf0qv", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ovabakf0qv"))
+%<SLibCG_AccessArg(1, 1, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 1, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ovabakf0qv", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ovabakf0qv"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 1, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ovabakf0qv(\
+%assign comma = ""
+%<comma>real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T x_size[2]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 1, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ovabakf0qv", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 1, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function kh1usf0vag_Fcn2(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+*y_size = *x_size;
+b = *x_size;
+for (k = 0; k < b; k++) {
+    y_data[k] = muDoubleScalarAbs(x_data[k]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("kh1usf0vag", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "kh1usf0vag"))
+%<SLibCG_AccessArg(1, 2, 4)>
+%endif
+%if SLibCG_ArgAccessed(1, 2, 4)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "kh1usf0vag", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "kh1usf0vag"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 2, 4)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void kh1usf0vag(\
+%assign comma = ""
+%<comma>const real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T *x_size\
+%assign comma = ", "
+%<comma>real_T y_data[]\
+%assign comma = ", "
+%<comma>int32_T *y_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 2, 4)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("kh1usf0vag", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 2, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4blsmnyei_Fcn3(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T in4_data[4];
+real_T tmp_data[4];
+int32_T loop_ub;
+int32_T stride_0_0_tmp;
+int32_T stride_1_0;
+int32_T tmp;
+int32_T tmp_size;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(1,3,0,1)
+%<SLibCG_AccessArg(1 ,3, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,3,0,4)
+%<SLibCG_AccessArg(1 ,3, 9)>
+%endif
+
+loop_ub = *in2_size;
+for (tmp_size = 0; tmp_size < loop_ub; tmp_size++) {
+    in4_data[tmp_size] = in4[in2_data[tmp_size]];
+}
+%<(SLibCGCallSubFcn("kh1usf0vag", ["in4_data", "in2_size", "tmp_data", "&tmp_size", "%<::tSimStruct>"], 1, 3, 0))>;
+stride_0_0_tmp = (*in2_size != 1);
+stride_1_0 = (tmp_size != 1);
+loop_ub = *in2_size == 1 ? *in2_size == 1 ? tmp_size == 1 ? *in2_size : tmp_size : *in2_size : *in2_size;
+for (tmp_size = 0; tmp_size < loop_ub; tmp_size++) {
+    tmp = in2_data[tmp_size * stride_0_0_tmp];
+    in1[(int8_T)in2_data[tmp_size]] = (in6[tmp] * in5 / in7 + in3[tmp] / tmp_data[tmp_size * stride_1_0]) * in8[tmp * 27 + 22];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4blsmnyei", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmnyei"))
+%<SLibCG_AccessArg(1, 3, 9)>
+%endif
+%if SLibCG_ArgAccessed(1, 3, 9)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4blsmnyei", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmnyei"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 3, 9)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4blsmnyei(\
+%assign comma = ""
+%<comma>real_T in1[4]\
+%assign comma = ", "
+%<comma>const int32_T in2_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in2_size\
+%assign comma = ", "
+%<comma>const real_T in3[4]\
+%assign comma = ", "
+%<comma>const real_T in4[4]\
+%assign comma = ", "
+%<comma>real_T in5\
+%assign comma = ", "
+%<comma>const real_T in6[4]\
+%assign comma = ", "
+%<comma>real_T in7\
+%assign comma = ", "
+%<comma>const real_T in8[108]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 3, 9)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4blsmnyei", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 3, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4blsmnye_Fcn4(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T in3_data[4];
+real_T tmp_data[4];
+int32_T loop_ub;
+int32_T stride_0_0;
+int32_T stride_1_0;
+int32_T tmp_size;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(1,4,0,1)
+%<SLibCG_AccessArg(1 ,4, 2)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,4,0,4)
+%<SLibCG_AccessArg(1 ,4, 5)>
+%endif
+
+loop_ub = *in2_size;
+for (tmp_size = 0; tmp_size < loop_ub; tmp_size++) {
+    in3_data[tmp_size] = in3[in2_data[tmp_size]];
+}
+%<(SLibCGCallSubFcn("kh1usf0vag", ["in3_data", "in2_size", "tmp_data", "&tmp_size", "%<::tSimStruct>"], 1, 4, 0))>;
+loop_ub = tmp_size == 1 ? *in2_size : tmp_size;
+stride_0_0 = (*in2_size != 1);
+stride_1_0 = (tmp_size != 1);
+for (tmp_size = 0; tmp_size < loop_ub; tmp_size++) {
+    in3_data[tmp_size] = tmp_data[tmp_size * stride_1_0] / in4 * in1[in2_data[tmp_size * stride_0_0]];
+}
+for (tmp_size = 0; tmp_size < loop_ub; tmp_size++) {
+    in1[(int8_T)in2_data[tmp_size]] = in3_data[tmp_size];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4blsmnye", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmnye"))
+%<SLibCG_AccessArg(1, 4, 5)>
+%endif
+%if SLibCG_ArgAccessed(1, 4, 5)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4blsmnye", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmnye"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 4, 5)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4blsmnye(\
+%assign comma = ""
+%<comma>real_T in1[4]\
+%assign comma = ", "
+%<comma>const int32_T in2_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in2_size\
+%assign comma = ", "
+%<comma>const real_T in3[4]\
+%assign comma = ", "
+%<comma>real_T in4\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 4, 5)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4blsmnye", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 4, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function etyirrpn2a4_Fcn5(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_data[4];
+real_T varargin_1;
+int32_T i;
+int32_T partialTrueCount_tmp;
+int32_T trueCount;
+int8_T tmp_data[4];
+int8_T tmp_data_e[4];
+int8_T tmp_data_i[4];
+int8_T tmp_data_p[4];
+y[0] = muDoubleScalarAbs(u[0]);
+y[1] = muDoubleScalarAbs(u[1]);
+y[2] = muDoubleScalarAbs(u[2]);
+y[3] = muDoubleScalarAbs(u[3]);
+trueCount = 0;
+partialTrueCount_tmp = 0;
+for (i = 0; i < 4; i++) {
+    if (y[i] < 0.0001) {
+        tmp_data[trueCount] = (int8_T)i;
+        partialTrueCount_tmp = trueCount + 1;
+        trueCount++;
+    }
+}
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (y[i] < 0.0001) {
+        tmp_data_p[trueCount] = (int8_T)i;
+        trueCount++;
+    }
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    varargin_1 = y[tmp_data_p[trueCount]] / 0.0001;
+    y_data[trueCount] = 0.0002 / (3.0 - varargin_1 * varargin_1);
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    y[tmp_data[trueCount]] = y_data[trueCount];
+}
+trueCount = 0;
+partialTrueCount_tmp = 0;
+for (i = 0; i < 4; i++) {
+    if (u[i] < 0.0) {
+        tmp_data_e[trueCount] = (int8_T)i;
+        partialTrueCount_tmp = trueCount + 1;
+        trueCount++;
+    }
+}
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (u[i] < 0.0) {
+        tmp_data_i[trueCount] = (int8_T)i;
+        trueCount++;
+    }
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    y_data[trueCount] = -y[tmp_data_i[trueCount]];
+}
+for (trueCount = 0; trueCount < partialTrueCount_tmp; trueCount++) {
+    y[tmp_data_e[trueCount]] = y_data[trueCount];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("etyirrpn2a4", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "etyirrpn2a4"))
+%<SLibCG_AccessArg(1, 5, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 5, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "etyirrpn2a4", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "etyirrpn2a4"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 5, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void etyirrpn2a4(\
+%assign comma = ""
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 5, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("etyirrpn2a4", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 5, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function e5tjr0p5gl_Fcn6(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T k;
+boolean_T exitg1;
+boolean_T y;
+y = false;
+k = 0;
+exitg1 = false;
+while ((!exitg1) && (k < 4)) {
+    if (x[k]) {
+        y = true;
+        exitg1 = true;
+    } else {
+        k++;
+    }
+}
+return y;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("e5tjr0p5gl", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "e5tjr0p5gl"))
+%<SLibCG_AccessArg(1, 6, 1)>
+%endif
+%if SLibCG_ArgAccessed(1, 6, 1)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "e5tjr0p5gl", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "e5tjr0p5gl"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 6, 1)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static boolean_T e5tjr0p5gl(\
+%assign comma = ""
+%<comma>const boolean_T x[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 6, 1)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("e5tjr0p5gl", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 6, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function mqgbilo3x5_Fcn7(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+b = *x_size;
+for (k = 0; k < b; k++) {
+    x_data[k] = muDoubleScalarAtan(x_data[k]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("mqgbilo3x5", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "mqgbilo3x5"))
+%<SLibCG_AccessArg(1, 7, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 7, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "mqgbilo3x5", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "mqgbilo3x5"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 7, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void mqgbilo3x5(\
+%assign comma = ""
+%<comma>real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T *x_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 7, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("mqgbilo3x5", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 7, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function iit2n2dklb_Fcn8(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+b = *x_size;
+for (k = 0; k < b; k++) {
+    x_data[k] = muDoubleScalarCos(x_data[k]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("iit2n2dklb", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "iit2n2dklb"))
+%<SLibCG_AccessArg(1, 8, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 8, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "iit2n2dklb", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "iit2n2dklb"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 8, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void iit2n2dklb(\
+%assign comma = ""
+%<comma>real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T *x_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 8, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("iit2n2dklb", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 8, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ovabakf0qvp_Fcn9(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+b = *x_size;
+for (k = 0; k < b; k++) {
+    x_data[k] = muDoubleScalarSqrt(x_data[k]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ovabakf0qvp", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ovabakf0qvp"))
+%<SLibCG_AccessArg(1, 9, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 9, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ovabakf0qvp", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ovabakf0qvp"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 9, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ovabakf0qvp(\
+%assign comma = ""
+%<comma>real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T *x_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 9, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ovabakf0qvp", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 9, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4blsmny_Fcn10(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T i;
+int32_T loop_ub;
+int32_T stride_0_0;
+int32_T stride_1_0;
+int32_T stride_2_0;
+int32_T tmp;
+i = *in9_size == 1 ? *in7_size : *in9_size;
+loop_ub = i == 1 ? *in6_size : i;
+*in1_size = loop_ub;
+stride_0_0 = (*in6_size != 1);
+stride_1_0 = (*in7_size != 1);
+stride_2_0 = (*in9_size != 1);
+for (i = 0; i < loop_ub; i++) {
+    tmp = in6_data[i * stride_0_0];
+    in1_data[i] = (in4[tmp] * in3 + 1.0) * in2 * in5[tmp] * (in9_data[i * stride_2_0] * in8 + in7_data[i * stride_1_0]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4blsmny", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmny"))
+%<SLibCG_AccessArg(1, 10, 13)>
+%endif
+%if SLibCG_ArgAccessed(1, 10, 13)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4blsmny", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmny"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 10, 13)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4blsmny(\
+%assign comma = ""
+%<comma>real_T in1_data[]\
+%assign comma = ", "
+%<comma>int32_T *in1_size\
+%assign comma = ", "
+%<comma>real_T in2\
+%assign comma = ", "
+%<comma>real_T in3\
+%assign comma = ", "
+%<comma>const real_T in4[4]\
+%assign comma = ", "
+%<comma>const real_T in5[4]\
+%assign comma = ", "
+%<comma>const int32_T in6_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in6_size\
+%assign comma = ", "
+%<comma>const real_T in7_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in7_size\
+%assign comma = ", "
+%<comma>real_T in8\
+%assign comma = ", "
+%<comma>const real_T in9_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in9_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 10, 13)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4blsmny", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 10, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magicsin_BC8OJFW4_Fcn11(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_p;
+y_p = B[0] * u[0];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarSin(y_p);
+y[0] = D[0] * y_p;
+y_p = B[1] * u[1];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarSin(y_p);
+y[1] = D[1] * y_p;
+y_p = B[2] * u[2];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarSin(y_p);
+y[2] = D[2] * y_p;
+y_p = B[3] * u[3];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarSin(y_p);
+y[3] = D[3] * y_p;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magicsin_BC8OJFW4", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magicsin_BC8OJFW4"))
+%<SLibCG_AccessArg(1, 11, 6)>
+%endif
+%if SLibCG_ArgAccessed(1, 11, 6)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magicsin_BC8OJFW4", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magicsin_BC8OJFW4"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 11, 6)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magicsin_BC8OJFW4(\
+%assign comma = ""
+%<comma>const real_T D[4]\
+%assign comma = ", "
+%<comma>real_T C\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>real_T E\
+%assign comma = ", "
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 11, 6)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magicsin_BC8OJFW4", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 11, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magiccos_vpB3Xlmi_Fcn12(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_p;
+y_p = B[0] * u[0];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[0];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y[0] = muDoubleScalarCos(y_p);
+y_p = B[1] * u[1];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[1];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y[1] = muDoubleScalarCos(y_p);
+y_p = B[2] * u[2];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[2];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y[2] = muDoubleScalarCos(y_p);
+y_p = B[3] * u[3];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[3];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y[3] = muDoubleScalarCos(y_p);
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magiccos_vpB3Xlmi", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_vpB3Xlmi"))
+%<SLibCG_AccessArg(1, 12, 5)>
+%endif
+%if SLibCG_ArgAccessed(1, 12, 5)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magiccos_vpB3Xlmi", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_vpB3Xlmi"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 12, 5)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magiccos_vpB3Xlmi(\
+%assign comma = ""
+%<comma>real_T C\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>const real_T E[4]\
+%assign comma = ", "
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 12, 5)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magiccos_vpB3Xlmi", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 12, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magiccos_RICJxYVg_Fcn13(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+y[0] = muDoubleScalarCos(muDoubleScalarAtan(B[0] * 0.0 - (B[0] * 0.0 - muDoubleScalarAtan(B[0] * 0.0)) * E[0]) * C);
+y[1] = muDoubleScalarCos(muDoubleScalarAtan(B[1] * 0.0 - (B[1] * 0.0 - muDoubleScalarAtan(B[1] * 0.0)) * E[1]) * C);
+y[2] = muDoubleScalarCos(muDoubleScalarAtan(B[2] * 0.0 - (B[2] * 0.0 - muDoubleScalarAtan(B[2] * 0.0)) * E[2]) * C);
+y[3] = muDoubleScalarCos(muDoubleScalarAtan(B[3] * 0.0 - (B[3] * 0.0 - muDoubleScalarAtan(B[3] * 0.0)) * E[3]) * C);
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magiccos_RICJxYVg", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_RICJxYVg"))
+%<SLibCG_AccessArg(1, 13, 4)>
+%endif
+%if SLibCG_ArgAccessed(1, 13, 4)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magiccos_RICJxYVg", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_RICJxYVg"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 13, 4)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magiccos_RICJxYVg(\
+%assign comma = ""
+%<comma>real_T C\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>const real_T E[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 13, 4)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magiccos_RICJxYVg", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 13, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magicsin_bqt92mPI_Fcn14(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_p;
+y_p = B[0] * u[0];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[0];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[0];
+y_p = muDoubleScalarSin(y_p);
+y[0] = D[0] * y_p;
+y_p = B[1] * u[1];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[1];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[1];
+y_p = muDoubleScalarSin(y_p);
+y[1] = D[1] * y_p;
+y_p = B[2] * u[2];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[2];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[2];
+y_p = muDoubleScalarSin(y_p);
+y[2] = D[2] * y_p;
+y_p = B[3] * u[3];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[3];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[3];
+y_p = muDoubleScalarSin(y_p);
+y[3] = D[3] * y_p;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magicsin_bqt92mPI", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magicsin_bqt92mPI"))
+%<SLibCG_AccessArg(1, 14, 6)>
+%endif
+%if SLibCG_ArgAccessed(1, 14, 6)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magicsin_bqt92mPI", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magicsin_bqt92mPI"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 14, 6)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magicsin_bqt92mPI(\
+%assign comma = ""
+%<comma>const real_T D[4]\
+%assign comma = ", "
+%<comma>const real_T C[4]\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>const real_T E[4]\
+%assign comma = ", "
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 14, 6)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magicsin_bqt92mPI", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 14, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4blsmn_Fcn15(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T in6_data[4];
+real_T tmp_data[4];
+int32_T i;
+int32_T loop_ub;
+int32_T stride_0_0_tmp;
+int32_T tmp;
+int32_T tmp_size;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(1,15,0,1)
+%<SLibCG_AccessArg(1 ,15, 6)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,15,0,4)
+%<SLibCG_AccessArg(1 ,15, 9)>
+%endif
+
+loop_ub = *in5_size;
+for (i = 0; i < loop_ub; i++) {
+    in6_data[i] = in6[in5_data[i]];
+}
+%<(SLibCGCallSubFcn("kh1usf0vag", ["in6_data", "in5_size", "tmp_data", "&tmp_size", "%<::tSimStruct>"], 1, 15, 0))>;
+i = *in5_size == 1 ? tmp_size : *in5_size;
+loop_ub = i == 1 ? *in5_size : i;
+*in1_size = loop_ub;
+stride_0_0_tmp = (*in5_size != 1);
+tmp_size = (tmp_size != 1);
+for (i = 0; i < loop_ub; i++) {
+    tmp = in5_data[i * stride_0_0_tmp];
+    in1_data[i] = in2[tmp] * 2.0 / 3.1415926535897931 * in3[tmp] * in4[tmp] / (in7[tmp] * 0.0001 - tmp_data[i * tmp_size]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4blsmn", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmn"))
+%<SLibCG_AccessArg(1, 15, 9)>
+%endif
+%if SLibCG_ArgAccessed(1, 15, 9)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4blsmn", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsmn"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 15, 9)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4blsmn(\
+%assign comma = ""
+%<comma>real_T in1_data[]\
+%assign comma = ", "
+%<comma>int32_T *in1_size\
+%assign comma = ", "
+%<comma>const real_T in2[4]\
+%assign comma = ", "
+%<comma>const real_T in3[4]\
+%assign comma = ", "
+%<comma>const real_T in4[4]\
+%assign comma = ", "
+%<comma>const int32_T in5_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in5_size\
+%assign comma = ", "
+%<comma>const real_T in6[4]\
+%assign comma = ", "
+%<comma>const real_T in7[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 15, 9)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4blsmn", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 15, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function bqn1tkpksh_Fcn16(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b;
+int32_T k;
+b = *x_size;
+for (k = 0; k < b; k++) {
+    x_data[k] = muDoubleScalarAcos(x_data[k]);
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("bqn1tkpksh", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "bqn1tkpksh"))
+%<SLibCG_AccessArg(1, 16, 2)>
+%endif
+%if SLibCG_ArgAccessed(1, 16, 2)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "bqn1tkpksh", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "bqn1tkpksh"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 16, 2)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void bqn1tkpksh(\
+%assign comma = ""
+%<comma>real_T x_data[]\
+%assign comma = ", "
+%<comma>const int32_T *x_size\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 16, 2)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("bqn1tkpksh", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 16, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4blsm_Fcn17(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T i;
+int32_T loop_ub;
+int32_T stride_0_0_tmp;
+int32_T tmp;
+stride_0_0_tmp = (*in4_size != 1);
+loop_ub = *in2_size;
+for (i = 0; i < loop_ub; i++) {
+    tmp = in4_data[i * stride_0_0_tmp];
+    in1[in2_data[i]] = (in5[27 * i + 11] * (in3[tmp] * 0.0) * (real_T)in6[i] + in7[tmp]) - in8[tmp] / in9[tmp];
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4blsm", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsm"))
+%<SLibCG_AccessArg(1, 17, 11)>
+%endif
+%if SLibCG_ArgAccessed(1, 17, 11)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4blsm", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4blsm"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 17, 11)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4blsm(\
+%assign comma = ""
+%<comma>real_T in1[4]\
+%assign comma = ", "
+%<comma>const int8_T in2_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in2_size\
+%assign comma = ", "
+%<comma>const real_T in3[4]\
+%assign comma = ", "
+%<comma>const int32_T in4_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in4_size\
+%assign comma = ", "
+%<comma>const real_T in5[108]\
+%assign comma = ", "
+%<comma>const boolean_T in6[4]\
+%assign comma = ", "
+%<comma>const real_T in7[4]\
+%assign comma = ", "
+%<comma>const real_T in8[4]\
+%assign comma = ", "
+%<comma>const real_T in9[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 17, 11)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4blsm", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 17, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function ewiatu4bls_Fcn18(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T i;
+int32_T loop_ub;
+int32_T stride_0_0_tmp;
+int32_T tmp;
+int32_T tmp_p;
+stride_0_0_tmp = (*in4_size != 1);
+loop_ub = *in2_size;
+for (i = 0; i < loop_ub; i++) {
+    tmp = in4_data[i * stride_0_0_tmp];
+    tmp_p = tmp * 9;
+    in1[in2_data[i]] = (((in7[tmp] * in8[tmp] - in9[tmp]) / in10[tmp] * in11[tmp_p] + in5[27 * i + 11] * (in3[tmp] * 0.0) * (real_T)in6[i]) + in11[tmp_p + 4]) - 1.0;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("ewiatu4bls", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4bls"))
+%<SLibCG_AccessArg(1, 18, 13)>
+%endif
+%if SLibCG_ArgAccessed(1, 18, 13)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "ewiatu4bls", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "ewiatu4bls"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 18, 13)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void ewiatu4bls(\
+%assign comma = ""
+%<comma>real_T in1[4]\
+%assign comma = ", "
+%<comma>const int8_T in2_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in2_size\
+%assign comma = ", "
+%<comma>const real_T in3[4]\
+%assign comma = ", "
+%<comma>const int32_T in4_data[]\
+%assign comma = ", "
+%<comma>const int32_T *in4_size\
+%assign comma = ", "
+%<comma>const real_T in5[108]\
+%assign comma = ", "
+%<comma>const boolean_T in6[4]\
+%assign comma = ", "
+%<comma>const real_T in7[4]\
+%assign comma = ", "
+%<comma>const real_T in8[4]\
+%assign comma = ", "
+%<comma>const real_T in9[4]\
+%assign comma = ", "
+%<comma>const real_T in10[4]\
+%assign comma = ", "
+%<comma>const real_T in11[36]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 18, 13)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("ewiatu4bls", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 18, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function rollingMoment_IvRBPgtr_Fcn19(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T Ro_p;
+real_T x;
+real_T x_tmp;
+Ro_p = -Ro * Fzo;
+x_tmp = Fz[0] / Fzo;
+x = Vcx[0] / Vo;
+My[0] = ((((Fx[0] / Fzo * b_QSY2 + b_QSY1) + b_QSY3 * muDoubleScalarAbs(x)) + b_QSY4 * muDoubleScalarPower(x, 4.0)) + (b_QSY6 * x_tmp + b_QSY5) * b_gamma[0] * b_gamma[0]) * (Ro_p * lam_My[0]) * (muDoubleScalarPower(muDoubleScalarMax(press[0] / pio, 0.05), b_QSY8) * muDoubleScalarPower(muDoubleScalarMax(x_tmp, 0.05), b_QSY7));
+x_tmp = Fz[1] / Fzo;
+x = Vcx[1] / Vo;
+My[1] = ((((Fx[1] / Fzo * b_QSY2 + b_QSY1) + b_QSY3 * muDoubleScalarAbs(x)) + b_QSY4 * muDoubleScalarPower(x, 4.0)) + (b_QSY6 * x_tmp + b_QSY5) * b_gamma[1] * b_gamma[1]) * (Ro_p * lam_My[1]) * (muDoubleScalarPower(muDoubleScalarMax(press[1] / pio, 0.05), b_QSY8) * muDoubleScalarPower(muDoubleScalarMax(x_tmp, 0.05), b_QSY7));
+x_tmp = Fz[2] / Fzo;
+x = Vcx[2] / Vo;
+My[2] = ((((Fx[2] / Fzo * b_QSY2 + b_QSY1) + b_QSY3 * muDoubleScalarAbs(x)) + b_QSY4 * muDoubleScalarPower(x, 4.0)) + (b_QSY6 * x_tmp + b_QSY5) * b_gamma[2] * b_gamma[2]) * (Ro_p * lam_My[2]) * (muDoubleScalarPower(muDoubleScalarMax(press[2] / pio, 0.05), b_QSY8) * muDoubleScalarPower(muDoubleScalarMax(x_tmp, 0.05), b_QSY7));
+x_tmp = Fz[3] / Fzo;
+x = Vcx[3] / Vo;
+My[3] = ((((Fx[3] / Fzo * b_QSY2 + b_QSY1) + b_QSY3 * muDoubleScalarAbs(x)) + b_QSY4 * muDoubleScalarPower(x, 4.0)) + (b_QSY6 * x_tmp + b_QSY5) * b_gamma[3] * b_gamma[3]) * (Ro_p * lam_My[3]) * (muDoubleScalarPower(muDoubleScalarMax(press[3] / pio, 0.05), b_QSY8) * muDoubleScalarPower(muDoubleScalarMax(x_tmp, 0.05), b_QSY7));
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("rollingMoment_IvRBPgtr", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "rollingMoment_IvRBPgtr"))
+%<SLibCG_AccessArg(1, 19, 19)>
+%endif
+%if SLibCG_ArgAccessed(1, 19, 19)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "rollingMoment_IvRBPgtr", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "rollingMoment_IvRBPgtr"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 19, 19)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void rollingMoment_IvRBPgtr(\
+%assign comma = ""
+%<comma>const real_T Fx[4]\
+%assign comma = ", "
+%<comma>const real_T Vcx[4]\
+%assign comma = ", "
+%<comma>const real_T Fz[4]\
+%assign comma = ", "
+%<comma>const real_T press[4]\
+%assign comma = ", "
+%<comma>const real_T b_gamma[4]\
+%assign comma = ", "
+%<comma>real_T Vo\
+%assign comma = ", "
+%<comma>real_T Ro\
+%assign comma = ", "
+%<comma>real_T Fzo\
+%assign comma = ", "
+%<comma>real_T pio\
+%assign comma = ", "
+%<comma>real_T b_QSY1\
+%assign comma = ", "
+%<comma>real_T b_QSY2\
+%assign comma = ", "
+%<comma>real_T b_QSY3\
+%assign comma = ", "
+%<comma>real_T b_QSY4\
+%assign comma = ", "
+%<comma>real_T b_QSY5\
+%assign comma = ", "
+%<comma>real_T b_QSY6\
+%assign comma = ", "
+%<comma>real_T b_QSY7\
+%assign comma = ", "
+%<comma>real_T b_QSY8\
+%assign comma = ", "
+%<comma>const real_T lam_My[4]\
+%assign comma = ", "
+%<comma>real_T My[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 19, 19)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("rollingMoment_IvRBPgtr", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 19, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magiccos_GUUO4NyC_Fcn20(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_p;
+y_p = B[0] * u[0];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * 0.0;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[0];
+y_p = muDoubleScalarCos(y_p);
+y[0] = D[0] * y_p;
+y_p = B[1] * u[1];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * 0.0;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[1];
+y_p = muDoubleScalarCos(y_p);
+y[1] = D[1] * y_p;
+y_p = B[2] * u[2];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * 0.0;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[2];
+y_p = muDoubleScalarCos(y_p);
+y[2] = D[2] * y_p;
+y_p = B[3] * u[3];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * 0.0;
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C[3];
+y_p = muDoubleScalarCos(y_p);
+y[3] = D[3] * y_p;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magiccos_GUUO4NyC", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_GUUO4NyC"))
+%<SLibCG_AccessArg(1, 20, 5)>
+%endif
+%if SLibCG_ArgAccessed(1, 20, 5)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magiccos_GUUO4NyC", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_GUUO4NyC"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 20, 5)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magiccos_GUUO4NyC(\
+%assign comma = ""
+%<comma>const real_T D[4]\
+%assign comma = ", "
+%<comma>const real_T C[4]\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 20, 5)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magiccos_GUUO4NyC", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 20, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function magiccos_lGr1MZp4_Fcn21(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T y_p;
+y_p = B[0] * u[0];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[0];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarCos(y_p);
+y[0] = D[0] * y_p;
+y_p = B[1] * u[1];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[1];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarCos(y_p);
+y[1] = D[1] * y_p;
+y_p = B[2] * u[2];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[2];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarCos(y_p);
+y[2] = D[2] * y_p;
+y_p = B[3] * u[3];
+y_p -= (y_p - muDoubleScalarAtan(y_p)) * E[3];
+y_p = muDoubleScalarAtan(y_p);
+y_p *= C;
+y_p = muDoubleScalarCos(y_p);
+y[3] = D[3] * y_p;
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("magiccos_lGr1MZp4", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_lGr1MZp4"))
+%<SLibCG_AccessArg(1, 21, 6)>
+%endif
+%if SLibCG_ArgAccessed(1, 21, 6)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "magiccos_lGr1MZp4", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "magiccos_lGr1MZp4"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 21, 6)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+extern void magiccos_lGr1MZp4(\
+%assign comma = ""
+%<comma>const real_T D[4]\
+%assign comma = ", "
+%<comma>real_T C\
+%assign comma = ", "
+%<comma>const real_T B[4]\
+%assign comma = ", "
+%<comma>const real_T E[4]\
+%assign comma = ", "
+%<comma>const real_T u[4]\
+%assign comma = ", "
+%<comma>real_T y[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 21, 6)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("magiccos_lGr1MZp4", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 21, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function cm10ecv2oc_Fcn22(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+real_T zeta[36];
+real_T Bykappa[4];
+real_T Ey[4];
+real_T Eykappa[4];
+real_T FzUnSat[4];
+real_T Kyalpha[4];
+real_T Kyalpha_prime[4];
+real_T Kygammao[4];
+real_T Mzphiinf[4];
+real_T R_omega[4];
+real_T SHy[4];
+real_T Vs[4];
+real_T Vsy[4];
+real_T dc_data[4];
+real_T dfz[4];
+real_T epsilon_gamma[4];
+real_T gamma_star[4];
+real_T kappa_x[4];
+real_T lam_Cz[4];
+real_T lam_Kygamma[4];
+real_T lam_muy[4];
+real_T phi[4];
+real_T phi_t[4];
+real_T rhoz_data[4];
+real_T rhoz_data_p[4];
+real_T tmpDrphiVar_data[4];
+real_T tmp_data_e[4];
+real_T Bykappa_tmp;
+real_T Dx_tmp;
+real_T Dx_tmp_e;
+real_T Dx_tmp_i;
+real_T Dx_tmp_p;
+real_T Fzo_prime_idx_0;
+real_T Fzo_prime_idx_1;
+real_T Fzo_prime_idx_2;
+real_T Fzo_prime_idx_3;
+real_T R_omega_p;
+real_T Vs_p;
+real_T Vsy_p;
+real_T Vsy_tmp;
+real_T Vsy_tmp_e;
+real_T Vsy_tmp_p;
+real_T a_tmp;
+real_T ab_idx_0;
+real_T dfz_p;
+real_T dpi_idx_0;
+real_T dpi_idx_1;
+real_T dpi_idx_2;
+real_T dpi_idx_3;
+real_T ec_data;
+real_T gamma_star_tmp;
+real_T gamma_star_tmp_e;
+real_T gamma_star_tmp_i;
+real_T gamma_star_tmp_p;
+real_T lam_Cz_p;
+real_T lam_Cz_tmp;
+real_T lam_muy_prime_idx_0;
+real_T lam_muy_prime_idx_1;
+real_T lam_muy_prime_idx_2;
+real_T lam_muy_prime_idx_3;
+real_T mu_y_idx_0;
+real_T mu_y_idx_1;
+real_T mu_y_idx_1_tmp;
+real_T mu_y_idx_2;
+real_T mu_y_idx_2_tmp;
+real_T x_idx_0;
+int32_T bc_tmp_data[4];
+int32_T sb_tmp_data[4];
+int32_T tmp_data[4];
+int32_T tmp_data_p[4];
+int32_T ec_size[2];
+int32_T i;
+int32_T rhoz_size;
+int32_T tmp_size;
+int32_T tmp_size_p;
+int32_T trueCount;
+int8_T bc_data[4];
+boolean_T nomslipinds[4];
+boolean_T tempInds[4];
+boolean_T tmp;
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(1,22,49,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,48,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,47,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,46,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,45,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,44,6)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,43,5)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,42,0)
+%<SLibCG_AccessArg(1 ,22, 185)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,1)
+%<SLibCG_AccessArg(1 ,22, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,3)
+%<SLibCG_AccessArg(1 ,22, 5)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,4)
+%<SLibCG_AccessArg(1 ,22, 4)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,5)
+%<SLibCG_AccessArg(1 ,22, 20)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,6)
+%<SLibCG_AccessArg(1 ,22, 21)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,7)
+%<SLibCG_AccessArg(1 ,22, 24)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,8)
+%<SLibCG_AccessArg(1 ,22, 23)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,9)
+%<SLibCG_AccessArg(1 ,22, 110)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,10)
+%<SLibCG_AccessArg(1 ,22, 111)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,11)
+%<SLibCG_AccessArg(1 ,22, 112)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,12)
+%<SLibCG_AccessArg(1 ,22, 113)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,13)
+%<SLibCG_AccessArg(1 ,22, 114)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,14)
+%<SLibCG_AccessArg(1 ,22, 115)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,15)
+%<SLibCG_AccessArg(1 ,22, 116)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,16)
+%<SLibCG_AccessArg(1 ,22, 117)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,42,19)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,41,6)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,40,6)
+%<SLibCG_AccessArg(1 ,22, 6)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,40,13)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,39,1)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,38,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,37,6)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,36,0)
+%<SLibCG_AccessArg(1 ,22, 62)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,36,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,35,0)
+%<SLibCG_AccessArg(1 ,22, 62)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,35,3)
+%<SLibCG_AccessArg(1 ,22, 192)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,35,5)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,34,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,33,6)
+%<SLibCG_AccessArg(1 ,22, 6)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,33,11)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,32,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,31,4)
+%<SLibCG_AccessArg(1 ,22, 186)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,31,9)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,30,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,29,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,28,6)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,27,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,26,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,25,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,24,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,23,0)
+%<SLibCG_AccessArg(1 ,22, 101)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,23,5)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,22,0)
+%<SLibCG_AccessArg(1 ,22, 101)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,22,5)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,21,6)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,20,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,19,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,18,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,17,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,16,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,15,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,14,2)
+%<SLibCG_AccessArg(1 ,22, 148)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,14,3)
+%<SLibCG_AccessArg(1 ,22, 149)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,14,10)
+%<SLibCG_AccessArg(1 ,22, 151)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,14,13)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,13,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,12,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,11,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,10,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,9,1)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,8,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,7,3)
+%<SLibCG_AccessArg(1 ,22, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,7,4)
+%<SLibCG_AccessArg(1 ,22, 13)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,7,5)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,6,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,5,1)
+%<SLibCG_AccessArg(1 ,22, 13)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,5,2)
+%<SLibCG_AccessArg(1 ,22, 189)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,5,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,4,0)
+%<SLibCG_AccessArg(1 ,22, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,4,1)
+%<SLibCG_AccessArg(1 ,22, 13)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,4,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,3,0)
+%<SLibCG_AccessArg(1 ,22, 190)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,3)
+%<SLibCG_AccessArg(1 ,22, 183)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,4)
+%<SLibCG_AccessArg(1 ,22, 7)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,5)
+%<SLibCG_AccessArg(1 ,22, 37)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,6)
+%<SLibCG_AccessArg(1 ,22, 182)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,7)
+%<SLibCG_AccessArg(1 ,22, 24)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,8)
+%<SLibCG_AccessArg(1 ,22, 6)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,3,9)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,2,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,1,2)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(1,22,0,0)
+%<SLibCG_AccessArg(1 ,22, 1)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,0,1)
+%<SLibCG_AccessArg(1 ,22, 13)>
+%endif
+%if SLibCG_FcnCallArgAccessed(1,22,0,4)
+%<SLibCG_AccessArg(1 ,22, 197)>
+%endif
+
+Fx[0] = scaleFactors[1];
+lam_muy[0] = scaleFactors[2];
+Fx[1] = scaleFactors[28];
+lam_muy[1] = scaleFactors[29];
+Fx[2] = scaleFactors[55];
+lam_muy[2] = scaleFactors[56];
+Fx[3] = scaleFactors[82];
+lam_muy[3] = scaleFactors[83];
+%<(SLibCGCallSubFcn("etyirrpn2a", ["Vx", "b_VXLOW", "R_omega", "Vsy", "%<::tSimStruct>"], 1, 22, 0))>;
+for (i = 0; i < 4; i++) {
+    dpi_idx_0 = b_gamma[i];
+    if (dpi_idx_0 < b_CAMMIN) {
+        dpi_idx_0 = b_CAMMIN;
+        b_gamma[i] = b_CAMMIN;
+    }
+    if (dpi_idx_0 > b_CAMMAX) {
+        b_gamma[i] = b_CAMMAX;
+    }
+    dpi_idx_0 = press[i];
+    if (dpi_idx_0 < b_PRESMIN) {
+        dpi_idx_0 = b_PRESMIN;
+        press[i] = b_PRESMIN;
+    }
+    if (dpi_idx_0 > b_PRESMAX) {
+        press[i] = b_PRESMAX;
+    }
+    if (Fx[i] <= 0.0) {
+        Fx[i] = 2.2204460492503131E-16;
+    }
+    if (lam_muy[i] <= 0.0) {
+        lam_muy[i] = 2.2204460492503131E-16;
+    }
+}
+dpi_idx_0 = (press[0] - b_NOMPRES) / b_NOMPRES;
+dpi_idx_1 = (press[1] - b_NOMPRES) / b_NOMPRES;
+dpi_idx_2 = (press[2] - b_NOMPRES) / b_NOMPRES;
+dpi_idx_3 = (press[3] - b_NOMPRES) / b_NOMPRES;
+Fzo_prime_idx_0 = scaleFactors[0] * b_FNOMIN;
+Fzo_prime_idx_1 = scaleFactors[27] * b_FNOMIN;
+Fzo_prime_idx_2 = scaleFactors[54] * b_FNOMIN;
+Fzo_prime_idx_3 = scaleFactors[81] * b_FNOMIN;
+if (vertType == 2.0) {
+    if (b_Q_FZ1 == 0.0) {
+        a_tmp = b_VERTICAL_STIFFNESS * b_UNLOADED_RADIUS / b_FNOMIN;
+        Vsy_tmp_p = a_tmp * a_tmp - 4.0 * b_Q_FZ2;
+        if (Vsy_tmp_p < 0.0) {
+            b_Q_FZ1 = b_Q_FZ2 * 0.0;
+        }
+        trueCount = 0;
+        tmp = !(Vsy_tmp_p < 0.0);
+        if (tmp) {
+            for (i = 0; i < 1; i++) {
+                trueCount++;
+            }
+        }
+        ec_size[0] = 1;
+        ec_size[1] = trueCount;
+        if (trueCount - 1 >= 0) {
+            ec_data = Vsy_tmp_p;
+        }
+        %<(SLibCGCallSubFcn("ovabakf0qv", ["&ec_data", "ec_size", "%<::tSimStruct>"], 1, 22, 1))>;
+        if (tmp) {
+            for (i = 0; i < 1; i++) {
+                b_Q_FZ1 = ec_data;
+            }
+        }
+    }
+    a_tmp = b_RIM_RADIUS + b_BOTTOM_OFFST;
+    ec_data = b_Q_FCX * Fx_ext[0] / b_FNOMIN;
+    mu_y_idx_0 = ec_data * ec_data;
+    ec_data = b_Q_FCY * Fy_ext[0] / b_FNOMIN;
+    lam_muy_prime_idx_0 = ec_data * ec_data;
+    ec_data = rhoz[0] / b_UNLOADED_RADIUS;
+    Fz_ext[0] = muDoubleScalarMax((((b_Q_V2 * muDoubleScalarAbs(Omega[0]) * b_UNLOADED_RADIUS / b_LONGVL + 1.0) - mu_y_idx_0) - lam_muy_prime_idx_0) * ((b_Q_FZ3 * b_gamma[0] * b_gamma[0] + b_Q_FZ1) * rhoz[0] / b_UNLOADED_RADIUS + ec_data * ec_data * b_Q_FZ2) * (b_PFZ1 * dpi_idx_0 + 1.0) * Fzo_prime_idx_0, (a_tmp - (b_UNLOADED_RADIUS + rhoz[0]) / muDoubleScalarCos(b_gamma[0])) * b_BOTTOM_STIFF);
+    ec_data = b_Q_FCX * Fx_ext[1] / b_FNOMIN;
+    mu_y_idx_0 = ec_data * ec_data;
+    ec_data = b_Q_FCY * Fy_ext[1] / b_FNOMIN;
+    lam_muy_prime_idx_0 = ec_data * ec_data;
+    ec_data = rhoz[1] / b_UNLOADED_RADIUS;
+    Fz_ext[1] = muDoubleScalarMax((((b_Q_V2 * muDoubleScalarAbs(Omega[1]) * b_UNLOADED_RADIUS / b_LONGVL + 1.0) - mu_y_idx_0) - lam_muy_prime_idx_0) * ((b_Q_FZ3 * b_gamma[1] * b_gamma[1] + b_Q_FZ1) * rhoz[1] / b_UNLOADED_RADIUS + ec_data * ec_data * b_Q_FZ2) * (b_PFZ1 * dpi_idx_1 + 1.0) * Fzo_prime_idx_1, (a_tmp - (b_UNLOADED_RADIUS + rhoz[1]) / muDoubleScalarCos(b_gamma[1])) * b_BOTTOM_STIFF);
+    ec_data = b_Q_FCX * Fx_ext[2] / b_FNOMIN;
+    mu_y_idx_0 = ec_data * ec_data;
+    ec_data = b_Q_FCY * Fy_ext[2] / b_FNOMIN;
+    lam_muy_prime_idx_0 = ec_data * ec_data;
+    ec_data = rhoz[2] / b_UNLOADED_RADIUS;
+    Fz_ext[2] = muDoubleScalarMax((((b_Q_V2 * muDoubleScalarAbs(Omega[2]) * b_UNLOADED_RADIUS / b_LONGVL + 1.0) - mu_y_idx_0) - lam_muy_prime_idx_0) * ((b_Q_FZ3 * b_gamma[2] * b_gamma[2] + b_Q_FZ1) * rhoz[2] / b_UNLOADED_RADIUS + ec_data * ec_data * b_Q_FZ2) * (b_PFZ1 * dpi_idx_2 + 1.0) * Fzo_prime_idx_2, (a_tmp - (b_UNLOADED_RADIUS + rhoz[2]) / muDoubleScalarCos(b_gamma[2])) * b_BOTTOM_STIFF);
+    ec_data = b_Q_FCX * Fx_ext[3] / b_FNOMIN;
+    mu_y_idx_0 = ec_data * ec_data;
+    ec_data = b_Q_FCY * Fy_ext[3] / b_FNOMIN;
+    lam_muy_prime_idx_0 = ec_data * ec_data;
+    ec_data = rhoz[3] / b_UNLOADED_RADIUS;
+    Fz_ext[3] = muDoubleScalarMax((((b_Q_V2 * muDoubleScalarAbs(Omega[3]) * b_UNLOADED_RADIUS / b_LONGVL + 1.0) - mu_y_idx_0) - lam_muy_prime_idx_0) * ((b_Q_FZ3 * b_gamma[3] * b_gamma[3] + b_Q_FZ1) * rhoz[3] / b_UNLOADED_RADIUS + ec_data * ec_data * b_Q_FZ2) * (b_PFZ1 * dpi_idx_3 + 1.0) * Fzo_prime_idx_3, (a_tmp - (b_UNLOADED_RADIUS + rhoz[3]) / muDoubleScalarCos(b_gamma[3])) * b_BOTTOM_STIFF);
+}
+Re[0] = b_VERTICAL_STIFFNESS * scaleFactors[22];
+Re[1] = b_VERTICAL_STIFFNESS * scaleFactors[49];
+Re[2] = b_VERTICAL_STIFFNESS * scaleFactors[76];
+Re[3] = b_VERTICAL_STIFFNESS * scaleFactors[103];
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (rhoz[i] > 0.0) {
+        trueCount++;
+    }
+}
+tmp_size = trueCount;
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (rhoz[i] > 0.0) {
+        tmp_data[trueCount] = i;
+        trueCount++;
+    }
+}
+rhoz_size = tmp_size;
+for (i = 0; i < tmp_size; i++) {
+    trueCount = tmp_data[i];
+    rhoz_data[i] = rhoz[trueCount];
+    rhoz_data_p[i] = rhoz[trueCount];
+    phi[i] = rhoz[trueCount];
+}
+%<(SLibCGCallSubFcn("kh1usf0vag", ["phi", "&tmp_size", "tmp_data_e", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 49))>;
+i = tmp_size == 1 ? tmp_size_p : tmp_size;
+%<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data", "&tmp_size", "tmp_data_e", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 47))>;
+%<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data_p", "&tmp_size", "tmp_data_e", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 48))>;
+if ((tmp_size == tmp_size_p) && ((tmp_size == 1 ? rhoz_size : tmp_size) == tmp_size) && ((i == 1 ? tmp_size : i) == tmp_size)) {
+    for (i = 0; i < tmp_size; i++) {
+        rhoz_data[i] = rhoz[tmp_data[i]];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data", "&tmp_size", "rhoz_data_p", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 2))>;
+    for (i = 0; i < tmp_size; i++) {
+        trueCount = tmp_data[i];
+        Re[trueCount] = (b_Q_FCY2 * Fy_ext[trueCount] / b_FNOMIN + Fz_ext[trueCount] / rhoz_data_p[i]) * scaleFactors[27 * trueCount + 22];
+    }
+} else {
+    %<(SLibCGCallSubFcn("ewiatu4blsmnyei", ["Re", "tmp_data", "&tmp_size", "Fz_ext", "rhoz", "b_Q_FCY2", "Fy_ext", "b_FNOMIN", "scaleFactors", "%<::tSimStruct>"], 1, 22, 3))>;
+}
+FzUnSat[0] = Fz_ext[0];
+FzUnSat[1] = Fz_ext[1];
+FzUnSat[2] = Fz_ext[2];
+FzUnSat[3] = Fz_ext[3];
+ec_data = Omega[0] * b_UNLOADED_RADIUS / b_LONGVL;
+R_omega_p = (ec_data * ec_data * b_Q_V1 + b_Q_RE0) * b_UNLOADED_RADIUS;
+R_omega[0] = R_omega_p;
+lam_Cz_p = Fz_ext[0] / b_FNOMIN;
+Re[0] = R_omega_p - (muDoubleScalarAtan(b_BREFF * lam_Cz_p) * b_DREFF + b_FREFF * lam_Cz_p) * (b_FNOMIN / Re[0]);
+ec_data = Omega[1] * b_UNLOADED_RADIUS / b_LONGVL;
+R_omega_p = (ec_data * ec_data * b_Q_V1 + b_Q_RE0) * b_UNLOADED_RADIUS;
+R_omega[1] = R_omega_p;
+lam_Cz_p = Fz_ext[1] / b_FNOMIN;
+Re[1] = R_omega_p - (muDoubleScalarAtan(b_BREFF * lam_Cz_p) * b_DREFF + b_FREFF * lam_Cz_p) * (b_FNOMIN / Re[1]);
+ec_data = Omega[2] * b_UNLOADED_RADIUS / b_LONGVL;
+R_omega_p = (ec_data * ec_data * b_Q_V1 + b_Q_RE0) * b_UNLOADED_RADIUS;
+R_omega[2] = R_omega_p;
+lam_Cz_p = Fz_ext[2] / b_FNOMIN;
+Re[2] = R_omega_p - (muDoubleScalarAtan(b_BREFF * lam_Cz_p) * b_DREFF + b_FREFF * lam_Cz_p) * (b_FNOMIN / Re[2]);
+ec_data = Omega[3] * b_UNLOADED_RADIUS / b_LONGVL;
+R_omega_p = (ec_data * ec_data * b_Q_V1 + b_Q_RE0) * b_UNLOADED_RADIUS;
+lam_Cz_p = Fz_ext[3] / b_FNOMIN;
+Re[3] = R_omega_p - (muDoubleScalarAtan(b_BREFF * lam_Cz_p) * b_DREFF + b_FREFF * lam_Cz_p) * (b_FNOMIN / Re[3]);
+for (i = 0; i < 4; i++) {
+    a_tmp = Fz_ext[i];
+    if (a_tmp < b_FZMIN) {
+        a_tmp = b_FZMIN;
+        Fz_ext[i] = b_FZMIN;
+    }
+    if (a_tmp > b_FZMAX) {
+        Fz_ext[i] = b_FZMAX;
+    }
+    if (Re[i] < 0.001) {
+        Re[i] = 0.001;
+    }
+}
+dfz_p = (Fz_ext[0] - Fzo_prime_idx_0) / Fzo_prime_idx_0;
+dfz[0] = dfz_p;
+epsilon_gamma[0] = (b_PECP2 * dfz_p + 1.0) * b_PECP1;
+dfz_p = (Fz_ext[1] - Fzo_prime_idx_1) / Fzo_prime_idx_1;
+dfz[1] = dfz_p;
+epsilon_gamma[1] = (b_PECP2 * dfz_p + 1.0) * b_PECP1;
+dfz_p = (Fz_ext[2] - Fzo_prime_idx_2) / Fzo_prime_idx_2;
+dfz[2] = dfz_p;
+epsilon_gamma[2] = (b_PECP2 * dfz_p + 1.0) * b_PECP1;
+dfz_p = (Fz_ext[3] - Fzo_prime_idx_3) / Fzo_prime_idx_3;
+dfz[3] = dfz_p;
+epsilon_gamma[3] = (b_PECP2 * dfz_p + 1.0) * b_PECP1;
+a_tmp = muDoubleScalarMax(R_omega[0] - (b_UNLOADED_RADIUS + rhoz[0]), 0.0) / b_UNLOADED_RADIUS;
+patch_a[0] = (b_Q_RA2 * a_tmp + b_Q_RA1 * muDoubleScalarSqrt(a_tmp)) * b_UNLOADED_RADIUS;
+patch_b[0] = (b_Q_RB2 * a_tmp + b_Q_RB1 * muDoubleScalarPower(a_tmp, 0.33333333333333331)) * b_WIDTH;
+a_tmp = Re[0] * Omega[0] - Vx[0];
+Ey[0] = a_tmp;
+kappa[0] = a_tmp / Vsy[0];
+a_tmp = muDoubleScalarMax(R_omega[1] - (b_UNLOADED_RADIUS + rhoz[1]), 0.0) / b_UNLOADED_RADIUS;
+patch_a[1] = (b_Q_RA2 * a_tmp + b_Q_RA1 * muDoubleScalarSqrt(a_tmp)) * b_UNLOADED_RADIUS;
+patch_b[1] = (b_Q_RB2 * a_tmp + b_Q_RB1 * muDoubleScalarPower(a_tmp, 0.33333333333333331)) * b_WIDTH;
+a_tmp = Re[1] * Omega[1] - Vx[1];
+Ey[1] = a_tmp;
+kappa[1] = a_tmp / Vsy[1];
+a_tmp = muDoubleScalarMax(R_omega[2] - (b_UNLOADED_RADIUS + rhoz[2]), 0.0) / b_UNLOADED_RADIUS;
+patch_a[2] = (b_Q_RA2 * a_tmp + b_Q_RA1 * muDoubleScalarSqrt(a_tmp)) * b_UNLOADED_RADIUS;
+patch_b[2] = (b_Q_RB2 * a_tmp + b_Q_RB1 * muDoubleScalarPower(a_tmp, 0.33333333333333331)) * b_WIDTH;
+a_tmp = Re[2] * Omega[2] - Vx[2];
+Ey[2] = a_tmp;
+kappa[2] = a_tmp / Vsy[2];
+a_tmp = muDoubleScalarMax(R_omega_p - (b_UNLOADED_RADIUS + rhoz[3]), 0.0) / b_UNLOADED_RADIUS;
+patch_a[3] = (b_Q_RA2 * a_tmp + b_Q_RA1 * muDoubleScalarSqrt(a_tmp)) * b_UNLOADED_RADIUS;
+patch_b[3] = (b_Q_RB2 * a_tmp + b_Q_RB1 * muDoubleScalarPower(a_tmp, 0.33333333333333331)) * b_WIDTH;
+a_tmp = Re[3] * Omega[3] - Vx[3];
+kappa[3] = a_tmp / Vsy[3];
+alpha[0] = muDoubleScalarAtan2(Vy[0], Vsy[0]);
+alpha[1] = muDoubleScalarAtan2(Vy[1], Vsy[1]);
+alpha[2] = muDoubleScalarAtan2(Vy[2], Vsy[2]);
+alpha[3] = muDoubleScalarAtan2(Vy[3], Vsy[3]);
+for (i = 0; i < 4; i++) {
+    mu_y_idx_0 = kappa[i];
+    if (mu_y_idx_0 < b_KPUMIN) {
+        mu_y_idx_0 = b_KPUMIN;
+        kappa[i] = b_KPUMIN;
+    }
+    if (mu_y_idx_0 > b_KPUMAX) {
+        kappa[i] = b_KPUMAX;
+    }
+    mu_y_idx_0 = alpha[i];
+    if (mu_y_idx_0 < b_ALPMIN) {
+        mu_y_idx_0 = b_ALPMIN;
+        alpha[i] = b_ALPMIN;
+    }
+    if (mu_y_idx_0 > b_ALPMAX) {
+        alpha[i] = b_ALPMAX;
+    }
+}
+kappa_x[0] = (b_PHX2 * dfz[0] + b_PHX1) * scaleFactors[10] + kappa[0];
+kappa_x[1] = (b_PHX2 * dfz[1] + b_PHX1) * scaleFactors[37] + kappa[1];
+kappa_x[2] = (b_PHX2 * dfz[2] + b_PHX1) * scaleFactors[64] + kappa[2];
+kappa_x[3] = (b_PHX2 * dfz_p + b_PHX1) * scaleFactors[91] + kappa[3];
+gamma_star_tmp = muDoubleScalarSin(b_gamma[0]);
+gamma_star[0] = gamma_star_tmp;
+ec_data = -Vsy[0] * kappa[0];
+R_omega_p = muDoubleScalarTan(alpha[0]);
+Vsy_p = -Vsy[0] * R_omega_p;
+mu_y_idx_2 = Vsy_p * Vsy_p;
+Vs[0] = muDoubleScalarSqrt(ec_data * ec_data + mu_y_idx_2);
+gamma_star_tmp_p = muDoubleScalarSin(b_gamma[1]);
+gamma_star[1] = gamma_star_tmp_p;
+ec_data = -Vsy[1] * kappa[1];
+Vsy_tmp = muDoubleScalarTan(alpha[1]);
+Vsy_p = -Vsy[1] * Vsy_tmp;
+mu_y_idx_0 = Vsy_p * Vsy_p;
+Vs[1] = muDoubleScalarSqrt(ec_data * ec_data + mu_y_idx_0);
+gamma_star_tmp_e = muDoubleScalarSin(b_gamma[2]);
+gamma_star[2] = gamma_star_tmp_e;
+ec_data = -Vsy[2] * kappa[2];
+Vsy_tmp_p = muDoubleScalarTan(alpha[2]);
+Vsy_p = -Vsy[2] * Vsy_tmp_p;
+mu_y_idx_1 = Vsy_p * Vsy_p;
+Vs[2] = muDoubleScalarSqrt(ec_data * ec_data + mu_y_idx_1);
+gamma_star_tmp_i = muDoubleScalarSin(b_gamma[3]);
+gamma_star[3] = gamma_star_tmp_i;
+ec_data = -Vsy[3] * kappa[3];
+Vsy_tmp_e = muDoubleScalarTan(alpha[3]);
+Vsy_p = -Vsy[3] * Vsy_tmp_e;
+%<(SLibCGCallSubFcn("etyirrpn2a", ["Vx", "b_VXLOW", "phi_t", "lam_Cz", "%<::tSimStruct>"], 1, 22, 4))>;
+R_omega[0] = muDoubleScalarSqrt(Vx[0] * Vx[0] + mu_y_idx_2);
+R_omega[1] = muDoubleScalarSqrt(Vx[1] * Vx[1] + mu_y_idx_0);
+R_omega[2] = muDoubleScalarSqrt(Vx[2] * Vx[2] + mu_y_idx_1);
+Vsy_p *= Vsy_p;
+R_omega[3] = muDoubleScalarSqrt(Vx[3] * Vx[3] + Vsy_p);
+%<(SLibCGCallSubFcn("etyirrpn2a", ["R_omega", "b_VXLOW", "Mz", "lam_Cz", "%<::tSimStruct>"], 1, 22, 5))>;
+tempInds[0] = (muDoubleScalarSqrt(Ey[0] * Ey[0] + mu_y_idx_2) < b_VXLOW);
+Vs_p = Vs[0] * scaleFactors[3] / b_LONGVL + 1.0;
+Vs[0] = Vs_p;
+Fx[0] /= Vs_p;
+tempInds[1] = (muDoubleScalarSqrt(Ey[1] * Ey[1] + mu_y_idx_0) < b_VXLOW);
+Vs_p = Vs[1] * scaleFactors[30] / b_LONGVL + 1.0;
+Vs[1] = Vs_p;
+Fx[1] /= Vs_p;
+tempInds[2] = (muDoubleScalarSqrt(Ey[2] * Ey[2] + mu_y_idx_1) < b_VXLOW);
+Vs_p = Vs[2] * scaleFactors[57] / b_LONGVL + 1.0;
+Vs[2] = Vs_p;
+Fx[2] /= Vs_p;
+tempInds[3] = (muDoubleScalarSqrt(a_tmp * a_tmp + Vsy_p) < b_VXLOW);
+Vs_p = muDoubleScalarSqrt(ec_data * ec_data + Vsy_p) * scaleFactors[84] / b_LONGVL + 1.0;
+Fx[3] /= Vs_p;
+Dx_tmp = dpi_idx_0 * dpi_idx_0;
+a_tmp = lam_muy[0] / Vs[0];
+lam_muy[0] = a_tmp;
+lam_muy_prime_idx_0 = a_tmp * 10.0 / (9.0 * a_tmp + 1.0);
+ec_data = gamma_star_tmp * gamma_star_tmp;
+mu_y_idx_0 = ((b_PPY3 * dpi_idx_0 + 1.0) + Dx_tmp * b_PPY4) * (b_PDY2 * dfz[0] + b_PDY1) * (1.0 - ec_data * b_PDY3) * a_tmp;
+phi_t[0] = -psidot[0] / phi_t[0] * muDoubleScalarCos(alpha[0]);
+Dx_tmp_p = dpi_idx_1 * dpi_idx_1;
+a_tmp = lam_muy[1] / Vs[1];
+lam_muy[1] = a_tmp;
+lam_muy_prime_idx_1 = a_tmp * 10.0 / (9.0 * a_tmp + 1.0);
+mu_y_idx_1_tmp = gamma_star_tmp_p * gamma_star_tmp_p;
+mu_y_idx_1 = ((b_PPY3 * dpi_idx_1 + 1.0) + Dx_tmp_p * b_PPY4) * (b_PDY2 * dfz[1] + b_PDY1) * (1.0 - mu_y_idx_1_tmp * b_PDY3) * a_tmp;
+phi_t[1] = -psidot[1] / phi_t[1] * muDoubleScalarCos(alpha[1]);
+Dx_tmp_e = dpi_idx_2 * dpi_idx_2;
+a_tmp = lam_muy[2] / Vs[2];
+lam_muy[2] = a_tmp;
+lam_muy_prime_idx_2 = a_tmp * 10.0 / (9.0 * a_tmp + 1.0);
+mu_y_idx_2_tmp = gamma_star_tmp_e * gamma_star_tmp_e;
+mu_y_idx_2 = ((b_PPY3 * dpi_idx_2 + 1.0) + Dx_tmp_e * b_PPY4) * (b_PDY2 * dfz[2] + b_PDY1) * (1.0 - mu_y_idx_2_tmp * b_PDY3) * a_tmp;
+phi_t[2] = -psidot[2] / phi_t[2] * muDoubleScalarCos(alpha[2]);
+Dx_tmp_i = dpi_idx_3 * dpi_idx_3;
+a_tmp = lam_muy[3] / Vs_p;
+lam_muy_prime_idx_3 = a_tmp * 10.0 / (9.0 * a_tmp + 1.0);
+Vs_p = gamma_star_tmp_i * gamma_star_tmp_i;
+Vsy_p = ((b_PPY3 * dpi_idx_3 + 1.0) + Dx_tmp_i * b_PPY4) * (b_PDY2 * dfz_p + b_PDY1) * (1.0 - Vs_p * b_PDY3) * a_tmp;
+phi_t[3] = -psidot[3] / phi_t[3] * muDoubleScalarCos(alpha[3]);
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (tempInds[i]) {
+        trueCount++;
+    }
+}
+tmp_size_p = trueCount;
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (tempInds[i]) {
+        tmp_data_p[trueCount] = i;
+        trueCount++;
+    }
+}
+for (i = 0; i < tmp_size_p; i++) {
+    rhoz_data[i] = Vx[tmp_data_p[i]];
+}
+%<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data", "&tmp_size_p", "tmp_data_e", "&tmp_size", "%<::tSimStruct>"], 1, 22, 46))>;
+if (tmp_size_p == tmp_size) {
+    for (i = 0; i < tmp_size_p; i++) {
+        rhoz_data[i] = Vx[tmp_data_p[i]];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data", "&tmp_size_p", "rhoz_data_p", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 6))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        rhoz_data[i] = rhoz_data_p[i] / b_VXLOW * phi_t[tmp_data_p[i]];
+    }
+    for (i = 0; i < tmp_size_p; i++) {
+        phi_t[tmp_data_p[i]] = rhoz_data[i];
+    }
+} else {
+    %<(SLibCGCallSubFcn("ewiatu4blsmnye", ["phi_t", "tmp_data_p", "&tmp_size_p", "Vx", "b_VXLOW", "%<::tSimStruct>"], 1, 22, 7))>;
+}
+%<(SLibCGCallSubFcn("etyirrpn2a4", ["R_omega", "rhoz_data", "%<::tSimStruct>"], 1, 22, 8))>;
+phi[0] = (psidot[0] - (1.0 - epsilon_gamma[0]) * muDoubleScalarAbs(Omega[0]) * gamma_star_tmp) * -(1.0 / rhoz_data[0]);
+phi[1] = (psidot[1] - (1.0 - epsilon_gamma[1]) * muDoubleScalarAbs(Omega[1]) * gamma_star_tmp_p) * -(1.0 / rhoz_data[1]);
+phi[2] = (psidot[2] - (1.0 - epsilon_gamma[2]) * muDoubleScalarAbs(Omega[2]) * gamma_star_tmp_e) * -(1.0 / rhoz_data[2]);
+phi[3] = (psidot[3] - (1.0 - epsilon_gamma[3]) * muDoubleScalarAbs(Omega[3]) * gamma_star_tmp_i) * -(1.0 / rhoz_data[3]);
+if (b_turnslip == 1.0) {
+    tempInds[0] = (muDoubleScalarAbs(phi[0]) > 0.01);
+    tempInds[1] = (muDoubleScalarAbs(phi[1]) > 0.01);
+    tempInds[2] = (muDoubleScalarAbs(phi[2]) > 0.01);
+    tempInds[3] = (muDoubleScalarAbs(phi[3]) > 0.01);
+} else {
+    tempInds[0] = false;
+    tempInds[1] = false;
+    tempInds[2] = false;
+    tempInds[3] = false;
+}
+nomslipinds[0] = !tempInds[0];
+Vsy[0] = b_RHY2 * dfz[0] + b_RHY1;
+Eykappa[0] = b_REY2 * dfz[0] + b_REY1;
+nomslipinds[1] = !tempInds[1];
+Vsy[1] = b_RHY2 * dfz[1] + b_RHY1;
+Eykappa[1] = b_REY2 * dfz[1] + b_REY1;
+nomslipinds[2] = !tempInds[2];
+Vsy[2] = b_RHY2 * dfz[2] + b_RHY1;
+Eykappa[2] = b_REY2 * dfz[2] + b_REY1;
+nomslipinds[3] = !tempInds[3];
+Vsy[3] = b_RHY2 * dfz_p + b_RHY1;
+Eykappa[3] = b_REY2 * dfz_p + b_REY1;
+Bykappa[0] = (ec_data * b_RBY4 + b_RBY1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBY2 * alpha[0])) * scaleFactors[19];
+Bykappa[1] = (mu_y_idx_1_tmp * b_RBY4 + b_RBY1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBY2 * alpha[1])) * scaleFactors[46];
+Bykappa[2] = (mu_y_idx_2_tmp * b_RBY4 + b_RBY1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBY2 * alpha[2])) * scaleFactors[73];
+Bykappa[3] = (Vs_p * b_RBY4 + b_RBY1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBY2 * alpha[3])) * scaleFactors[100];
+for (i = 0; i < 4; i++) {
+    if (Eykappa[i] > 1.0) {
+        Eykappa[i] = 1.0;
+    }
+    if (Bykappa[i] < 0.0) {
+        Bykappa[i] = 0.0;
+    }
+}
+for (i = 0; i < 36; i++) {
+    zeta[i] = 1.0;
+}
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (tempInds[i]) {
+        trueCount++;
+    }
+}
+tmp_size_p = trueCount;
+trueCount = 0;
+for (i = 0; i < 4; i++) {
+    if (tempInds[i]) {
+        bc_tmp_data[trueCount] = i;
+        trueCount++;
+    }
+}
+for (i = 0; i < tmp_size_p; i++) {
+    bc_data[i] = (int8_T)bc_tmp_data[i];
+}
+for (i = 0; i < tmp_size_p; i++) {
+    zeta[9 * bc_data[i]] = 0.0;
+}
+tmp = %<(SLibCGCallSubFcn("e5tjr0p5gl", ["tempInds", "%<::tSimStruct>"], 1, 22, 9))>;
+if (tmp) {
+    Kyalpha[0] = muDoubleScalarCos(muDoubleScalarAtan(b_PDXP3 * kappa[0]));
+    lam_Cz[0] = muDoubleScalarCos(muDoubleScalarAtan(b_PDYP3 * R_omega_p));
+    Kyalpha[1] = muDoubleScalarCos(muDoubleScalarAtan(b_PDXP3 * kappa[1]));
+    lam_Cz[1] = muDoubleScalarCos(muDoubleScalarAtan(b_PDYP3 * Vsy_tmp));
+    Kyalpha[2] = muDoubleScalarCos(muDoubleScalarAtan(b_PDXP3 * kappa[2]));
+    lam_Cz[2] = muDoubleScalarCos(muDoubleScalarAtan(b_PDYP3 * Vsy_tmp_p));
+    Kyalpha[3] = muDoubleScalarCos(muDoubleScalarAtan(b_PDXP3 * kappa[3]));
+    lam_Cz[3] = muDoubleScalarCos(muDoubleScalarAtan(b_PDYP3 * Vsy_tmp_e));
+    for (i = 0; i < tmp_size_p; i++) {
+        trueCount = bc_tmp_data[i];
+        rhoz_data[i] = (b_PDXP2 * dfz[trueCount] + 1.0) * b_PDXP1 * Kyalpha[trueCount] * b_UNLOADED_RADIUS * phi[trueCount];
+    }
+    %<(SLibCGCallSubFcn("mqgbilo3x5", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 10))>;
+    %<(SLibCGCallSubFcn("iit2n2dklb", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 11))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 1] = rhoz_data[i];
+        tmpDrphiVar_data[i] = phi[bc_tmp_data[i]];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["tmpDrphiVar_data", "&tmp_size_p", "rhoz_data_p", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 12))>;
+    for (i = 0; i < rhoz_size; i++) {
+        rhoz_data[i] = b_UNLOADED_RADIUS * rhoz_data_p[i];
+    }
+    if (rhoz_size - 1 >= 0) {
+        memcpy(&tmpDrphiVar_data[0], &rhoz_data[0], (uint32_T)rhoz_size * sizeof(real_T));
+    }
+    %<(SLibCGCallSubFcn("ovabakf0qvp", ["tmpDrphiVar_data", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 13))>;
+    if ((rhoz_size == rhoz_size) && ((rhoz_size == 1 ? rhoz_size : rhoz_size) == tmp_size_p)) {
+        tmp_size = tmp_size_p;
+        for (i = 0; i < tmp_size_p; i++) {
+            trueCount = bc_tmp_data[i];
+            dc_data[i] = (b_PDYP2 * dfz[trueCount] + 1.0) * b_PDYP1 * lam_Cz[trueCount] * (b_PDYP4 * tmpDrphiVar_data[i] + rhoz_data[i]);
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4blsmny", ["dc_data", "&tmp_size", "b_PDYP1", "b_PDYP2", "dfz", "lam_Cz", "bc_tmp_data", "&tmp_size_p", "rhoz_data", "&rhoz_size", "b_PDYP4", "tmpDrphiVar_data", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 14))>;
+    }
+    %<(SLibCGCallSubFcn("mqgbilo3x5", ["dc_data", "&tmp_size", "%<::tSimStruct>"], 1, 22, 15))>;
+    %<(SLibCGCallSubFcn("iit2n2dklb", ["dc_data", "&tmp_size", "%<::tSimStruct>"], 1, 22, 16))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 2] = dc_data[i];
+    }
+    dfz_p = b_UNLOADED_RADIUS * b_UNLOADED_RADIUS * b_PKYP1;
+    for (i = 0; i < tmp_size_p; i++) {
+        R_omega_p = phi[bc_tmp_data[i]];
+        rhoz_data[i] = R_omega_p * R_omega_p * dfz_p;
+    }
+    %<(SLibCGCallSubFcn("mqgbilo3x5", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 17))>;
+    %<(SLibCGCallSubFcn("iit2n2dklb", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 18))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 3] = rhoz_data[i];
+    }
+}
+Vsy_tmp_p = 1.0 - b_PKY3 * 0.0;
+Kygammao[0] = (b_PKY7 * dfz[0] + b_PKY6) * Fz_ext[0] * (b_PPY5 * dpi_idx_0 + 1.0) * scaleFactors[14];
+Vsy_tmp = Fz_ext[0] / Fzo_prime_idx_0;
+Mzphiinf[0] = Vsy_tmp;
+R_omega_p = (b_PPY1 * dpi_idx_0 + 1.0) * (b_PKY1 * Fzo_prime_idx_0);
+Vsy_tmp_e = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp / (ec_data * b_PKY5 + b_PKY2) / (b_PPY2 * dpi_idx_0 + 1.0)) * b_PKY4);
+Kyalpha[0] = (1.0 - b_PKY3 * muDoubleScalarAbs(gamma_star_tmp)) * R_omega_p * Vsy_tmp_e * zeta[3] * scaleFactors[5];
+R_omega[0] = R_omega_p * Vsy_tmp_p * Vsy_tmp_e * zeta[3] * scaleFactors[5];
+Kygammao[1] = (b_PKY7 * dfz[1] + b_PKY6) * Fz_ext[1] * (b_PPY5 * dpi_idx_1 + 1.0) * scaleFactors[41];
+Vsy_tmp = Fz_ext[1] / Fzo_prime_idx_1;
+Mzphiinf[1] = Vsy_tmp;
+R_omega_p = (b_PPY1 * dpi_idx_1 + 1.0) * (b_PKY1 * Fzo_prime_idx_1);
+Vsy_tmp_e = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp / (mu_y_idx_1_tmp * b_PKY5 + b_PKY2) / (b_PPY2 * dpi_idx_1 + 1.0)) * b_PKY4);
+Kyalpha[1] = (1.0 - b_PKY3 * muDoubleScalarAbs(gamma_star_tmp_p)) * R_omega_p * Vsy_tmp_e * zeta[12] * scaleFactors[32];
+R_omega[1] = R_omega_p * Vsy_tmp_p * Vsy_tmp_e * zeta[12] * scaleFactors[32];
+Kygammao[2] = (b_PKY7 * dfz[2] + b_PKY6) * Fz_ext[2] * (b_PPY5 * dpi_idx_2 + 1.0) * scaleFactors[68];
+Vsy_tmp = Fz_ext[2] / Fzo_prime_idx_2;
+Mzphiinf[2] = Vsy_tmp;
+R_omega_p = (b_PPY1 * dpi_idx_2 + 1.0) * (b_PKY1 * Fzo_prime_idx_2);
+Vsy_tmp_e = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp / (mu_y_idx_2_tmp * b_PKY5 + b_PKY2) / (b_PPY2 * dpi_idx_2 + 1.0)) * b_PKY4);
+Kyalpha[2] = (1.0 - b_PKY3 * muDoubleScalarAbs(gamma_star_tmp_e)) * R_omega_p * Vsy_tmp_e * zeta[21] * scaleFactors[59];
+R_omega[2] = R_omega_p * Vsy_tmp_p * Vsy_tmp_e * zeta[21] * scaleFactors[59];
+Kygammao[3] = (b_PKY7 * dfz[3] + b_PKY6) * Fz_ext[3] * (b_PPY5 * dpi_idx_3 + 1.0) * scaleFactors[95];
+Vsy_tmp = Fz_ext[3] / Fzo_prime_idx_3;
+R_omega_p = (b_PPY1 * dpi_idx_3 + 1.0) * (b_PKY1 * Fzo_prime_idx_3);
+Vsy_tmp_e = muDoubleScalarSin(muDoubleScalarAtan(Vsy_tmp / (Vs_p * b_PKY5 + b_PKY2) / (b_PPY2 * dpi_idx_3 + 1.0)) * b_PKY4);
+dfz_p = (1.0 - b_PKY3 * muDoubleScalarAbs(gamma_star_tmp_i)) * R_omega_p * Vsy_tmp_e * zeta[30] * scaleFactors[86];
+Kyalpha[3] = dfz_p;
+R_omega[3] = R_omega_p * Vsy_tmp_p * Vsy_tmp_e * zeta[30] * scaleFactors[86];
+%<(SLibCGCallSubFcn("etyirrpn2a", ["Kyalpha", "0.0001", "Kyalpha_prime", "lam_Cz", "%<::tSimStruct>"], 1, 22, 19))>;
+%<(SLibCGCallSubFcn("etyirrpn2a", ["R_omega", "0.0001", "Ey", "lam_Cz", "%<::tSimStruct>"], 1, 22, 20))>;
+x_idx_0 = b_PHYP1;
+if (b_PHYP1 < 0.0) {
+    x_idx_0 = 0.0;
+}
+R_omega_p = muDoubleScalarTanh(Vx[0]);
+lam_Cz[0] = (b_PHYP3 * dfz[0] + b_PHYP2) * R_omega_p;
+Vsy_tmp_p = muDoubleScalarTanh(Vx[1]);
+lam_Cz[1] = (b_PHYP3 * dfz[1] + b_PHYP2) * Vsy_tmp_p;
+Vsy_tmp_e = muDoubleScalarTanh(Vx[2]);
+lam_Cz[2] = (b_PHYP3 * dfz[2] + b_PHYP2) * Vsy_tmp_e;
+lam_Cz_tmp = muDoubleScalarTanh(Vx[3]);
+lam_Cz_p = (b_PHYP3 * dfz[3] + b_PHYP2) * lam_Cz_tmp;
+lam_Cz[3] = lam_Cz_p;
+ab_idx_0 = b_PHYP4;
+if (b_PHYP4 > 1.0) {
+    ab_idx_0 = 1.0;
+}
+Vs[0] = Kygammao[0] / (1.0 - epsilon_gamma[0]) / (x_idx_0 * lam_Cz[0] * Ey[0]);
+dc_data[0] = b_UNLOADED_RADIUS * phi[0];
+Vs[1] = Kygammao[1] / (1.0 - epsilon_gamma[1]) / (x_idx_0 * lam_Cz[1] * Ey[1]);
+dc_data[1] = b_UNLOADED_RADIUS * phi[1];
+Vs[2] = Kygammao[2] / (1.0 - epsilon_gamma[2]) / (x_idx_0 * lam_Cz[2] * Ey[2]);
+dc_data[2] = b_UNLOADED_RADIUS * phi[2];
+Vs[3] = Kygammao[3] / (1.0 - epsilon_gamma[3]) / (x_idx_0 * lam_Cz_p * Ey[3]);
+dc_data[3] = b_UNLOADED_RADIUS * phi[3];
+%<(SLibCGCallSubFcn("magicsin_BC8OJFW4", ["lam_Cz", "x_idx_0", "Vs", "ab_idx_0", "dc_data", "rhoz_data", "%<::tSimStruct>"], 1, 22, 21))>;
+Vs[0] = rhoz_data[0] * R_omega_p;
+lam_Kygamma[0] = (b_PVY4 * dfz[0] + b_PVY3) * Fz_ext[0] * gamma_star_tmp * zeta[2] * scaleFactors[14] * lam_muy_prime_idx_0;
+SHy[0] = 0.0;
+Ey[0] = kappa[0] + Vsy[0];
+Vs[1] = rhoz_data[1] * Vsy_tmp_p;
+lam_Kygamma[1] = (b_PVY4 * dfz[1] + b_PVY3) * Fz_ext[1] * gamma_star_tmp_p * zeta[11] * scaleFactors[41] * lam_muy_prime_idx_1;
+SHy[1] = 0.0;
+Ey[1] = kappa[1] + Vsy[1];
+Vs[2] = rhoz_data[2] * Vsy_tmp_e;
+lam_Kygamma[2] = (b_PVY4 * dfz[2] + b_PVY3) * Fz_ext[2] * gamma_star_tmp_e * zeta[20] * scaleFactors[68] * lam_muy_prime_idx_2;
+SHy[2] = 0.0;
+Ey[2] = kappa[2] + Vsy[2];
+Vs[3] = rhoz_data[3] * lam_Cz_tmp;
+lam_Kygamma[3] = (b_PVY4 * dfz[3] + b_PVY3) * Fz_ext[3] * gamma_star_tmp_i * zeta[29] * scaleFactors[95] * lam_muy_prime_idx_3;
+SHy[3] = 0.0;
+Ey[3] = kappa[3] + Vsy[3];
+%<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["b_RCY1", "Bykappa", "Eykappa", "Ey", "rhoz_data", "%<::tSimStruct>"], 1, 22, 22))>;
+%<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["b_RCY1", "Bykappa", "Eykappa", "Vsy", "dc_data", "%<::tSimStruct>"], 1, 22, 23))>;
+Fy[0] = rhoz_data[0] / dc_data[0];
+Fy[1] = rhoz_data[1] / dc_data[1];
+Fy[2] = rhoz_data[2] / dc_data[2];
+Fy[3] = rhoz_data[3] / dc_data[3];
+for (i = 0; i < 4; i++) {
+    if (Fy[i] < 0.0) {
+        Fy[i] = 0.0;
+    }
+}
+if (tmp) {
+    for (i = 0; i < tmp_size_p; i++) {
+        trueCount = bc_tmp_data[i];
+        zeta[9 * bc_data[i] + 4] = (Vs[trueCount] + 1.0) - lam_Kygamma[trueCount] / Kyalpha_prime[trueCount];
+    }
+    R_omega_p = b_QDTP1 * b_UNLOADED_RADIUS;
+    for (i = 0; i < tmp_size_p; i++) {
+        rhoz_data[i] = R_omega_p * phi[bc_tmp_data[i]];
+    }
+    %<(SLibCGCallSubFcn("mqgbilo3x5", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 24))>;
+    %<(SLibCGCallSubFcn("iit2n2dklb", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 25))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 5] = rhoz_data[i];
+    }
+    R_omega_p = b_QBRP1 * b_UNLOADED_RADIUS;
+    for (i = 0; i < tmp_size_p; i++) {
+        rhoz_data[i] = R_omega_p * phi[bc_tmp_data[i]];
+    }
+    %<(SLibCGCallSubFcn("mqgbilo3x5", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 26))>;
+    %<(SLibCGCallSubFcn("iit2n2dklb", ["rhoz_data", "&tmp_size_p", "%<::tSimStruct>"], 1, 22, 27))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 6] = rhoz_data[i];
+    }
+    Mzphiinf[0] = b_QCRP1 * mu_y_idx_0 * b_UNLOADED_RADIUS * Fz_ext[0] * muDoubleScalarSqrt(Mzphiinf[0]) * scaleFactors[26];
+    Mzphiinf[1] = b_QCRP1 * mu_y_idx_1 * b_UNLOADED_RADIUS * Fz_ext[1] * muDoubleScalarSqrt(Mzphiinf[1]) * scaleFactors[53];
+    Mzphiinf[2] = b_QCRP1 * mu_y_idx_2 * b_UNLOADED_RADIUS * Fz_ext[2] * muDoubleScalarSqrt(Mzphiinf[2]) * scaleFactors[80];
+    Mzphiinf[3] = b_QCRP1 * Vsy_p * b_UNLOADED_RADIUS * Fz_ext[3] * muDoubleScalarSqrt(Vsy_tmp) * scaleFactors[107];
+    for (i = 0; i < 4; i++) {
+        if (Mzphiinf[i] < 0.0) {
+            Mzphiinf[i] = 1.0E-6;
+        }
+    }
+    R_omega_p = b_QCRP2 * b_UNLOADED_RADIUS;
+    Bykappa[0] = muDoubleScalarAtan(R_omega_p * muDoubleScalarAbs(phi_t[0]));
+    Bykappa[1] = muDoubleScalarAtan(R_omega_p * muDoubleScalarAbs(phi_t[1]));
+    Bykappa[2] = muDoubleScalarAtan(R_omega_p * muDoubleScalarAbs(phi_t[2]));
+    Bykappa[3] = muDoubleScalarAtan(R_omega_p * muDoubleScalarAbs(phi_t[3]));
+    gamma_star_tmp = b_QDRP1;
+    if (b_QDRP1 < 0.0) {
+        gamma_star_tmp = 0.0;
+    }
+    gamma_star_tmp_p = b_QDRP2;
+    if (b_QDRP2 < 0.0) {
+        gamma_star_tmp_p = 0.0;
+    }
+    R_omega_p = muDoubleScalarSin(1.5707963267948966 * gamma_star_tmp);
+    lam_Cz_p = Mzphiinf[0] / R_omega_p;
+    lam_Cz[0] = lam_Cz_p;
+    Vsy[0] = ((b_QDZ11 * dfz[0] + b_QDZ10) * muDoubleScalarAbs(b_gamma[0]) + (b_QDZ9 * dfz[0] + b_QDZ8)) * (Fz_ext[0] * b_UNLOADED_RADIUS) * scaleFactors[15] / (gamma_star_tmp * lam_Cz_p * (1.0 - epsilon_gamma[0]) + muDoubleScalarSign(1.0 - epsilon_gamma[0]) * 0.0001);
+    dc_data[0] = -b_UNLOADED_RADIUS * phi[0];
+    lam_Cz_p = Mzphiinf[1] / R_omega_p;
+    lam_Cz[1] = lam_Cz_p;
+    Vsy[1] = ((b_QDZ11 * dfz[1] + b_QDZ10) * muDoubleScalarAbs(b_gamma[1]) + (b_QDZ9 * dfz[1] + b_QDZ8)) * (Fz_ext[1] * b_UNLOADED_RADIUS) * scaleFactors[42] / (gamma_star_tmp * lam_Cz_p * (1.0 - epsilon_gamma[1]) + muDoubleScalarSign(1.0 - epsilon_gamma[1]) * 0.0001);
+    dc_data[1] = -b_UNLOADED_RADIUS * phi[1];
+    lam_Cz_p = Mzphiinf[2] / R_omega_p;
+    lam_Cz[2] = lam_Cz_p;
+    Vsy[2] = ((b_QDZ11 * dfz[2] + b_QDZ10) * muDoubleScalarAbs(b_gamma[2]) + (b_QDZ9 * dfz[2] + b_QDZ8)) * (Fz_ext[2] * b_UNLOADED_RADIUS) * scaleFactors[69] / (gamma_star_tmp * lam_Cz_p * (1.0 - epsilon_gamma[2]) + muDoubleScalarSign(1.0 - epsilon_gamma[2]) * 0.0001);
+    dc_data[2] = -b_UNLOADED_RADIUS * phi[2];
+    lam_Cz_p = Mzphiinf[3] / R_omega_p;
+    lam_Cz[3] = lam_Cz_p;
+    Vsy[3] = ((b_QDZ11 * dfz[3] + b_QDZ10) * muDoubleScalarAbs(b_gamma[3]) + (b_QDZ9 * dfz[3] + b_QDZ8)) * (Fz_ext[3] * b_UNLOADED_RADIUS) * scaleFactors[96] / (gamma_star_tmp * lam_Cz_p * (1.0 - epsilon_gamma[3]) + muDoubleScalarSign(1.0 - epsilon_gamma[3]) * 0.0001);
+    dc_data[3] = -b_UNLOADED_RADIUS * phi[3];
+    %<(SLibCGCallSubFcn("magicsin_BC8OJFW4", ["lam_Cz", "gamma_star_tmp", "Vsy", "gamma_star_tmp_p", "dc_data", "R_omega", "%<::tSimStruct>"], 1, 22, 28))>;
+    lam_Cz[0] = muDoubleScalarSign(R_omega[0]);
+    lam_Cz[1] = muDoubleScalarSign(R_omega[1]);
+    lam_Cz[2] = muDoubleScalarSign(R_omega[2]);
+    lam_Cz[3] = muDoubleScalarSign(R_omega[3]);
+    for (i = 0; i < 4; i++) {
+        if (lam_Cz[i] == 0.0) {
+            lam_Cz[i] = 1.0;
+        }
+    }
+    for (i = 0; i < tmp_size_p; i++) {
+        trueCount = bc_tmp_data[i];
+        dc_data[i] = R_omega[trueCount];
+        rhoz_data[i] = R_omega[trueCount];
+    }
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["rhoz_data", "&tmp_size_p", "rhoz_data_p", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 29))>;
+    %<(SLibCGCallSubFcn("kh1usf0vag", ["dc_data", "&tmp_size_p", "tmp_data_e", "&tmp_size", "%<::tSimStruct>"], 1, 22, 45))>;
+    if ((tmp_size == tmp_size_p) && ((rhoz_size == 1 ? tmp_size_p : rhoz_size) == tmp_size_p)) {
+        for (i = 0; i < tmp_size_p; i++) {
+            dc_data[i] = R_omega[bc_tmp_data[i]];
+        }
+        %<(SLibCGCallSubFcn("kh1usf0vag", ["dc_data", "&tmp_size_p", "rhoz_data_p", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 30))>;
+        rhoz_size = tmp_size_p;
+        for (i = 0; i < tmp_size_p; i++) {
+            trueCount = bc_tmp_data[i];
+            tmpDrphiVar_data[i] = Mzphiinf[trueCount] * 2.0 / 3.1415926535897931 * Bykappa[trueCount] * Fy[trueCount] / (0.0001 * lam_Cz[trueCount] - rhoz_data_p[i]);
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4blsmn", ["tmpDrphiVar_data", "&rhoz_size", "Mzphiinf", "Bykappa", "Fy", "bc_tmp_data", "&tmp_size_p", "R_omega", "lam_Cz", "%<::tSimStruct>"], 1, 22, 31))>;
+    }
+    trueCount = rhoz_size - 1;
+    for (i = 0; i <= trueCount; i++) {
+        if (tmpDrphiVar_data[i] > 1.0) {
+            tmpDrphiVar_data[i] = 1.0;
+        }
+        if (tmpDrphiVar_data[i] < -1.0) {
+            tmpDrphiVar_data[i] = -1.0;
+        }
+    }
+    %<(SLibCGCallSubFcn("bqn1tkpksh", ["tmpDrphiVar_data", "&rhoz_size", "%<::tSimStruct>"], 1, 22, 32))>;
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 7] = 0.63661977236758138 * tmpDrphiVar_data[i];
+    }
+    for (i = 0; i < tmp_size_p; i++) {
+        zeta[9 * bc_data[i] + 8] = R_omega[bc_tmp_data[i]] + 1.0;
+    }
+    if (tmp_size_p == 4) {
+        for (i = 0; i < tmp_size_p; i++) {
+            trueCount = bc_tmp_data[i];
+            SHy[bc_data[i]] = (scaleFactors[27 * i + 11] * (0.0 * dfz[trueCount]) * (real_T)tempInds[i] + Vs[trueCount]) - lam_Kygamma[trueCount] / Kyalpha_prime[trueCount];
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4blsm", ["SHy", "bc_data", "&tmp_size_p", "dfz", "bc_tmp_data", "&tmp_size_p", "scaleFactors", "tempInds", "Vs", "lam_Kygamma", "Kyalpha_prime", "%<::tSimStruct>"], 1, 22, 33))>;
+    }
+}
+Vsy[0] = b_PCX1 * scaleFactors[6];
+Vsy[1] = b_PCX1 * scaleFactors[33];
+Vsy[2] = b_PCX1 * scaleFactors[60];
+Vsy[3] = b_PCX1 * scaleFactors[87];
+gamma_star_tmp = b_gamma[0] * b_gamma[0];
+epsilon_gamma[0] = ((b_PPX3 * dpi_idx_0 + 1.0) + b_PPX4 * Dx_tmp) * (b_PDX2 * dfz[0] + b_PDX1) * (1.0 - gamma_star_tmp * b_PDX3) * Fx[0] * Fz_ext[0] * zeta[1];
+gamma_star_tmp_p = b_gamma[1] * b_gamma[1];
+epsilon_gamma[1] = ((b_PPX3 * dpi_idx_1 + 1.0) + b_PPX4 * Dx_tmp_p) * (b_PDX2 * dfz[1] + b_PDX1) * (1.0 - gamma_star_tmp_p * b_PDX3) * Fx[1] * Fz_ext[1] * zeta[10];
+gamma_star_tmp_e = b_gamma[2] * b_gamma[2];
+epsilon_gamma[2] = ((b_PPX3 * dpi_idx_2 + 1.0) + b_PPX4 * Dx_tmp_e) * (b_PDX2 * dfz[2] + b_PDX1) * (1.0 - gamma_star_tmp_e * b_PDX3) * Fx[2] * Fz_ext[2] * zeta[19];
+gamma_star_tmp_i = b_gamma[3] * b_gamma[3];
+epsilon_gamma[3] = ((b_PPX3 * dpi_idx_3 + 1.0) + b_PPX4 * Dx_tmp_i) * (b_PDX2 * dfz[3] + b_PDX1) * (1.0 - gamma_star_tmp_i * b_PDX3) * Fx[3] * Fz_ext[3] * zeta[28];
+x_idx_0 = dfz[0] * dfz[0];
+Bykappa[0] = ((b_PEX2 * dfz[0] + b_PEX1) + x_idx_0 * b_PEX3) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[0]) * b_PEX4) * scaleFactors[8];
+lam_Cz_tmp = dfz[1] * dfz[1];
+Bykappa[1] = ((b_PEX2 * dfz[1] + b_PEX1) + lam_Cz_tmp * b_PEX3) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[1]) * b_PEX4) * scaleFactors[35];
+ab_idx_0 = dfz[2] * dfz[2];
+Bykappa[2] = ((b_PEX2 * dfz[2] + b_PEX1) + ab_idx_0 * b_PEX3) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[2]) * b_PEX4) * scaleFactors[62];
+Bykappa_tmp = dfz[3] * dfz[3];
+Bykappa[3] = ((b_PEX2 * dfz[3] + b_PEX1) + Bykappa_tmp * b_PEX3) * (1.0 - muDoubleScalarTanh(10.0 * kappa_x[3]) * b_PEX4) * scaleFactors[89];
+for (i = 0; i < 4; i++) {
+    if (Vsy[i] < 0.0) {
+        Vsy[i] = 0.0;
+    }
+    if (epsilon_gamma[i] < 0.0) {
+        epsilon_gamma[i] = 0.0;
+    }
+    if (Bykappa[i] > 1.0) {
+        Bykappa[i] = 1.0;
+    }
+}
+phi[0] = (b_PKX2 * dfz[0] + b_PKX1) * Fz_ext[0] * muDoubleScalarExp(b_PKX3 * dfz[0]) * ((b_PPX1 * dpi_idx_0 + 1.0) + Dx_tmp * b_PPX2) * scaleFactors[4];
+Vs[0] = Vsy[0] * epsilon_gamma[0];
+phi[1] = (b_PKX2 * dfz[1] + b_PKX1) * Fz_ext[1] * muDoubleScalarExp(b_PKX3 * dfz[1]) * ((b_PPX1 * dpi_idx_1 + 1.0) + Dx_tmp_p * b_PPX2) * scaleFactors[31];
+Vs[1] = Vsy[1] * epsilon_gamma[1];
+phi[2] = (b_PKX2 * dfz[2] + b_PKX1) * Fz_ext[2] * muDoubleScalarExp(b_PKX3 * dfz[2]) * ((b_PPX1 * dpi_idx_2 + 1.0) + Dx_tmp_e * b_PPX2) * scaleFactors[58];
+Vs[2] = Vsy[2] * epsilon_gamma[2];
+Dx_tmp = (b_PKX2 * dfz[3] + b_PKX1) * Fz_ext[3] * muDoubleScalarExp(b_PKX3 * dfz[3]) * ((b_PPX1 * dpi_idx_3 + 1.0) + Dx_tmp_i * b_PPX2) * scaleFactors[85];
+Vs[3] = Vsy[3] * epsilon_gamma[3];
+%<(SLibCGCallSubFcn("etyirrpn2a", ["Vs", "0.0001", "Ey", "lam_Cz", "%<::tSimStruct>"], 1, 22, 34))>;
+lam_Cz[0] = b_REX2 * dfz[0] + b_REX1;
+lam_Cz[1] = b_REX2 * dfz[1] + b_REX1;
+lam_Cz[2] = b_REX2 * dfz[2] + b_REX1;
+lam_Cz[3] = b_REX2 * dfz[3] + b_REX1;
+R_omega[0] = (ec_data * b_RBX3 + b_RBX1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBX2 * kappa[0])) * scaleFactors[18];
+R_omega[1] = (mu_y_idx_1_tmp * b_RBX3 + b_RBX1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBX2 * kappa[1])) * scaleFactors[45];
+R_omega[2] = (mu_y_idx_2_tmp * b_RBX3 + b_RBX1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBX2 * kappa[2])) * scaleFactors[72];
+R_omega[3] = (Vs_p * b_RBX3 + b_RBX1) * muDoubleScalarCos(muDoubleScalarAtan(b_RBX2 * kappa[3])) * scaleFactors[99];
+for (i = 0; i < 4; i++) {
+    if (lam_Cz[i] > 1.0) {
+        lam_Cz[i] = 1.0;
+    }
+    if (R_omega[i] < 0.0) {
+        R_omega[i] = 0.0;
+    }
+}
+%<(SLibCGCallSubFcn("magiccos_vpB3Xlmi", ["b_RCX1", "R_omega", "lam_Cz", "alpha", "rhoz_data", "%<::tSimStruct>"], 1, 22, 35))>;
+%<(SLibCGCallSubFcn("magiccos_RICJxYVg", ["b_RCX1", "R_omega", "lam_Cz", "dc_data", "%<::tSimStruct>"], 1, 22, 36))>;
+Vs[0] = rhoz_data[0] / dc_data[0];
+Vs[1] = rhoz_data[1] / dc_data[1];
+Vs[2] = rhoz_data[2] / dc_data[2];
+Vs[3] = rhoz_data[3] / dc_data[3];
+for (i = 0; i < 4; i++) {
+    if (Vs[i] < 0.0) {
+        Vs[i] = 0.0;
+    }
+}
+Mzphiinf[0] = phi[0] / Ey[0];
+Mzphiinf[1] = phi[1] / Ey[1];
+Mzphiinf[2] = phi[2] / Ey[2];
+Mzphiinf[3] = Dx_tmp / Ey[3];
+%<(SLibCGCallSubFcn("magicsin_bqt92mPI", ["epsilon_gamma", "Vsy", "Mzphiinf", "Bykappa", "kappa_x", "rhoz_data", "%<::tSimStruct>"], 1, 22, 37))>;
+Fx[0] = ((b_PVX2 * dfz[0] + b_PVX1) * Fz_ext[0] * (Fx[0] * 10.0 / (9.0 * Fx[0] + 1.0)) * scaleFactors[12] * zeta[1] + rhoz_data[0]) * Vs[0];
+phi_t[0] = b_PCY1 * scaleFactors[7];
+Fx[1] = ((b_PVX2 * dfz[1] + b_PVX1) * Fz_ext[1] * (Fx[1] * 10.0 / (9.0 * Fx[1] + 1.0)) * scaleFactors[39] * zeta[10] + rhoz_data[1]) * Vs[1];
+phi_t[1] = b_PCY1 * scaleFactors[34];
+Fx[2] = ((b_PVX2 * dfz[2] + b_PVX1) * Fz_ext[2] * (Fx[2] * 10.0 / (9.0 * Fx[2] + 1.0)) * scaleFactors[66] * zeta[19] + rhoz_data[2]) * Vs[2];
+phi_t[2] = b_PCY1 * scaleFactors[61];
+mu_y_idx_1_tmp = ((b_PVX2 * dfz[3] + b_PVX1) * Fz_ext[3] * (Fx[3] * 10.0 / (9.0 * Fx[3] + 1.0)) * scaleFactors[93] * zeta[28] + rhoz_data[3]) * Vs[3];
+Fx[3] = mu_y_idx_1_tmp;
+phi_t[3] = b_PCY1 * scaleFactors[88];
+for (i = 0; i < 4; i++) {
+    if (phi_t[i] < 0.0) {
+        phi_t[i] = 0.0;
+    }
+}
+ec_data = mu_y_idx_0 * Fz_ext[0];
+mu_y_idx_0 = ec_data;
+Vs_p = ec_data * zeta[2];
+Vs[0] = Vs_p;
+Vsy[0] = phi_t[0] * Vs_p;
+ec_data = mu_y_idx_1 * Fz_ext[1];
+mu_y_idx_1 = ec_data;
+Vs_p = ec_data * zeta[11];
+Vs[1] = Vs_p;
+Vsy[1] = phi_t[1] * Vs_p;
+ec_data = mu_y_idx_2 * Fz_ext[2];
+mu_y_idx_2 = ec_data;
+Vs_p = ec_data * zeta[20];
+Vs[2] = Vs_p;
+Vsy[2] = phi_t[2] * Vs_p;
+ec_data = Vsy_p * Fz_ext[3];
+Vs_p = ec_data * zeta[29];
+Vs[3] = Vs_p;
+Vsy[3] = phi_t[3] * Vs_p;
+%<(SLibCGCallSubFcn("etyirrpn2a", ["Vsy", "0.0001", "epsilon_gamma", "lam_Cz", "%<::tSimStruct>"], 1, 22, 38))>;
+epsilon_gamma[0] = Kyalpha[0] / epsilon_gamma[0];
+epsilon_gamma[1] = Kyalpha[1] / epsilon_gamma[1];
+epsilon_gamma[2] = Kyalpha[2] / epsilon_gamma[2];
+epsilon_gamma[3] = dfz_p / epsilon_gamma[3];
+if (%<(SLibCGCallSubFcn("e5tjr0p5gl", ["nomslipinds", "%<::tSimStruct>"], 1, 22, 39))>) {
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (nomslipinds[i]) {
+            trueCount++;
+        }
+    }
+    rhoz_size = trueCount;
+    trueCount = 0;
+    for (i = 0; i < 4; i++) {
+        if (nomslipinds[i]) {
+            sb_tmp_data[trueCount] = i;
+            trueCount++;
+        }
+    }
+    for (i = 0; i < rhoz_size; i++) {
+        bc_data[i] = (int8_T)sb_tmp_data[i];
+    }
+    if (rhoz_size == 4) {
+        for (i = 0; i < rhoz_size; i++) {
+            trueCount = sb_tmp_data[i];
+            SHy[bc_data[i]] = ((scaleFactors[27 * i + 11] * (0.0 * dfz[trueCount]) * (real_T)nomslipinds[i] + (Kygammao[trueCount] * gamma_star[trueCount] - lam_Kygamma[trueCount]) / Kyalpha_prime[trueCount] * zeta[9 * trueCount]) + zeta[9 * trueCount + 4]) - 1.0;
+        }
+    } else {
+        %<(SLibCGCallSubFcn("ewiatu4bls", ["SHy", "bc_data", "&rhoz_size", "dfz", "sb_tmp_data", "&rhoz_size", "scaleFactors", "nomslipinds", "Kygammao", "gamma_star", "lam_Kygamma", "Kyalpha_prime", "zeta", "%<::tSimStruct>"], 1, 22, 40))>;
+    }
+}
+lam_muy_prime_idx_0 = 0.0 * dfz[0] * Fz_ext[0] * scaleFactors[13] * lam_muy_prime_idx_0 * zeta[2] + lam_Kygamma[0];
+R_omega_p = alpha[0] + SHy[0];
+R_omega[0] = R_omega_p;
+lam_Cz[0] = muDoubleScalarSign(R_omega_p);
+lam_muy_prime_idx_1 = 0.0 * dfz[1] * Fz_ext[1] * scaleFactors[40] * lam_muy_prime_idx_1 * zeta[11] + lam_Kygamma[1];
+R_omega_p = alpha[1] + SHy[1];
+R_omega[1] = R_omega_p;
+lam_Cz[1] = muDoubleScalarSign(R_omega_p);
+lam_muy_prime_idx_2 = 0.0 * dfz[2] * Fz_ext[2] * scaleFactors[67] * lam_muy_prime_idx_2 * zeta[20] + lam_Kygamma[2];
+R_omega_p = alpha[2] + SHy[2];
+R_omega[2] = R_omega_p;
+lam_Cz[2] = muDoubleScalarSign(R_omega_p);
+lam_muy_prime_idx_3 = 0.0 * dfz[3] * Fz_ext[3] * scaleFactors[94] * lam_muy_prime_idx_3 * zeta[29] + lam_Kygamma[3];
+R_omega_p = alpha[3] + SHy[3];
+R_omega[3] = R_omega_p;
+lam_Cz[3] = muDoubleScalarSign(R_omega_p);
+for (i = 0; i < 4; i++) {
+    if (lam_Cz[i] == 0.0) {
+        lam_Cz[i] = 1.0;
+    }
+}
+Vsy_tmp = gamma_star[0] * gamma_star[0];
+Ey[0] = ((Vsy_tmp * b_PEY5 + 1.0) - b_PEY4 * gamma_star[0] * lam_Cz[0]) * (b_PEY2 * dfz[0] + b_PEY1) * scaleFactors[9];
+Vsy_tmp_p = gamma_star[1] * gamma_star[1];
+Ey[1] = ((Vsy_tmp_p * b_PEY5 + 1.0) - b_PEY4 * gamma_star[1] * lam_Cz[1]) * (b_PEY2 * dfz[1] + b_PEY1) * scaleFactors[36];
+Vsy_tmp_e = gamma_star[2] * gamma_star[2];
+Ey[2] = ((Vsy_tmp_e * b_PEY5 + 1.0) - b_PEY4 * gamma_star[2] * lam_Cz[2]) * (b_PEY2 * dfz[2] + b_PEY1) * scaleFactors[63];
+Dx_tmp_p = gamma_star[3] * gamma_star[3];
+Ey[3] = ((Dx_tmp_p * b_PEY5 + 1.0) - b_PEY4 * gamma_star[3] * lam_Cz[3]) * (b_PEY2 * dfz[3] + b_PEY1) * scaleFactors[90];
+for (i = 0; i < 4; i++) {
+    if (Ey[i] > 1.0) {
+        Ey[i] = 1.0;
+    }
+}
+%<(SLibCGCallSubFcn("magicsin_bqt92mPI", ["Vs", "phi_t", "epsilon_gamma", "Ey", "R_omega", "rhoz_data", "%<::tSimStruct>"], 1, 22, 41))>;
+Vsy_p = (0.0 * dfz[0] + b_RVY3 * gamma_star[0]) * mu_y_idx_0 * muDoubleScalarCos(muDoubleScalarAtan(b_RVY4 * alpha[0])) * zeta[2] * muDoubleScalarSin(muDoubleScalarAtan(b_RVY6 * kappa[0]) * b_RVY5) * scaleFactors[20];
+mu_y_idx_0 = Vsy_p;
+Fy[0] = (rhoz_data[0] + lam_muy_prime_idx_0) * Fy[0] + Vsy_p;
+My[0] = muDoubleScalarTanh(10.0 * Omega[0]);
+Vsy[0] = scaleFactors[25];
+Vsy_p = (0.0 * dfz[1] + b_RVY3 * gamma_star[1]) * mu_y_idx_1 * muDoubleScalarCos(muDoubleScalarAtan(b_RVY4 * alpha[1])) * zeta[11] * muDoubleScalarSin(muDoubleScalarAtan(b_RVY6 * kappa[1]) * b_RVY5) * scaleFactors[47];
+mu_y_idx_1 = Vsy_p;
+Fy[1] = (rhoz_data[1] + lam_muy_prime_idx_1) * Fy[1] + Vsy_p;
+My[1] = muDoubleScalarTanh(10.0 * Omega[1]);
+Vsy[1] = scaleFactors[52];
+Vsy_p = (0.0 * dfz[2] + b_RVY3 * gamma_star[2]) * mu_y_idx_2 * muDoubleScalarCos(muDoubleScalarAtan(b_RVY4 * alpha[2])) * zeta[20] * muDoubleScalarSin(muDoubleScalarAtan(b_RVY6 * kappa[2]) * b_RVY5) * scaleFactors[74];
+mu_y_idx_2 = Vsy_p;
+Fy[2] = (rhoz_data[2] + lam_muy_prime_idx_2) * Fy[2] + Vsy_p;
+My[2] = muDoubleScalarTanh(10.0 * Omega[2]);
+Vsy[2] = scaleFactors[79];
+Vsy_p = (0.0 * dfz[3] + b_RVY3 * gamma_star[3]) * ec_data * muDoubleScalarCos(muDoubleScalarAtan(b_RVY4 * alpha[3])) * zeta[29] * muDoubleScalarSin(muDoubleScalarAtan(b_RVY6 * kappa[3]) * b_RVY5) * scaleFactors[101];
+Fy[3] = (rhoz_data[3] + lam_muy_prime_idx_3) * Fy[3] + Vsy_p;
+Vsy[3] = scaleFactors[106];
+%<(SLibCGCallSubFcn("rollingMoment_IvRBPgtr", ["Fx", "Vx", "FzUnSat", "press", "b_gamma", "b_LONGVL", "b_UNLOADED_RADIUS", "b_FNOMIN", "b_NOMPRES", "b_QSY1", "b_QSY2", "b_QSY3", "b_QSY4", "b_QSY5", "b_QSY6", "b_QSY7", "b_QSY8", "Vsy", "rhoz_data", "%<::tSimStruct>"], 1, 22, 42))>;
+My[0] *= rhoz_data[0];
+ec_data = b_QSX6 * Fz_ext[0] / b_FNOMIN;
+mu_y_idx_2_tmp = b_UNLOADED_RADIUS * Fz_ext[0];
+Bykappa[0] = mu_y_idx_2_tmp;
+Dx_tmp_e = muDoubleScalarAbs(b_gamma[0]);
+Mx[0] = (((((0.0 * scaleFactors[24] - (b_PPMX1 * dpi_idx_0 + 1.0) * (b_QSX2 * b_gamma[0])) - b_QSX12 * b_gamma[0] * Dx_tmp_e) + b_QSX3 * Fy[0] / b_FNOMIN) + muDoubleScalarSin(muDoubleScalarAtan(b_QSX9 * Fy[0] / b_FNOMIN) * b_QSX8 + b_QSX7 * b_gamma[0]) * (muDoubleScalarCos(muDoubleScalarAtan(ec_data * ec_data) * b_QSX5) * b_QSX4)) + muDoubleScalarAtan(b_QSX11 * Fz_ext[0] / b_FNOMIN) * b_QSX10 * b_gamma[0]) * (mu_y_idx_2_tmp * scaleFactors[23]) + b_UNLOADED_RADIUS * Fy[0] * scaleFactors[23] * (b_QSX14 * Dx_tmp_e + b_QSX13);
+Mz[0] = Vx[0] / Mz[0];
+Ey[0] = ((b_QHZ4 * dfz[0] + b_QHZ3) * gamma_star[0] + 0.0 * dfz[0]) + alpha[0];
+SHy[0] = (lam_muy_prime_idx_0 / Kyalpha_prime[0] + SHy[0]) + alpha[0];
+Vs_p = 0.0 * b_gamma[0] + 1.0;
+Vs[0] = Vs_p;
+Vsy[0] = ((b_QBZ2 * dfz[0] + b_QBZ1) + x_idx_0 * b_QBZ3) * ((b_QBZ5 * Dx_tmp_e + Vs_p) + Vsy_tmp * b_QBZ6) * scaleFactors[5] / lam_muy[0];
+My[1] *= rhoz_data[1];
+ec_data = b_QSX6 * Fz_ext[1] / b_FNOMIN;
+mu_y_idx_2_tmp = b_UNLOADED_RADIUS * Fz_ext[1];
+Bykappa[1] = mu_y_idx_2_tmp;
+Dx_tmp_e = muDoubleScalarAbs(b_gamma[1]);
+Mx[1] = (((((0.0 * scaleFactors[51] - (b_PPMX1 * dpi_idx_1 + 1.0) * (b_QSX2 * b_gamma[1])) - b_QSX12 * b_gamma[1] * Dx_tmp_e) + b_QSX3 * Fy[1] / b_FNOMIN) + muDoubleScalarSin(muDoubleScalarAtan(b_QSX9 * Fy[1] / b_FNOMIN) * b_QSX8 + b_QSX7 * b_gamma[1]) * (muDoubleScalarCos(muDoubleScalarAtan(ec_data * ec_data) * b_QSX5) * b_QSX4)) + muDoubleScalarAtan(b_QSX11 * Fz_ext[1] / b_FNOMIN) * b_QSX10 * b_gamma[1]) * (mu_y_idx_2_tmp * scaleFactors[50]) + b_UNLOADED_RADIUS * Fy[1] * scaleFactors[50] * (b_QSX14 * Dx_tmp_e + b_QSX13);
+Mz[1] = Vx[1] / Mz[1];
+Ey[1] = ((b_QHZ4 * dfz[1] + b_QHZ3) * gamma_star[1] + 0.0 * dfz[1]) + alpha[1];
+SHy[1] = (lam_muy_prime_idx_1 / Kyalpha_prime[1] + SHy[1]) + alpha[1];
+Vs_p = 0.0 * b_gamma[1] + 1.0;
+Vs[1] = Vs_p;
+Vsy[1] = ((b_QBZ2 * dfz[1] + b_QBZ1) + lam_Cz_tmp * b_QBZ3) * ((b_QBZ5 * Dx_tmp_e + Vs_p) + Vsy_tmp_p * b_QBZ6) * scaleFactors[32] / lam_muy[1];
+My[2] *= rhoz_data[2];
+ec_data = b_QSX6 * Fz_ext[2] / b_FNOMIN;
+mu_y_idx_2_tmp = b_UNLOADED_RADIUS * Fz_ext[2];
+Bykappa[2] = mu_y_idx_2_tmp;
+Dx_tmp_e = muDoubleScalarAbs(b_gamma[2]);
+Mx[2] = (((((0.0 * scaleFactors[78] - (b_PPMX1 * dpi_idx_2 + 1.0) * (b_QSX2 * b_gamma[2])) - b_QSX12 * b_gamma[2] * Dx_tmp_e) + b_QSX3 * Fy[2] / b_FNOMIN) + muDoubleScalarSin(muDoubleScalarAtan(b_QSX9 * Fy[2] / b_FNOMIN) * b_QSX8 + b_QSX7 * b_gamma[2]) * (muDoubleScalarCos(muDoubleScalarAtan(ec_data * ec_data) * b_QSX5) * b_QSX4)) + muDoubleScalarAtan(b_QSX11 * Fz_ext[2] / b_FNOMIN) * b_QSX10 * b_gamma[2]) * (mu_y_idx_2_tmp * scaleFactors[77]) + b_UNLOADED_RADIUS * Fy[2] * scaleFactors[77] * (b_QSX14 * Dx_tmp_e + b_QSX13);
+Mz[2] = Vx[2] / Mz[2];
+Ey[2] = ((b_QHZ4 * dfz[2] + b_QHZ3) * gamma_star[2] + 0.0 * dfz[2]) + alpha[2];
+SHy[2] = (lam_muy_prime_idx_2 / Kyalpha_prime[2] + SHy[2]) + alpha[2];
+Vs_p = 0.0 * b_gamma[2] + 1.0;
+Vs[2] = Vs_p;
+Vsy[2] = ((b_QBZ2 * dfz[2] + b_QBZ1) + ab_idx_0 * b_QBZ3) * ((b_QBZ5 * Dx_tmp_e + Vs_p) + Vsy_tmp_e * b_QBZ6) * scaleFactors[59] / lam_muy[2];
+My[3] = muDoubleScalarTanh(10.0 * Omega[3]) * rhoz_data[3];
+ec_data = b_QSX6 * Fz_ext[3] / b_FNOMIN;
+mu_y_idx_2_tmp = b_UNLOADED_RADIUS * Fz_ext[3];
+Dx_tmp_e = muDoubleScalarAbs(b_gamma[3]);
+Mx[3] = (((((0.0 * scaleFactors[105] - (b_PPMX1 * dpi_idx_3 + 1.0) * (b_QSX2 * b_gamma[3])) - b_QSX12 * b_gamma[3] * Dx_tmp_e) + b_QSX3 * Fy[3] / b_FNOMIN) + muDoubleScalarSin(muDoubleScalarAtan(b_QSX9 * Fy[3] / b_FNOMIN) * b_QSX8 + b_QSX7 * b_gamma[3]) * (muDoubleScalarCos(muDoubleScalarAtan(ec_data * ec_data) * b_QSX5) * b_QSX4)) + muDoubleScalarAtan(b_QSX11 * Fz_ext[3] / b_FNOMIN) * b_QSX10 * b_gamma[3]) * (mu_y_idx_2_tmp * scaleFactors[104]) + b_UNLOADED_RADIUS * Fy[3] * scaleFactors[104] * (b_QSX14 * Dx_tmp_e + b_QSX13);
+Mz[3] = Vx[3] / Mz[3];
+Ey[3] = ((b_QHZ4 * dfz[3] + b_QHZ3) * gamma_star[3] + 0.0 * dfz[3]) + alpha[3];
+SHy[3] = (lam_muy_prime_idx_3 / Kyalpha_prime[3] + SHy[3]) + alpha[3];
+Vs_p = 0.0 * b_gamma[3] + 1.0;
+Vsy[3] = ((b_QBZ2 * dfz[3] + b_QBZ1) + Bykappa_tmp * b_QBZ3) * ((b_QBZ5 * Dx_tmp_e + Vs_p) + Dx_tmp_p * b_QBZ6) * scaleFactors[86] / a_tmp;
+for (i = 0; i < 4; i++) {
+    if (Vsy[i] < 0.0) {
+        Vsy[i] = 0.0;
+    }
+}
+ec_data = b_QCZ1;
+if (b_QCZ1 < 0.0) {
+    ec_data = 0.0;
+}
+Eykappa[0] = (b_QEZ5 * gamma_star[0] * 2.0 / 3.1415926535897931 * muDoubleScalarAtan(Vsy[0] * ec_data * Ey[0]) + 1.0) * ((b_QEZ2 * dfz[0] + b_QEZ1) + x_idx_0 * b_QEZ3);
+Eykappa[1] = (b_QEZ5 * gamma_star[1] * 2.0 / 3.1415926535897931 * muDoubleScalarAtan(ec_data * Vsy[1] * Ey[1]) + 1.0) * ((b_QEZ2 * dfz[1] + b_QEZ1) + lam_Cz_tmp * b_QEZ3);
+Eykappa[2] = (b_QEZ5 * gamma_star[2] * 2.0 / 3.1415926535897931 * muDoubleScalarAtan(ec_data * Vsy[2] * Ey[2]) + 1.0) * ((b_QEZ2 * dfz[2] + b_QEZ1) + ab_idx_0 * b_QEZ3);
+Eykappa[3] = (b_QEZ5 * gamma_star[3] * 2.0 / 3.1415926535897931 * muDoubleScalarAtan(ec_data * Vsy[3] * Ey[3]) + 1.0) * ((b_QEZ2 * dfz[3] + b_QEZ1) + Bykappa_tmp * b_QEZ3);
+for (i = 0; i < 4; i++) {
+    if (Eykappa[i] > 1.0) {
+        Eykappa[i] = 1.0;
+    }
+}
+lam_Cz_p = muDoubleScalarTan(SHy[0]);
+lam_muy_prime_idx_0 = phi[0] / Kyalpha_prime[0];
+lam_muy_prime_idx_1 = lam_muy_prime_idx_0 * lam_muy_prime_idx_0 * (kappa[0] * kappa[0]);
+lam_muy_prime_idx_0 = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1));
+lam_Cz_p = muDoubleScalarTan(Ey[0]);
+rhoz_data[0] = ((((b_QDZ9 * dfz[0] + b_QDZ8) * (b_PPZ2 * dpi_idx_0 + 1.0) + (b_QDZ11 * dfz[0] + b_QDZ10) * muDoubleScalarAbs(gamma_star[0])) * gamma_star[0] * scaleFactors[15] * zeta[0] + 0.0 * dfz[0] * scaleFactors[17] * zeta[2]) * Bykappa[0] * lam_muy[0] * muDoubleScalarTanh(10.0 * Vx[0]) * Mz[0] + zeta[8]) - 1.0;
+kappa_x[0] = zeta[7];
+lam_Cz[0] = (b_QBZ9 * scaleFactors[5] / lam_muy[0] + b_QBZ10 * epsilon_gamma[0] * phi_t[0]) * zeta[6];
+Kygammao[0] = muDoubleScalarTanh(1000.0 * SHy[0]) * lam_muy_prime_idx_0;
+FzUnSat[0] = (b_QDZ2 * dfz[0] + b_QDZ1) * (1.0 - b_PPZ1 * dpi_idx_0) * (gamma_star_tmp * b_QDZ4 + Vs[0]) * Fz_ext[0] * (b_UNLOADED_RADIUS / Fzo_prime_idx_0) * scaleFactors[16] * zeta[5];
+Mzphiinf[0] = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1)) * muDoubleScalarTanh(1000.0 * Ey[0]);
+lam_Cz_p = muDoubleScalarTan(SHy[1]);
+lam_muy_prime_idx_0 = phi[1] / Kyalpha_prime[1];
+lam_muy_prime_idx_1 = lam_muy_prime_idx_0 * lam_muy_prime_idx_0 * (kappa[1] * kappa[1]);
+lam_muy_prime_idx_0 = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1));
+lam_Cz_p = muDoubleScalarTan(Ey[1]);
+rhoz_data[1] = ((((b_QDZ9 * dfz[1] + b_QDZ8) * (b_PPZ2 * dpi_idx_1 + 1.0) + (b_QDZ11 * dfz[1] + b_QDZ10) * muDoubleScalarAbs(gamma_star[1])) * gamma_star[1] * scaleFactors[42] * zeta[9] + 0.0 * dfz[1] * scaleFactors[44] * zeta[11]) * Bykappa[1] * lam_muy[1] * muDoubleScalarTanh(10.0 * Vx[1]) * Mz[1] + zeta[17]) - 1.0;
+kappa_x[1] = zeta[16];
+lam_Cz[1] = (b_QBZ9 * scaleFactors[32] / lam_muy[1] + b_QBZ10 * epsilon_gamma[1] * phi_t[1]) * zeta[15];
+Kygammao[1] = muDoubleScalarTanh(1000.0 * SHy[1]) * lam_muy_prime_idx_0;
+FzUnSat[1] = (b_QDZ2 * dfz[1] + b_QDZ1) * (1.0 - b_PPZ1 * dpi_idx_1) * (gamma_star_tmp_p * b_QDZ4 + Vs[1]) * Fz_ext[1] * (b_UNLOADED_RADIUS / Fzo_prime_idx_1) * scaleFactors[43] * zeta[14];
+Mzphiinf[1] = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1)) * muDoubleScalarTanh(1000.0 * Ey[1]);
+lam_Cz_p = muDoubleScalarTan(SHy[2]);
+lam_muy_prime_idx_0 = phi[2] / Kyalpha_prime[2];
+lam_muy_prime_idx_1 = lam_muy_prime_idx_0 * lam_muy_prime_idx_0 * (kappa[2] * kappa[2]);
+lam_muy_prime_idx_0 = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1));
+lam_Cz_p = muDoubleScalarTan(Ey[2]);
+rhoz_data[2] = ((((b_QDZ9 * dfz[2] + b_QDZ8) * (b_PPZ2 * dpi_idx_2 + 1.0) + (b_QDZ11 * dfz[2] + b_QDZ10) * muDoubleScalarAbs(gamma_star[2])) * gamma_star[2] * scaleFactors[69] * zeta[18] + 0.0 * dfz[2] * scaleFactors[71] * zeta[20]) * Bykappa[2] * lam_muy[2] * muDoubleScalarTanh(10.0 * Vx[2]) * Mz[2] + zeta[26]) - 1.0;
+kappa_x[2] = zeta[25];
+lam_Cz[2] = (b_QBZ9 * scaleFactors[59] / lam_muy[2] + b_QBZ10 * epsilon_gamma[2] * phi_t[2]) * zeta[24];
+Kygammao[2] = muDoubleScalarTanh(1000.0 * SHy[2]) * lam_muy_prime_idx_0;
+FzUnSat[2] = (b_QDZ2 * dfz[2] + b_QDZ1) * (1.0 - b_PPZ1 * dpi_idx_2) * (gamma_star_tmp_e * b_QDZ4 + Vs[2]) * Fz_ext[2] * (b_UNLOADED_RADIUS / Fzo_prime_idx_2) * scaleFactors[70] * zeta[23];
+Mzphiinf[2] = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1)) * muDoubleScalarTanh(1000.0 * Ey[2]);
+lam_Cz_p = muDoubleScalarTan(SHy[3]);
+lam_muy_prime_idx_0 = Dx_tmp / Kyalpha_prime[3];
+lam_muy_prime_idx_1 = lam_muy_prime_idx_0 * lam_muy_prime_idx_0 * (kappa[3] * kappa[3]);
+lam_muy_prime_idx_0 = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1));
+lam_Cz_p = muDoubleScalarTan(Ey[3]);
+rhoz_data[3] = ((((b_QDZ9 * dfz[3] + b_QDZ8) * (b_PPZ2 * dpi_idx_3 + 1.0) + (b_QDZ11 * dfz[3] + b_QDZ10) * muDoubleScalarAbs(gamma_star[3])) * gamma_star[3] * scaleFactors[96] * zeta[27] + 0.0 * dfz[3] * scaleFactors[98] * zeta[29]) * mu_y_idx_2_tmp * a_tmp * muDoubleScalarTanh(10.0 * Vx[3]) * Mz[3] + zeta[35]) - 1.0;
+kappa_x[3] = zeta[34];
+lam_Cz[3] = (b_QBZ9 * scaleFactors[86] / a_tmp + b_QBZ10 * epsilon_gamma[3] * phi_t[3]) * zeta[33];
+Kygammao[3] = muDoubleScalarTanh(1000.0 * SHy[3]) * lam_muy_prime_idx_0;
+FzUnSat[3] = (b_QDZ2 * dfz[3] + b_QDZ1) * (1.0 - b_PPZ1 * dpi_idx_3) * (gamma_star_tmp_i * b_QDZ4 + Vs_p) * Fz_ext[3] * (b_UNLOADED_RADIUS / Fzo_prime_idx_3) * scaleFactors[97] * zeta[32];
+Mzphiinf[3] = muDoubleScalarAtan(muDoubleScalarSqrt(lam_Cz_p * lam_Cz_p + lam_muy_prime_idx_1)) * muDoubleScalarTanh(1000.0 * Ey[3]);
+%<(SLibCGCallSubFcn("magiccos_GUUO4NyC", ["rhoz_data", "kappa_x", "lam_Cz", "Kygammao", "lam_muy", "%<::tSimStruct>"], 1, 22, 43))>;
+%<(SLibCGCallSubFcn("magiccos_lGr1MZp4", ["FzUnSat", "ec_data", "Vsy", "Eykappa", "Mzphiinf", "rhoz_data", "%<::tSimStruct>"], 1, 22, 44))>;
+Mz[0] = ((b_SSZ4 * dfz[0] + b_SSZ3) * gamma_star[0] + b_SSZ2 * Fy[0] / b_FNOMIN) * b_UNLOADED_RADIUS * scaleFactors[21] * Fx[0] + (-(rhoz_data[0] * Mz[0] * scaleFactors[0]) * (Fy[0] - mu_y_idx_0) + lam_muy[0]);
+sig_x[0] = muDoubleScalarAbs(phi[0] / (((b_PCFX1 * dfz[0] + 1.0) + x_idx_0 * b_PCFX2) * b_LONGITUDINAL_STIFFNESS * (b_PCFX3 * dpi_idx_0 + 1.0)));
+sig_y[0] = muDoubleScalarAbs(Kyalpha[0] / (((b_PCFY1 * dfz[0] + 1.0) + x_idx_0 * b_PCFY2) * b_LATERAL_STIFFNESS * (b_PCFY3 * dpi_idx_0 + 1.0)));
+Mz[1] = ((b_SSZ4 * dfz[1] + b_SSZ3) * gamma_star[1] + b_SSZ2 * Fy[1] / b_FNOMIN) * b_UNLOADED_RADIUS * scaleFactors[48] * Fx[1] + (-(rhoz_data[1] * Mz[1] * scaleFactors[27]) * (Fy[1] - mu_y_idx_1) + lam_muy[1]);
+sig_x[1] = muDoubleScalarAbs(phi[1] / (((b_PCFX1 * dfz[1] + 1.0) + lam_Cz_tmp * b_PCFX2) * b_LONGITUDINAL_STIFFNESS * (b_PCFX3 * dpi_idx_1 + 1.0)));
+sig_y[1] = muDoubleScalarAbs(Kyalpha[1] / (((b_PCFY1 * dfz[1] + 1.0) + lam_Cz_tmp * b_PCFY2) * b_LATERAL_STIFFNESS * (b_PCFY3 * dpi_idx_1 + 1.0)));
+Mz[2] = ((b_SSZ4 * dfz[2] + b_SSZ3) * gamma_star[2] + b_SSZ2 * Fy[2] / b_FNOMIN) * b_UNLOADED_RADIUS * scaleFactors[75] * Fx[2] + (-(rhoz_data[2] * Mz[2] * scaleFactors[54]) * (Fy[2] - mu_y_idx_2) + lam_muy[2]);
+sig_x[2] = muDoubleScalarAbs(phi[2] / (((b_PCFX1 * dfz[2] + 1.0) + ab_idx_0 * b_PCFX2) * b_LONGITUDINAL_STIFFNESS * (b_PCFX3 * dpi_idx_2 + 1.0)));
+sig_y[2] = muDoubleScalarAbs(Kyalpha[2] / (((b_PCFY1 * dfz[2] + 1.0) + ab_idx_0 * b_PCFY2) * b_LATERAL_STIFFNESS * (b_PCFY3 * dpi_idx_2 + 1.0)));
+Mz[3] = ((b_SSZ4 * dfz[3] + b_SSZ3) * gamma_star[3] + b_SSZ2 * Fy[3] / b_FNOMIN) * b_UNLOADED_RADIUS * scaleFactors[102] * mu_y_idx_1_tmp + (-(rhoz_data[3] * Mz[3] * scaleFactors[81]) * (Fy[3] - Vsy_p) + lam_muy[3]);
+sig_x[3] = muDoubleScalarAbs(Dx_tmp / (((b_PCFX1 * dfz[3] + 1.0) + Bykappa_tmp * b_PCFX2) * b_LONGITUDINAL_STIFFNESS * (b_PCFX3 * dpi_idx_3 + 1.0)));
+sig_y[3] = muDoubleScalarAbs(dfz_p / (((b_PCFY1 * dfz[3] + 1.0) + Bykappa_tmp * b_PCFY2) * b_LATERAL_STIFFNESS * (b_PCFY3 * dpi_idx_3 + 1.0)));
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("cm10ecv2oc", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "cm10ecv2oc"))
+%<SLibCG_AccessArg(1, 22, 197)>
+%endif
+%if SLibCG_ArgAccessed(1, 22, 197)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "cm10ecv2oc", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "cm10ecv2oc"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 22, 197)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void cm10ecv2oc(\
+%assign comma = ""
+%<comma>const real_T Omega[4]\
+%assign comma = ", "
+%<comma>const real_T Vx[4]\
+%assign comma = ", "
+%<comma>const real_T Vy[4]\
+%assign comma = ", "
+%<comma>const real_T psidot[4]\
+%assign comma = ", "
+%<comma>real_T b_gamma[4]\
+%assign comma = ", "
+%<comma>real_T press[4]\
+%assign comma = ", "
+%<comma>const real_T scaleFactors[108]\
+%assign comma = ", "
+%<comma>const real_T rhoz[4]\
+%assign comma = ", "
+%<comma>real_T b_turnslip\
+%assign comma = ", "
+%<comma>real_T b_PRESMAX\
+%assign comma = ", "
+%<comma>real_T b_PRESMIN\
+%assign comma = ", "
+%<comma>real_T b_FZMAX\
+%assign comma = ", "
+%<comma>real_T b_FZMIN\
+%assign comma = ", "
+%<comma>real_T b_VXLOW\
+%assign comma = ", "
+%<comma>real_T b_KPUMAX\
+%assign comma = ", "
+%<comma>real_T b_KPUMIN\
+%assign comma = ", "
+%<comma>real_T b_ALPMAX\
+%assign comma = ", "
+%<comma>real_T b_ALPMIN\
+%assign comma = ", "
+%<comma>real_T b_CAMMIN\
+%assign comma = ", "
+%<comma>real_T b_CAMMAX\
+%assign comma = ", "
+%<comma>real_T b_LONGVL\
+%assign comma = ", "
+%<comma>real_T b_UNLOADED_RADIUS\
+%assign comma = ", "
+%<comma>real_T b_RIM_RADIUS\
+%assign comma = ", "
+%<comma>real_T b_NOMPRES\
+%assign comma = ", "
+%<comma>real_T b_FNOMIN\
+%assign comma = ", "
+%<comma>real_T b_VERTICAL_STIFFNESS\
+%assign comma = ", "
+%<comma>real_T b_DREFF\
+%assign comma = ", "
+%<comma>real_T b_BREFF\
+%assign comma = ", "
+%<comma>real_T b_FREFF\
+%assign comma = ", "
+%<comma>real_T b_Q_RE0\
+%assign comma = ", "
+%<comma>real_T b_Q_V1\
+%assign comma = ", "
+%<comma>real_T b_Q_V2\
+%assign comma = ", "
+%<comma>real_T b_Q_FZ1\
+%assign comma = ", "
+%<comma>real_T b_Q_FZ2\
+%assign comma = ", "
+%<comma>real_T b_Q_FCX\
+%assign comma = ", "
+%<comma>real_T b_Q_FCY\
+%assign comma = ", "
+%<comma>real_T b_PFZ1\
+%assign comma = ", "
+%<comma>real_T b_Q_FCY2\
+%assign comma = ", "
+%<comma>real_T b_BOTTOM_OFFST\
+%assign comma = ", "
+%<comma>real_T b_BOTTOM_STIFF\
+%assign comma = ", "
+%<comma>real_T b_PCX1\
+%assign comma = ", "
+%<comma>real_T b_PDX1\
+%assign comma = ", "
+%<comma>real_T b_PDX2\
+%assign comma = ", "
+%<comma>real_T b_PDX3\
+%assign comma = ", "
+%<comma>real_T b_PEX1\
+%assign comma = ", "
+%<comma>real_T b_PEX2\
+%assign comma = ", "
+%<comma>real_T b_PEX3\
+%assign comma = ", "
+%<comma>real_T b_PEX4\
+%assign comma = ", "
+%<comma>real_T b_PKX1\
+%assign comma = ", "
+%<comma>real_T b_PKX2\
+%assign comma = ", "
+%<comma>real_T b_PKX3\
+%assign comma = ", "
+%<comma>real_T b_PHX1\
+%assign comma = ", "
+%<comma>real_T b_PHX2\
+%assign comma = ", "
+%<comma>real_T b_PVX1\
+%assign comma = ", "
+%<comma>real_T b_PVX2\
+%assign comma = ", "
+%<comma>real_T b_PPX1\
+%assign comma = ", "
+%<comma>real_T b_PPX2\
+%assign comma = ", "
+%<comma>real_T b_PPX3\
+%assign comma = ", "
+%<comma>real_T b_PPX4\
+%assign comma = ", "
+%<comma>real_T b_RBX1\
+%assign comma = ", "
+%<comma>real_T b_RBX2\
+%assign comma = ", "
+%<comma>real_T b_RBX3\
+%assign comma = ", "
+%<comma>real_T b_RCX1\
+%assign comma = ", "
+%<comma>real_T b_REX1\
+%assign comma = ", "
+%<comma>real_T b_REX2\
+%assign comma = ", "
+%<comma>real_T b_QSX2\
+%assign comma = ", "
+%<comma>real_T b_QSX3\
+%assign comma = ", "
+%<comma>real_T b_QSX4\
+%assign comma = ", "
+%<comma>real_T b_QSX5\
+%assign comma = ", "
+%<comma>real_T b_QSX6\
+%assign comma = ", "
+%<comma>real_T b_QSX7\
+%assign comma = ", "
+%<comma>real_T b_QSX8\
+%assign comma = ", "
+%<comma>real_T b_QSX9\
+%assign comma = ", "
+%<comma>real_T b_QSX10\
+%assign comma = ", "
+%<comma>real_T b_QSX11\
+%assign comma = ", "
+%<comma>real_T b_PPMX1\
+%assign comma = ", "
+%<comma>real_T b_PCY1\
+%assign comma = ", "
+%<comma>real_T b_PDY1\
+%assign comma = ", "
+%<comma>real_T b_PDY2\
+%assign comma = ", "
+%<comma>real_T b_PDY3\
+%assign comma = ", "
+%<comma>real_T b_PEY1\
+%assign comma = ", "
+%<comma>real_T b_PEY2\
+%assign comma = ", "
+%<comma>real_T b_PEY4\
+%assign comma = ", "
+%<comma>real_T b_PEY5\
+%assign comma = ", "
+%<comma>real_T b_PKY1\
+%assign comma = ", "
+%<comma>real_T b_PKY2\
+%assign comma = ", "
+%<comma>real_T b_PKY3\
+%assign comma = ", "
+%<comma>real_T b_PKY4\
+%assign comma = ", "
+%<comma>real_T b_PKY5\
+%assign comma = ", "
+%<comma>real_T b_PKY6\
+%assign comma = ", "
+%<comma>real_T b_PKY7\
+%assign comma = ", "
+%<comma>real_T b_PVY3\
+%assign comma = ", "
+%<comma>real_T b_PVY4\
+%assign comma = ", "
+%<comma>real_T b_PPY1\
+%assign comma = ", "
+%<comma>real_T b_PPY2\
+%assign comma = ", "
+%<comma>real_T b_PPY3\
+%assign comma = ", "
+%<comma>real_T b_PPY4\
+%assign comma = ", "
+%<comma>real_T b_PPY5\
+%assign comma = ", "
+%<comma>real_T b_RBY1\
+%assign comma = ", "
+%<comma>real_T b_RBY2\
+%assign comma = ", "
+%<comma>real_T b_RBY4\
+%assign comma = ", "
+%<comma>real_T b_RCY1\
+%assign comma = ", "
+%<comma>real_T b_REY1\
+%assign comma = ", "
+%<comma>real_T b_REY2\
+%assign comma = ", "
+%<comma>real_T b_RHY1\
+%assign comma = ", "
+%<comma>real_T b_RHY2\
+%assign comma = ", "
+%<comma>real_T b_RVY3\
+%assign comma = ", "
+%<comma>real_T b_RVY4\
+%assign comma = ", "
+%<comma>real_T b_RVY5\
+%assign comma = ", "
+%<comma>real_T b_RVY6\
+%assign comma = ", "
+%<comma>real_T b_QSY1\
+%assign comma = ", "
+%<comma>real_T b_QSY2\
+%assign comma = ", "
+%<comma>real_T b_QSY3\
+%assign comma = ", "
+%<comma>real_T b_QSY4\
+%assign comma = ", "
+%<comma>real_T b_QSY5\
+%assign comma = ", "
+%<comma>real_T b_QSY6\
+%assign comma = ", "
+%<comma>real_T b_QSY7\
+%assign comma = ", "
+%<comma>real_T b_QSY8\
+%assign comma = ", "
+%<comma>real_T b_QBZ1\
+%assign comma = ", "
+%<comma>real_T b_QBZ2\
+%assign comma = ", "
+%<comma>real_T b_QBZ3\
+%assign comma = ", "
+%<comma>real_T b_QBZ5\
+%assign comma = ", "
+%<comma>real_T b_QBZ6\
+%assign comma = ", "
+%<comma>real_T b_QBZ9\
+%assign comma = ", "
+%<comma>real_T b_QBZ10\
+%assign comma = ", "
+%<comma>real_T b_QCZ1\
+%assign comma = ", "
+%<comma>real_T b_QDZ1\
+%assign comma = ", "
+%<comma>real_T b_QDZ2\
+%assign comma = ", "
+%<comma>real_T b_QDZ4\
+%assign comma = ", "
+%<comma>real_T b_QDZ8\
+%assign comma = ", "
+%<comma>real_T b_QDZ9\
+%assign comma = ", "
+%<comma>real_T b_QDZ10\
+%assign comma = ", "
+%<comma>real_T b_QDZ11\
+%assign comma = ", "
+%<comma>real_T b_QEZ1\
+%assign comma = ", "
+%<comma>real_T b_QEZ2\
+%assign comma = ", "
+%<comma>real_T b_QEZ3\
+%assign comma = ", "
+%<comma>real_T b_QEZ5\
+%assign comma = ", "
+%<comma>real_T b_QHZ3\
+%assign comma = ", "
+%<comma>real_T b_QHZ4\
+%assign comma = ", "
+%<comma>real_T b_PPZ1\
+%assign comma = ", "
+%<comma>real_T b_PPZ2\
+%assign comma = ", "
+%<comma>real_T b_SSZ2\
+%assign comma = ", "
+%<comma>real_T b_SSZ3\
+%assign comma = ", "
+%<comma>real_T b_SSZ4\
+%assign comma = ", "
+%<comma>real_T b_PDXP1\
+%assign comma = ", "
+%<comma>real_T b_PDXP2\
+%assign comma = ", "
+%<comma>real_T b_PDXP3\
+%assign comma = ", "
+%<comma>real_T b_PKYP1\
+%assign comma = ", "
+%<comma>real_T b_PDYP1\
+%assign comma = ", "
+%<comma>real_T b_PDYP2\
+%assign comma = ", "
+%<comma>real_T b_PDYP3\
+%assign comma = ", "
+%<comma>real_T b_PDYP4\
+%assign comma = ", "
+%<comma>real_T b_PHYP1\
+%assign comma = ", "
+%<comma>real_T b_PHYP2\
+%assign comma = ", "
+%<comma>real_T b_PHYP3\
+%assign comma = ", "
+%<comma>real_T b_PHYP4\
+%assign comma = ", "
+%<comma>real_T b_PECP1\
+%assign comma = ", "
+%<comma>real_T b_PECP2\
+%assign comma = ", "
+%<comma>real_T b_QDTP1\
+%assign comma = ", "
+%<comma>real_T b_QCRP1\
+%assign comma = ", "
+%<comma>real_T b_QCRP2\
+%assign comma = ", "
+%<comma>real_T b_QBRP1\
+%assign comma = ", "
+%<comma>real_T b_QDRP1\
+%assign comma = ", "
+%<comma>real_T b_QDRP2\
+%assign comma = ", "
+%<comma>real_T b_WIDTH\
+%assign comma = ", "
+%<comma>real_T b_Q_RA1\
+%assign comma = ", "
+%<comma>real_T b_Q_RA2\
+%assign comma = ", "
+%<comma>real_T b_Q_RB1\
+%assign comma = ", "
+%<comma>real_T b_Q_RB2\
+%assign comma = ", "
+%<comma>real_T b_QSX12\
+%assign comma = ", "
+%<comma>real_T b_QSX13\
+%assign comma = ", "
+%<comma>real_T b_QSX14\
+%assign comma = ", "
+%<comma>real_T b_Q_FZ3\
+%assign comma = ", "
+%<comma>real_T b_LONGITUDINAL_STIFFNESS\
+%assign comma = ", "
+%<comma>real_T b_LATERAL_STIFFNESS\
+%assign comma = ", "
+%<comma>real_T b_PCFX1\
+%assign comma = ", "
+%<comma>real_T b_PCFX2\
+%assign comma = ", "
+%<comma>real_T b_PCFX3\
+%assign comma = ", "
+%<comma>real_T b_PCFY1\
+%assign comma = ", "
+%<comma>real_T b_PCFY2\
+%assign comma = ", "
+%<comma>real_T b_PCFY3\
+%assign comma = ", "
+%<comma>const real_T Fx_ext[4]\
+%assign comma = ", "
+%<comma>const real_T Fy_ext[4]\
+%assign comma = ", "
+%<comma>real_T Fz_ext[4]\
+%assign comma = ", "
+%<comma>real_T vertType\
+%assign comma = ", "
+%<comma>real_T Fx[4]\
+%assign comma = ", "
+%<comma>real_T Fy[4]\
+%assign comma = ", "
+%<comma>real_T Mx[4]\
+%assign comma = ", "
+%<comma>real_T My[4]\
+%assign comma = ", "
+%<comma>real_T Mz[4]\
+%assign comma = ", "
+%<comma>real_T Re[4]\
+%assign comma = ", "
+%<comma>real_T kappa[4]\
+%assign comma = ", "
+%<comma>real_T alpha[4]\
+%assign comma = ", "
+%<comma>real_T sig_x[4]\
+%assign comma = ", "
+%<comma>real_T sig_y[4]\
+%assign comma = ", "
+%<comma>real_T patch_a[4]\
+%assign comma = ", "
+%<comma>real_T patch_b[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 22, 197)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("cm10ecv2oc", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 22, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
+%function bgik5e4neb_Fcn23(block) void
+%assign fcnBuff = ""
+%openfile fcnBuff
+%assign cfgTxt = ""
+%openfile cfgTxt
+int32_T b_ii;
+int32_T idx;
+int8_T ii_data[4];
+boolean_T exitg1;
+idx = 0;
+b_ii = 0;
+exitg1 = false;
+while ((!exitg1) && (b_ii < 4)) {
+    if (u[b_ii] < 0.0) {
+        idx++;
+        ii_data[idx - 1] = (int8_T)(b_ii + 1);
+        if (idx >= 4) {
+            exitg1 = true;
+        } else {
+            b_ii++;
+        }
+    } else {
+        b_ii++;
+    }
+}
+if (idx < 1) {
+    b_ii = 0;
+} else {
+    b_ii = idx;
+}
+for (idx = 0; idx < b_ii; idx++) {
+    u[ii_data[idx] - 1] = 0.0;
+}
+%closefile cfgTxt
+%<cfgTxt>
+%closefile fcnBuff
+%assign rtmArgSys = ::CompiledModel.System[::CompiledModel.System[::CompiledModel.RTWCGModules.RTWCGModule[1].CGSystemIdx].NonInlinedParentSystemIdx]
+%if SysFcnArgNeeded("bgik5e4neb", rtmArgSys.Interface.RTMArgDef, rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "bgik5e4neb"))
+%<SLibCG_AccessArg(1, 23, 1)>
+%endif
+%if SLibCG_ArgAccessed(1, 23, 1)
+%<SLibAccessArg(rtmArgSys.Interface.RTMArgDef, "bgik5e4neb", rtmArgSys.CurrentTID, FcnSysModuleIsRateGrouping(rtmArgSys, "bgik5e4neb"))>
+%endif
+%if (IsModelReferenceBaseSys(rtmArgSys) && (IsModelRefScalableBuild() || GenerateClassInterface)) ||...
+(GenerateClassInterface && SLibIsMultiInstanceServer(rtmArgSys))
+%<SLibCG_UndoAccessArg(1, 23, 1)>
+%endif
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void bgik5e4neb(\
+%assign comma = ""
+%<comma>real_T u[4]\
+%assign comma = ", "
+%if SLibCG_ArgAccessed(1, 23, 1)
+%<comma>%<::tSimStructType> * const %<::tSimStruct>\
+%assign comma = ", "
+%<SLibUpdateSymbolForFunction("bgik5e4neb", SLibGetFcnDefinitionRTMSymbolName(), TLC_FALSE)>\
+%endif
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(1, 23, fcnProtoType)>
+%return fcnBuff
+%endfunction
+
