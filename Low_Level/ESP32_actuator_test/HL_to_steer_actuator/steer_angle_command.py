@@ -18,7 +18,7 @@ def read_excel_and_send_values(excel_file):
     frequency = 25  # Desired frequency in Hz
     delay = 1 / frequency  # Calculate the delay between each value
     for index, row in df.iterrows():
-        angular_value = float(row['steer_sat:1'])
+        angular_value = float(row['steer_sat:1'])*10
         send_to_esp(angular_value)
         time.sleep(delay)  # Adjust delay based on frequency
 

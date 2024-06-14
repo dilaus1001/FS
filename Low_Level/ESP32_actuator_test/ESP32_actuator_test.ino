@@ -1,4 +1,4 @@
- // Define the pins connected to the stepper driver
+// Define the pins connected to the stepper driver
 int driverPULL = 27; // PULL- pin
 int driverDIR = 26;  // DIR- pin
 int encoderPinA = 33; // Encoder pin A
@@ -8,7 +8,7 @@ int encoderPinB = 25; // Encoder pin B
 #define STEPS_PER_REV 1600
 
 // Define the delay between steps in microseconds (this controls the speed)
-#define STEP_DELAY 1000 // Adjust this value to change the speed
+int stepDelay = 1000; // Adjust this value to change the speed
 
 long currentSteps = 0; // Variable to keep track of the current steps
 volatile long encoderCount = 0; // Variable to store encoder position
@@ -20,6 +20,9 @@ unsigned long printInterval = 500; // Print every 500ms
 
 volatile bool stopMotor = false; // Variable to signal stopping the motor
 volatile bool newCommandReceived = false; // Variable to signal new command
+
+// Forward declaration of the updateEncoder function
+void updateEncoder();
 
 void setup() {
   // Set the pin modes
@@ -56,6 +59,12 @@ void loop() {
           stopMotor = true; // Set the flag to stop the motor
         }
         break;
+      case 'V': // Handle VELOCITY command
+        if (input.startsWith("VELOCITY ")) {
+          int velocity = input.substring(9).toInt();
+          setMotorVelocity(velocity);
+        }
+        break;
       default: // Handle target angle input
         float targetAngle = input.toFloat();
         stopMotor = false; // Clear the stop flag before starting a new move
@@ -75,8 +84,6 @@ void loop() {
   }
 }
 
-
-///////////////////////////////////////////////////////////
 void moveToAngle(float targetAngle) {
   // Convert the target angle to steps
   long targetSteps = (targetAngle / 360.0) * STEPS_PER_REV;
@@ -84,11 +91,9 @@ void moveToAngle(float targetAngle) {
 
   currentSteps = (encoderToAngle(encoderCount) / 360.0) * STEPS_PER_REV;
 
-   long stepsToMove = targetSteps - currentSteps;
+  long stepsToMove = targetSteps - currentSteps;
   // Move the stepper motor to the target position
   moveStepper(stepsToMove);
-
-
 }
 
 void moveStepper(long steps) {
@@ -116,9 +121,9 @@ void moveStepper(long steps) {
     }
 
     digitalWrite(driverPULL, HIGH);
-    delayMicroseconds(STEP_DELAY); // Wait for a short period
+    delayMicroseconds(stepDelay); // Wait for a short period
     digitalWrite(driverPULL, LOW);
-    delayMicroseconds(STEP_DELAY); // Wait for a short period
+    delayMicroseconds(stepDelay); // Wait for a short period
   }
 }
 
@@ -149,4 +154,16 @@ void updateEncoder() {
 // Function to convert encoder count to angle
 float encoderToAngle(long count) {
   return (float)count * 0.09;
+}
+
+// Function to set motor velocity
+void setMotorVelocity(int velocity) {
+  if (velocity > 0) {
+    stepDelay = 1000000 / velocity; // Calculate delay in microseconds
+    Serial.print("Motor velocity set to ");
+    Serial.print(velocity);
+    Serial.println(" steps per second.");
+  } else {
+    Serial.println("Invalid velocity value.");
+  }
 }
